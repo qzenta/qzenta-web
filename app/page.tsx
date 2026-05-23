@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Qzenta — IT Infrastructure for South African Businesses",
@@ -69,31 +70,47 @@ export default function HomePage() {
               "radial-gradient(ellipse 60% 50% at 80% 0%, rgba(16,185,129,0.08) 0%, transparent 70%)",
           }}
         />
-        <div className="relative max-w-3xl">
-          <p className="text-emerald-500 text-xs font-semibold tracking-widest uppercase mb-5">
-            IT Services &middot; South Africa
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 leading-tight">
-            IT infrastructure for{" "}
-            <span className="text-emerald-400">ambitious</span> businesses
-          </h1>
-          <p className="mt-6 text-lg text-slate-400 max-w-2xl leading-relaxed">
-            Qzenta builds, deploys, and manages the digital foundations that growing South African
-            businesses depend on — from domains and hosting to full web development.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/services"
-              className="px-6 py-3 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-medium transition-colors"
-            >
-              Our Services
-            </Link>
-            <Link
-              href="/portfolio"
-              className="px-6 py-3 rounded-md border border-gray-700 hover:border-emerald-500 text-slate-100 font-medium transition-colors"
-            >
-              View Portfolio
-            </Link>
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Text */}
+          <div>
+            <p className="text-emerald-500 text-xs font-semibold tracking-widest uppercase mb-5">
+              IT Services &middot; South Africa
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 leading-tight">
+              IT infrastructure for{" "}
+              <span className="text-emerald-400">ambitious</span> businesses
+            </h1>
+            <p className="mt-6 text-lg text-slate-400 max-w-2xl leading-relaxed">
+              Qzenta builds, deploys, and manages the digital foundations that growing South African
+              businesses depend on — from domains and hosting to full web development.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/services"
+                className="px-6 py-3 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-medium transition-colors"
+              >
+                Our Services
+              </Link>
+              <Link
+                href="/portfolio"
+                className="px-6 py-3 rounded-md border border-gray-700 hover:border-emerald-500 text-slate-100 font-medium transition-colors"
+              >
+                View Portfolio
+              </Link>
+            </div>
+          </div>
+          {/* Hero image */}
+          <div className="relative hidden lg:block h-[420px] rounded-2xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=900&q=80"
+              alt="African business professionals collaborating in a modern office"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 0vw, 50vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/30 via-transparent to-transparent" />
           </div>
         </div>
       </section>
@@ -126,6 +143,32 @@ export default function HomePage() {
             >
               All services &rarr;
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Image strip — Africa-first */}
+      <section className="py-4 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-3 gap-3 h-48 sm:h-64 rounded-2xl overflow-hidden">
+          <div className="relative col-span-2 rounded-xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80"
+              alt="Black businesswoman in a professional setting"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 66vw, 44vw"
+            />
+            <div className="absolute inset-0 bg-emerald-900/20" />
+          </div>
+          <div className="relative rounded-xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=500&q=80"
+              alt="Tech professional working in Africa"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 33vw, 22vw"
+            />
+            <div className="absolute inset-0 bg-emerald-900/20" />
           </div>
         </div>
       </section>

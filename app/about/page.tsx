@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -41,7 +42,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20 max-w-7xl mx-auto">
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="prose prose-invert prose-slate">
             <p className="text-slate-300 text-lg leading-relaxed">
               Qzenta was established in May 2026 as a dedicated IT services entity — a home for all the
@@ -63,6 +64,39 @@ export default function AboutPage() {
               deployment, Cloudflare for DNS and security, Brevo for transactional email. This
               consistency means fewer moving parts, faster troubleshooting, and infrastructure that
               anyone on the team can pick up.
+            </p>
+          </div>
+          {/* Story image */}
+          <div className="relative h-[460px] rounded-2xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+              alt="Black female professional working on a laptop — the kind of client Qzenta serves"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent" />
+            <p className="absolute bottom-5 left-5 right-5 text-slate-300 text-sm italic leading-relaxed">
+              &ldquo;Your technology should work quietly so you can work loudly.&rdquo;
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* City banner */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-4 max-w-7xl mx-auto">
+        <div className="relative h-52 sm:h-72 rounded-2xl overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1400&q=80"
+            alt="Johannesburg city skyline at sunset — Qzenta's home base"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gray-900/50" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <p className="text-slate-200 text-lg sm:text-2xl font-semibold tracking-wide text-center px-4">
+              Built in South Africa. Built for Africa.
             </p>
           </div>
         </div>

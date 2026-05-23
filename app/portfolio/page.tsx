@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -14,6 +15,8 @@ const projects = [
     url: "https://www.sikatrix.com",
     desc: "Full marketing site for a South African tax and accounting practice. 13 blog posts, 8 location pages, MailerLite newsletter integration, and Brevo transactional email.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo", "MailerLite"],
+    // Black professional reviewing financial documents
+    cover: "https://images.unsplash.com/photo-1589666564459-93cdd3ab856a?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Erga Properties",
@@ -21,6 +24,8 @@ const projects = [
     url: "https://www.erga.co.za",
     desc: "Property services platform for a South African estate agency. Clean, professional design with contact form integration and Cloudflare DNS.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo"],
+    // South African residential architecture
+    cover: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "TiqBooks",
@@ -28,6 +33,8 @@ const projects = [
     url: "https://www.tiqbooks.com",
     desc: "Marketing and onboarding site for a bookkeeping SaaS platform. Full Cloudflare DNS setup, Brevo authentication email, and SQL database integration.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo", "PostgreSQL"],
+    // African entrepreneur working on laptop with data
+    cover: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Ghana Diaspora SA",
@@ -35,6 +42,8 @@ const projects = [
     url: "https://www.ghanadiasporasa.org",
     desc: "Platform for the Ghana Diaspora South Africa NGO. Live with Brevo email integration and Salesforce membership management (in progress).",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo", "Salesforce"],
+    // African community gathering
+    cover: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -58,11 +67,22 @@ export default function PortfolioPage() {
               key={p.name}
               className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden hover:border-emerald-500/40 transition-colors"
             >
-              <div className="p-8">
-                <span className="text-xs font-semibold text-emerald-500 uppercase tracking-wider">
+              {/* Cover image */}
+              <div className="relative h-44 overflow-hidden">
+                <Image
+                  src={p.cover}
+                  alt={`${p.name} — ${p.tag}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gray-900/40" />
+                <span className="absolute top-4 left-4 text-xs font-semibold text-emerald-400 uppercase tracking-wider bg-gray-900/70 px-2.5 py-1 rounded">
                   {p.tag}
                 </span>
-                <h2 className="mt-2 text-xl font-semibold text-slate-100">{p.name}</h2>
+              </div>
+              <div className="p-8">
+                <h2 className="text-xl font-semibold text-slate-100">{p.name}</h2>
                 <p className="mt-3 text-sm text-slate-400 leading-relaxed">{p.desc}</p>
 
                 <div className="mt-5 flex flex-wrap gap-2">

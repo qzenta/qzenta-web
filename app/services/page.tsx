@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -123,10 +124,25 @@ export default function ServicesPage() {
       {/* How we work */}
       <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-800/30">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-100 mb-3">How we work</h2>
-          <p className="text-slate-400 mb-10 max-w-xl">
-            A consistent process across every engagement — no surprises.
-          </p>
+          {/* Image + heading */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-14">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-100 mb-3">How we work</h2>
+              <p className="text-slate-400 max-w-xl">
+                A consistent process across every engagement — no surprises.
+              </p>
+            </div>
+            <div className="relative h-52 sm:h-64 rounded-2xl overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80"
+                alt="African business team collaborating with technology"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-emerald-900/30" />
+            </div>
+          </div>
           <div className="flex flex-col md:flex-row gap-0">
             {process.map((p, i) => (
               <div
