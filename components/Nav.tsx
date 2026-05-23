@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -24,15 +23,11 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="shrink-0 flex items-center">
-            <Image
-              src="/logo.png"
-              alt="Qzenta"
-              width={140}
-              height={40}
-              className="h-9 w-auto"
-              priority
-            />
+          <Link
+            href="/"
+            className="text-xl font-bold tracking-tight text-slate-100 shrink-0"
+          >
+            <span className="text-emerald-500">Q</span>zenta
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
