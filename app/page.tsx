@@ -33,27 +33,23 @@ const services = [
 
 const portfolio = [
   {
-    name: "Sikatrix",
-    desc: "Tax and accounting practice",
-    url: "https://www.sikatrix.com",
+    name: "Accounting Practice",
+    desc: "Tax and accounting firm — multi-location marketing site with newsletter and email integration.",
     tag: "Professional Services",
   },
   {
-    name: "Erga Properties",
-    desc: "Property services platform",
-    url: "https://www.erga.co.za",
+    name: "Property Agency",
+    desc: "Property services platform for a South African estate agency with contact form and DNS management.",
     tag: "Property",
   },
   {
-    name: "TiqBooks",
-    desc: "Bookkeeping SaaS platform",
-    url: "https://www.tiqbooks.com",
+    name: "Bookkeeping SaaS",
+    desc: "Marketing and onboarding site for a bookkeeping SaaS platform with auth email and database integration.",
     tag: "SaaS",
   },
   {
-    name: "GDSA",
-    desc: "Ghana Diaspora SA NGO",
-    url: "https://www.ghanadiasporasa.org",
+    name: "Community NGO",
+    desc: "Platform for an African diaspora NGO — email integration and membership management.",
     tag: "NGO",
   },
 ];
@@ -182,21 +178,18 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {portfolio.map((p) => (
-              <a
+              <div
                 key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-emerald-500/50 transition-colors"
+                className="bg-gray-800 rounded-lg p-6 border border-gray-700"
               >
                 <span className="text-xs font-semibold text-emerald-500 uppercase tracking-wider">
                   {p.tag}
                 </span>
-                <h3 className="mt-2 font-semibold text-slate-100 group-hover:text-emerald-400 transition-colors">
+                <h3 className="mt-2 font-semibold text-slate-100">
                   {p.name}
                 </h3>
                 <p className="mt-1 text-sm text-slate-400">{p.desc}</p>
-              </a>
+              </div>
             ))}
           </div>
           <div className="mt-8">

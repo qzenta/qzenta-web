@@ -5,42 +5,38 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Live projects built and maintained by Qzenta — from professional services and property to SaaS and NGO platforms.",
+    "Work built and managed by Qzenta — web infrastructure, deployments, and digital operations across multiple sectors.",
 };
 
 const projects = [
   {
-    name: "Sikatrix Business Accountants",
+    name: "South African Accounting Practice",
     tag: "Professional Services",
-    url: "https://www.sikatrix.com",
-    desc: "Full marketing site for a South African tax and accounting practice. 13 blog posts, 8 location pages, MailerLite newsletter integration, and Brevo transactional email.",
+    desc: "Full marketing site for a tax and accounting practice. Multi-location SEO pages, integrated blog, MailerLite newsletter, and Brevo transactional email — all on a single Next.js deployment.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo", "MailerLite"],
     // Black professional reviewing financial documents
     cover: "https://images.unsplash.com/photo-1589666564459-93cdd3ab856a?auto=format&fit=crop&w=800&q=80",
   },
   {
-    name: "Erga Properties",
+    name: "Property Services Agency",
     tag: "Property",
-    url: "https://www.erga.co.za",
-    desc: "Property services platform for a South African estate agency. Clean, professional design with contact form integration and Cloudflare DNS.",
+    desc: "Clean, professional platform for a South African estate agency. Contact form integration, Brevo email, and full Cloudflare DNS management with zero-downtime cutover.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo"],
     // South African residential architecture
     cover: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80",
   },
   {
-    name: "TiqBooks",
+    name: "Bookkeeping SaaS Platform",
     tag: "SaaS",
-    url: "https://www.tiqbooks.com",
-    desc: "Marketing and onboarding site for a bookkeeping SaaS platform. Full Cloudflare DNS setup, Brevo authentication email, and SQL database integration.",
+    desc: "Marketing and onboarding site for a bookkeeping SaaS product. Brevo authentication email flows, PostgreSQL database integration, and full Cloudflare DNS setup.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo", "PostgreSQL"],
     // African entrepreneur working on laptop with data
     cover: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
   },
   {
-    name: "Ghana Diaspora SA",
+    name: "Diaspora Community NGO",
     tag: "NGO",
-    url: "https://www.ghanadiasporasa.org",
-    desc: "Platform for the Ghana Diaspora South Africa NGO. Live with Brevo email integration and Salesforce membership management (in progress).",
+    desc: "Platform for an African diaspora organisation in South Africa. Brevo email integration, Salesforce membership management, and a community-first design built for accessibility.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo", "Salesforce"],
     // African community gathering
     cover: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
@@ -96,17 +92,7 @@ export default function PortfolioPage() {
                   ))}
                 </div>
 
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-emerald-500 hover:text-emerald-400 transition-colors"
-                >
-                  Visit site
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
+                <p className="mt-6 text-xs text-slate-500 italic">Live project — details shared with client permission.</p>
               </div>
             </div>
           ))}
