@@ -45,14 +45,14 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="prose prose-invert prose-slate">
             <p className="text-slate-300 text-lg leading-relaxed">
-              Qzenta was established in May 2026 as a dedicated IT services entity — a home for all the
-              infrastructure work that had been accumulating across Sikatrix, Erga Properties, TiqBooks,
-              and GDSA.
+              Qzenta was established in May 2026 as a dedicated IT services entity — a proper home
+              for the kind of infrastructure work that every growing business accumulates but few
+              businesses manage intentionally.
             </p>
             <p className="mt-5 text-slate-400 leading-relaxed">
-              The logic was simple: good IT infrastructure deserves a proper home. Managing domains,
-              hosting, GitHub organisations, and deployments as a side function of an accounting
-              practice made no sense. Qzenta gives it a structure, a name, and a mandate.
+              The logic was simple: good IT infrastructure deserves its own structure. Managing domains,
+              hosting, deployments, and digital operations as a side function of other business
+              activity made no sense. Qzenta gives it a name, a mandate, and the attention it deserves.
             </p>
             <p className="mt-5 text-slate-400 leading-relaxed">
               We are a boutique operation — deliberately so. We work with a small number of clients at a

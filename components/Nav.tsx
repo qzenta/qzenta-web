@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -23,11 +24,15 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link
-            href="/"
-            className="text-xl font-bold tracking-tight text-slate-100 shrink-0"
-          >
-            <span className="text-emerald-500">Q</span>zenta
+          <Link href="/" className="shrink-0 flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Qzenta"
+              width={160}
+              height={48}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">

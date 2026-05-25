@@ -16,6 +16,10 @@ export const metadata: Metadata = {
     "IT infrastructure and web services for ambitious South African businesses. Web development, domain management, hosting, and ongoing technical support.",
   keywords: ["IT services", "web development", "South Africa", "Qzenta", "domain hosting", "SME tech"],
   metadataBase: new URL("https://www.qzenta.com"),
+  icons: {
+    icon: "/qzenta-icon.svg",
+    shortcut: "/qzenta-icon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_ZA",

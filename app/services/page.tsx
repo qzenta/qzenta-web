@@ -121,6 +121,74 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-800/30">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-emerald-500 text-xs font-semibold tracking-widest uppercase mb-4">
+            Pricing
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 mb-3">
+            Simple, transparent pricing
+          </h2>
+          <p className="text-slate-400 mb-12 max-w-xl">
+            One setup fee. One monthly subscription. No surprises, no lock-in.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-5">
+                Once-off
+              </p>
+              <p className="text-5xl font-bold text-slate-100 tracking-tight">R3,000</p>
+              <p className="mt-2 text-sm text-slate-500">Setup fee — paid once</p>
+              <div className="mt-8 space-y-3">
+                {[
+                  "Website design and development",
+                  "Domain registration and DNS configuration",
+                  "Professional email setup",
+                  "SSL and Cloudflare activation",
+                  "Full deployment and handoff",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-sm text-slate-400">
+                    <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-800 rounded-lg p-8 border border-emerald-500/30 relative overflow-hidden">
+              <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
+              <p className="text-xs font-semibold text-emerald-500 uppercase tracking-widest mb-5">
+                Monthly subscription
+              </p>
+              <div className="flex items-baseline gap-1.5">
+                <p className="text-5xl font-bold text-slate-100 tracking-tight">R200</p>
+                <p className="text-slate-400 text-xl">– R300</p>
+              </div>
+              <p className="mt-2 text-sm text-slate-500">per month, ongoing</p>
+              <div className="mt-8 space-y-3">
+                {[
+                  "Domain and hosting managed end-to-end",
+                  "Uptime monitoring and incident response",
+                  "Security updates and dependency patches",
+                  "Content updates on request",
+                  "Monthly infrastructure health report",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-sm text-slate-400">
+                    <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <p className="mt-8 text-sm text-slate-500 max-w-xl">
+            This is a managed service — not commodity hosting. We handle everything so you
+            can focus on the work that matters.
+          </p>
+        </div>
+      </section>
+
       {/* How we work */}
       <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-800/30">
         <div className="max-w-7xl mx-auto">

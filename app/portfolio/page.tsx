@@ -14,7 +14,6 @@ const projects = [
     tag: "Professional Services",
     desc: "Full marketing site for a tax and accounting practice. Multi-location SEO pages, integrated blog, MailerLite newsletter, and Brevo transactional email — all on a single Next.js deployment.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo", "MailerLite"],
-    // Black professional reviewing financial documents
     cover: "https://images.unsplash.com/photo-1589666564459-93cdd3ab856a?auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -22,7 +21,6 @@ const projects = [
     tag: "Property",
     desc: "Clean, professional platform for a South African estate agency. Contact form integration, Brevo email, and full Cloudflare DNS management with zero-downtime cutover.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo"],
-    // South African residential architecture
     cover: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -30,7 +28,6 @@ const projects = [
     tag: "SaaS",
     desc: "Marketing and onboarding site for a bookkeeping SaaS product. Brevo authentication email flows, PostgreSQL database integration, and full Cloudflare DNS setup.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo", "PostgreSQL"],
-    // African entrepreneur working on laptop with data
     cover: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
   },
   {
@@ -38,8 +35,14 @@ const projects = [
     tag: "NGO",
     desc: "Platform for an African diaspora organisation in South Africa. Brevo email integration, Salesforce membership management, and a community-first design built for accessibility.",
     stack: ["Next.js", "Vercel", "Cloudflare", "Brevo", "Salesforce"],
-    // African community gathering
     cover: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    name: "Legal Services / Faith Organisation",
+    tag: "Legal · Faith",
+    desc: "Website and professional email infrastructure for a South African legal and faith-based organisation. Domain configuration, Cloudflare DNS, and Brevo transactional email — built for credibility and trust.",
+    stack: ["Web Development", "Email Setup", "Domain Management"],
+    cover: "https://images.unsplash.com/photo-1521791055366-0d553872952f?auto=format&fit=crop&w=800&q=80",
   },
 ];
 

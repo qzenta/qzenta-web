@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const pageLinks = [
   { href: "/services", label: "Services" },
@@ -19,8 +20,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <Link href="/" className="text-xl font-bold text-slate-100">
-              <span className="text-emerald-500">Q</span>zenta
+            <Link href="/" className="inline-flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Qzenta"
+                width={140}
+                height={42}
+                className="h-9 w-auto"
+              />
             </Link>
             <p className="mt-3 text-sm text-slate-400 leading-relaxed">
               IT infrastructure and web services for ambitious South African businesses.
