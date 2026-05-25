@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const pageLinks = [
-  { href: "/services", label: "Services" },
+  { href: "/solutions", label: "Solutions" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
   { href: "/insights", label: "Insights" },
@@ -78,22 +78,24 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <div className="mt-6 flex gap-4">
-              {legalLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-xs text-slate-500 hover:text-slate-400 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-gray-800 text-center text-xs text-slate-500">
-          &copy; 2026 Qzenta (Pty) Ltd. All rights reserved. South Africa.
+        <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex flex-wrap gap-5">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs text-slate-500 hover:text-slate-400 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <p className="text-xs text-slate-500">
+            &copy; 2026 Qzenta (Pty) Ltd. All rights reserved. South Africa.
+          </p>
         </div>
       </div>
     </footer>

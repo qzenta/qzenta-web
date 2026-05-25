@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import HeroPanels from "@/components/HeroPanels";
 
 export const metadata: Metadata = {
   title: "Qzenta — IT Infrastructure for South African Businesses",
@@ -62,54 +62,7 @@ const portfolio = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero — full-bleed with background image */}
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1800&q=80"
-            alt="African business professionals collaborating in a modern office"
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-            priority
-          />
-          {/* Left-heavy dark overlay for text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/88 to-gray-900/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/20" />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-28">
-          <div className="max-w-7xl mx-auto">
-            <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-6">
-              Quietly Excellent &nbsp;·&nbsp; IT Services &nbsp;·&nbsp; South Africa
-            </p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight max-w-3xl">
-              Digital infrastructure for{" "}
-              <span className="text-emerald-400">ambitious</span> African businesses
-            </h1>
-            <p className="mt-8 text-lg sm:text-xl text-slate-300 max-w-xl leading-relaxed">
-              We build, deploy, and manage the digital foundations growing businesses depend on
-              — from domains and hosting to full web development. Managed service, not DIY.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/services"
-                className="px-7 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-400 text-white font-semibold transition-colors text-sm"
-              >
-                Our Services
-              </Link>
-              <Link
-                href="/portfolio"
-                className="px-7 py-3.5 rounded-md border border-white/25 hover:border-white/50 text-white font-semibold transition-colors text-sm"
-              >
-                View Portfolio
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroPanels />
 
       {/* Trust strip */}
       <section className="bg-gray-800 border-b border-gray-700/60">
@@ -153,10 +106,10 @@ export default function HomePage() {
           </div>
           <div className="mt-8">
             <Link
-              href="/services"
+              href="/solutions"
               className="text-sm text-emerald-500 hover:text-emerald-400 font-medium transition-colors"
             >
-              All services &rarr;
+              All solutions &rarr;
             </Link>
           </div>
         </div>

@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
+  { href: "/solutions", label: "Solutions" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
   { href: "/insights", label: "Insights" },
@@ -23,14 +23,14 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <Link href="/" className="shrink-0 flex items-center">
             <Image
               src="/logo.png"
               alt="Qzenta"
               width={721}
               height={442}
-              style={{ height: "36px", width: "auto" }}
+              style={{ height: "52px", width: "auto" }}
               priority
             />
           </Link>
