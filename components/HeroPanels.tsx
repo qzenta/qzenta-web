@@ -23,35 +23,40 @@ const panels = [
   },
 ];
 
+// Sharp glass-and-steel office building — horizontal architecture, works well at 4:1 aspect ratio
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=90";
+
 export default function HeroPanels() {
   const [active, setActive] = useState(1);
 
   return (
     <>
-      {/* Desktop: 4-panel accordion over ONE shared background image */}
+      {/* ── Desktop: 4-panel accordion over ONE shared building image ── */}
       <section className="hidden lg:block relative h-[70vh] min-h-[480px] overflow-hidden">
-        {/* Shared background image — spans all 4 panels */}
+        {/* Shared background — ONE image behind all panels */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1800&q=80"
-            alt="Business professionals at work"
+            src={HERO_IMAGE}
+            alt="Modern glass office building"
             fill
             className="object-cover object-center"
             sizes="100vw"
             priority
+            quality={90}
           />
-          {/* Base dark tint so text is always readable */}
-          <div className="absolute inset-0 bg-gray-900/50" />
+          {/* Subtle base tint so text is readable on any panel */}
+          <div className="absolute inset-0 bg-gray-900/40" />
         </div>
 
-        {/* Brand tag — top left */}
+        {/* Brand tag — top left, above panels */}
         <div className="absolute top-8 left-10 z-20">
           <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase">
             Quietly Excellent &nbsp;·&nbsp; IT Services &nbsp;·&nbsp; South Africa
           </p>
         </div>
 
-        {/* 4 panels as overlay dividers */}
+        {/* 4 transparent overlay panels — background image shows through */}
         <div className="absolute inset-0 flex z-10">
           {panels.map((panel, i) => (
             <div
@@ -63,12 +68,14 @@ export default function HeroPanels() {
               }}
               onMouseEnter={() => setActive(i)}
             >
-              {/* Per-panel overlay — lighter on active to reveal more of the background */}
+              {/* Per-panel overlay — lighter on active, darker on inactive */}
               <div
-                className="absolute inset-0 transition-colors duration-500"
+                className="absolute inset-0 transition-all duration-500"
                 style={{
                   background:
-                    active === i ? "rgba(17,24,39,0.18)" : "rgba(17,24,39,0.52)",
+                    active === i
+                      ? "rgba(17,24,39,0.15)"
+                      : "rgba(17,24,39,0.55)",
                 }}
               />
 
@@ -77,7 +84,7 @@ export default function HeroPanels() {
                 <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-500 z-10" />
               )}
 
-              {/* Content */}
+              {/* Panel content */}
               <div className="relative z-10 p-8 pb-10">
                 <span className="text-xs font-semibold text-emerald-400 tracking-[0.3em] uppercase mb-3 block">
                   0{i + 1}
@@ -91,7 +98,7 @@ export default function HeroPanels() {
                   {panel.title}
                 </h2>
 
-                {/* Description + EXPLORE — visible on active panel only */}
+                {/* Revealed only when this panel is active */}
                 <div
                   className="overflow-hidden transition-all duration-500"
                   style={{
@@ -99,7 +106,7 @@ export default function HeroPanels() {
                     opacity: active === i ? 1 : 0,
                   }}
                 >
-                  <p className="mt-3 text-sm text-slate-300 leading-relaxed max-w-xs">
+                  <p className="mt-3 text-sm text-slate-200 leading-relaxed max-w-xs">
                     {panel.desc}
                   </p>
                   <Link
@@ -116,15 +123,16 @@ export default function HeroPanels() {
         </div>
       </section>
 
-      {/* Mobile: classic full-bleed hero */}
+      {/* ── Mobile: full-bleed hero ── */}
       <section className="lg:hidden relative min-h-[88vh] flex items-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1200&q=80"
-          alt="Qzenta IT Infrastructure"
+          src={HERO_IMAGE}
+          alt="Qzenta — IT Infrastructure"
           fill
           className="object-cover object-center"
           sizes="100vw"
           priority
+          quality={90}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/88 to-gray-900/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/20" />
@@ -136,7 +144,7 @@ export default function HeroPanels() {
             Digital infrastructure for{" "}
             <span className="text-emerald-400">ambitious</span> African businesses
           </h1>
-          <p className="mt-6 text-lg text-slate-300 max-w-sm leading-relaxed">
+          <p className="mt-6 text-lg text-slate-200 max-w-sm leading-relaxed">
             We build, deploy, and manage the digital foundations growing businesses depend on —
             managed service, not DIY.
           </p>
@@ -149,7 +157,7 @@ export default function HeroPanels() {
             </Link>
             <Link
               href="/portfolio"
-              className="px-7 py-3.5 rounded-md border border-white/25 hover:border-white/50 text-white font-semibold transition-colors text-sm"
+              className="px-7 py-3.5 rounded-md border border-white/30 hover:border-white/60 text-white font-semibold transition-colors text-sm"
             >
               View Portfolio
             </Link>
