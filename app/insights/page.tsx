@@ -20,11 +20,11 @@ export default function InsightsPage() {
   return (
     <>
       <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-500 text-xs font-semibold tracking-widest uppercase mb-4">
+        <p className="text-emerald-600 text-xs font-semibold tracking-widest uppercase mb-4">
           Learn
         </p>
-        <h1 className="text-4xl sm:text-5xl font-bold text-slate-100">Insights</h1>
-        <p className="mt-4 text-lg text-slate-400 max-w-2xl">
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">Insights</h1>
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl">
           Practical guides on web infrastructure, IT management, and building a reliable digital
           presence in South Africa.
         </p>
@@ -36,21 +36,21 @@ export default function InsightsPage() {
             <Link
               key={post.slug}
               href={`/insights/${post.slug}`}
-              className="group block bg-gray-800 rounded-lg border border-gray-700 hover:border-emerald-500/50 transition-colors overflow-hidden"
+              className="group block bg-white rounded-lg border border-gray-200 shadow-sm hover:border-emerald-400/60 hover:shadow-md transition-all overflow-hidden"
             >
               <div className="p-6">
-                <div className="flex items-center gap-3 text-xs text-slate-500 mb-4">
+                <div className="flex items-center gap-3 text-xs text-gray-500 mb-4">
                   <time dateTime={post.date}>{formatDate(post.date)}</time>
                   <span>&middot;</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h2 className="font-semibold text-slate-100 group-hover:text-emerald-400 transition-colors leading-snug">
+                <h2 className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors leading-snug">
                   {post.title}
                 </h2>
-                <p className="mt-3 text-sm text-slate-400 leading-relaxed line-clamp-3">
+                <p className="mt-3 text-sm text-gray-600 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-emerald-500 group-hover:text-emerald-400 transition-colors">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-emerald-600 group-hover:text-emerald-700 transition-colors">
                   Read more
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

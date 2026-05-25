@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 const services = [
   {
     number: "01",
+    id: "web",
     title: "Web Development & Deployment",
     summary: "Modern, performant websites built for growth.",
     details: [
@@ -23,6 +24,7 @@ const services = [
   },
   {
     number: "02",
+    id: "domains",
     title: "Domain & Hosting Management",
     summary: "Your domains and hosting, handled end-to-end.",
     details: [
@@ -35,6 +37,7 @@ const services = [
   },
   {
     number: "03",
+    id: "infrastructure",
     title: "Tech Infrastructure for SMEs",
     summary: "The complete digital foundation, set up right from day one.",
     details: [
@@ -47,6 +50,7 @@ const services = [
   },
   {
     number: "04",
+    id: "support",
     title: "Ongoing Maintenance & Support",
     summary: "Your tech stack, managed month to month.",
     details: [
@@ -86,11 +90,11 @@ export default function SolutionsPage() {
   return (
     <>
       <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-500 text-xs font-semibold tracking-widest uppercase mb-4">
+        <p className="text-emerald-600 text-xs font-semibold tracking-widest uppercase mb-4">
           What we offer
         </p>
-        <h1 className="text-4xl sm:text-5xl font-bold text-slate-100">Solutions</h1>
-        <p className="mt-4 text-lg text-slate-400 max-w-2xl">
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">Solutions</h1>
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl">
           End-to-end IT support for businesses that want to move fast without breaking things.
         </p>
       </section>
@@ -100,17 +104,18 @@ export default function SolutionsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {services.map((s) => (
             <div
+              id={s.id}
               key={s.number}
-              className="bg-gray-800 rounded-lg p-8 border border-gray-700"
+              className="bg-white rounded-lg p-8 border border-gray-200 shadow-sm"
             >
               <span className="text-4xl font-bold text-emerald-500/20 select-none">
                 {s.number}
               </span>
-              <h2 className="mt-4 text-xl font-semibold text-slate-100">{s.title}</h2>
-              <p className="mt-2 text-slate-400">{s.summary}</p>
+              <h2 className="mt-4 text-xl font-semibold text-gray-900">{s.title}</h2>
+              <p className="mt-2 text-gray-600">{s.summary}</p>
               <ul className="mt-5 space-y-2">
                 {s.details.map((d) => (
-                  <li key={d} className="flex items-start gap-3 text-sm text-slate-400">
+                  <li key={d} className="flex items-start gap-3 text-sm text-gray-600">
                     <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500" />
                     {d}
                   </li>
@@ -122,24 +127,24 @@ export default function SolutionsPage() {
       </section>
 
       {/* How we work */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-800/30">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-14">
             <div>
-              <h2 className="text-2xl font-bold text-slate-100 mb-3">How we work</h2>
-              <p className="text-slate-400 max-w-xl">
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">How we work</h2>
+              <p className="text-gray-600 max-w-xl">
                 A consistent process across every engagement — no surprises.
               </p>
             </div>
-            <div className="relative h-52 sm:h-64 rounded-2xl overflow-hidden">
+            <div className="relative h-52 sm:h-64 rounded-2xl overflow-hidden shadow-md">
               <Image
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80"
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80"
                 alt="African business team collaborating with technology"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-emerald-900/30" />
+              <div className="absolute inset-0 bg-emerald-900/20" />
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-0">
@@ -150,16 +155,16 @@ export default function SolutionsPage() {
               >
                 {i < process.length - 1 && (
                   <>
-                    <span className="absolute left-3 top-7 bottom-0 w-px bg-gray-700 md:hidden" />
-                    <span className="hidden md:block absolute top-3 left-1/2 right-0 h-px bg-gray-700" />
+                    <span className="absolute left-3 top-7 bottom-0 w-px bg-gray-200 md:hidden" />
+                    <span className="hidden md:block absolute top-3 left-1/2 right-0 h-px bg-gray-200" />
                   </>
                 )}
-                <span className="absolute left-0 top-1 md:left-auto md:top-0 md:relative md:block w-6 h-6 rounded-full bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center">
+                <span className="absolute left-0 top-1 md:left-auto md:top-0 md:relative md:block w-6 h-6 rounded-full bg-emerald-50 border border-emerald-400 flex items-center justify-center">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 block" />
                 </span>
                 <div className="md:mt-4 ml-0">
-                  <h3 className="font-semibold text-slate-100 text-sm">{p.step}</h3>
-                  <p className="mt-1 text-sm text-slate-400 leading-relaxed">{p.desc}</p>
+                  <h3 className="font-semibold text-gray-900 text-sm">{p.step}</h3>
+                  <p className="mt-1 text-sm text-gray-600 leading-relaxed">{p.desc}</p>
                 </div>
               </div>
             ))}
@@ -168,17 +173,19 @@ export default function SolutionsPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 max-w-7xl mx-auto text-center">
-        <h2 className="text-2xl font-bold text-slate-100">Ready to get started?</h2>
-        <p className="mt-3 text-slate-400 max-w-md mx-auto">
-          Tell us what you need and we&apos;ll put together a plan.
-        </p>
-        <Link
-          href="/contact"
-          className="mt-6 inline-block px-8 py-3 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-medium transition-colors"
-        >
-          Get in Touch
-        </Link>
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-white">Ready to get started?</h2>
+          <p className="mt-3 text-gray-400 max-w-md mx-auto">
+            Tell us what you need and we&apos;ll put together a plan.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-block px-8 py-3 rounded-md bg-emerald-500 hover:bg-emerald-400 text-white font-medium transition-colors"
+          >
+            Get in Touch
+          </Link>
+        </div>
       </section>
     </>
   );

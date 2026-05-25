@@ -81,7 +81,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div className="mt-10 pt-6 border-t border-gray-800">
+          <p className="text-xs text-slate-500 mb-3">
+            &copy; 2026 Qzenta (Pty) Ltd. All rights reserved. South Africa.
+          </p>
           <div className="flex flex-wrap gap-5">
             {legalLinks.map((link) => (
               <Link
@@ -93,9 +96,6 @@ export default function Footer() {
               </Link>
             ))}
           </div>
-          <p className="text-xs text-slate-500">
-            &copy; 2026 Qzenta (Pty) Ltd. All rights reserved. South Africa.
-          </p>
         </div>
       </div>
     </footer>

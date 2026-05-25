@@ -65,7 +65,7 @@ export default function HomePage() {
       <HeroPanels />
 
       {/* Trust strip */}
-      <section className="bg-gray-800 border-b border-gray-700/60">
+      <section className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-wrap items-center justify-center sm:justify-between gap-6 sm:gap-4">
             {[
@@ -75,39 +75,39 @@ export default function HomePage() {
               { value: "24h", label: "Response commitment" },
             ].map((s) => (
               <div key={s.label} className="text-center">
-                <p className="text-2xl font-bold text-emerald-400">{s.value}</p>
-                <p className="text-xs text-slate-400 mt-0.5 tracking-wide uppercase">{s.label}</p>
+                <p className="text-2xl font-bold text-emerald-600">{s.value}</p>
+                <p className="text-xs text-gray-500 mt-0.5 tracking-wide uppercase">{s.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-800/30">
+      {/* Solutions */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-100 mb-3">What we do</h2>
-          <p className="text-slate-400 mb-10 max-w-xl">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">What we do</h2>
+          <p className="text-gray-600 mb-10 max-w-xl">
             End-to-end IT support for businesses that want to move fast without breaking things.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
               <div
                 key={s.number}
-                className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-colors"
+                className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:border-emerald-400/60 hover:shadow-md transition-all"
               >
-                <span className="text-3xl font-bold text-emerald-500/25 select-none">
+                <span className="text-3xl font-bold text-emerald-500/20 select-none">
                   {s.number}
                 </span>
-                <h3 className="mt-4 font-semibold text-slate-100">{s.title}</h3>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{s.desc}</p>
+                <h3 className="mt-4 font-semibold text-gray-900">{s.title}</h3>
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-8">
             <Link
               href="/solutions"
-              className="text-sm text-emerald-500 hover:text-emerald-400 font-medium transition-colors"
+              className="text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
             >
               All solutions &rarr;
             </Link>
@@ -116,32 +116,30 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-100 mb-3">Recent work</h2>
-          <p className="text-slate-400 mb-10 max-w-xl">
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">Recent work</h2>
+          <p className="text-gray-600 mb-10 max-w-xl">
             Live projects built and maintained under the Qzenta infrastructure umbrella.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {portfolio.map((p) => (
               <div
                 key={p.name}
-                className="bg-gray-800 rounded-lg p-6 border border-gray-700"
+                className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm"
               >
-                <span className="text-xs font-semibold text-emerald-500 uppercase tracking-wider">
+                <span className="text-xs font-semibold text-emerald-600 uppercase tracking-wider">
                   {p.tag}
                 </span>
-                <h3 className="mt-2 font-semibold text-slate-100">
-                  {p.name}
-                </h3>
-                <p className="mt-1 text-sm text-slate-400">{p.desc}</p>
+                <h3 className="mt-2 font-semibold text-gray-900">{p.name}</h3>
+                <p className="mt-1 text-sm text-gray-600">{p.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-8">
             <Link
               href="/portfolio"
-              className="text-sm text-emerald-500 hover:text-emerald-400 font-medium transition-colors"
+              className="text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
             >
               Full portfolio &rarr;
             </Link>
@@ -149,19 +147,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-24 bg-gray-800/30">
+      {/* CTA — dark band for contrast */}
+      <section className="px-4 sm:px-6 lg:px-8 py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-100">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Ready to build something?
           </h2>
-          <p className="mt-4 text-slate-400 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-gray-400 max-w-xl mx-auto leading-relaxed">
             Whether you need a new website, help with your infrastructure, or ongoing technical
             support — we&apos;re here for it.
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block px-8 py-3 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-medium transition-colors"
+            className="mt-8 inline-block px-8 py-3 rounded-md bg-emerald-500 hover:bg-emerald-400 text-white font-medium transition-colors"
           >
             Get in Touch
           </Link>
