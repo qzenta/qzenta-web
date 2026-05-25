@@ -38,11 +38,11 @@ const projects = [
     cover: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
   },
   {
-    name: "Legal Services / Faith Organisation",
-    tag: "Legal · Faith",
-    desc: "Website and professional email infrastructure for a South African legal and faith-based organisation. Domain configuration, Cloudflare DNS, and Brevo transactional email — built for credibility and trust.",
-    stack: ["Web Development", "Email Setup", "Domain Management"],
-    cover: "https://images.unsplash.com/photo-1521791055366-0d553872952f?auto=format&fit=crop&w=800&q=80",
+    name: "Payroll Solutions Provider",
+    tag: "Payroll · HR",
+    desc: "Website and professional email infrastructure for a South African payroll outsourcing firm. Domain configuration, Cloudflare DNS, Brevo transactional email, and POPIA-compliant copy — built for compliance and trust.",
+    stack: ["Web Development", "Email Setup", "Domain Management", "POPIA"],
+    cover: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
   },
 ];
 

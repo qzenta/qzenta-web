@@ -5,13 +5,14 @@ const pageLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
-  { href: "/resources", label: "Resources" },
+  { href: "/insights", label: "Insights" },
   { href: "/contact", label: "Contact" },
 ];
 
 const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Service" },
+  { href: "/popia", label: "POPIA Notice" },
 ];
 
 export default function Footer() {
@@ -24,9 +25,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Qzenta"
-                width={140}
-                height={42}
-                className="h-9 w-auto"
+                width={721}
+                height={442}
+                style={{ height: "32px", width: "auto" }}
               />
             </Link>
             <p className="mt-3 text-sm text-slate-400 leading-relaxed">

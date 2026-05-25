@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
-  { href: "/resources", label: "Resources" },
+  { href: "/insights", label: "Insights" },
 ];
 
 export default function Nav() {
@@ -28,9 +28,9 @@ export default function Nav() {
             <Image
               src="/logo.png"
               alt="Qzenta"
-              width={160}
-              height={48}
-              className="h-10 w-auto"
+              width={721}
+              height={442}
+              style={{ height: "36px", width: "auto" }}
               priority
             />
           </Link>
