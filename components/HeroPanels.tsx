@@ -23,7 +23,6 @@ const panels = [
   },
 ];
 
-// Sharp glass-and-steel office building — horizontal architecture, works well at 4:1 aspect ratio
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=90";
 
@@ -32,31 +31,39 @@ export default function HeroPanels() {
 
   return (
     <>
-      {/* ── Desktop: 4-panel accordion over ONE shared building image ── */}
+      {/* ── Desktop: 4-panel accordion over ONE slowly-panning building image ── */}
       <section className="hidden lg:block relative h-[70vh] min-h-[480px] overflow-hidden">
-        {/* Shared background — ONE image behind all panels */}
-        <div className="absolute inset-0">
-          <Image
-            src={HERO_IMAGE}
-            alt="Modern glass office building"
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-            priority
-            quality={90}
-          />
-          {/* Subtle base tint so text is readable on any panel */}
-          <div className="absolute inset-0 bg-gray-900/40" />
+
+        {/* Shared background — pans left ↔ right via CSS @keyframes hero-pan */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/*
+            .hero-pan applies: scale(1.1) + translateX alternating ±4%
+            The 10 % extra scale hides the edges so no black bars appear.
+            This is a pure CSS animation — one image, no video needed.
+          */}
+          <div className="hero-pan absolute inset-0">
+            <Image
+              src={HERO_IMAGE}
+              alt="Modern glass office building"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+              priority
+              quality={90}
+            />
+          </div>
+          {/* Base dark tint */}
+          <div className="absolute inset-0 bg-gray-900/45" />
         </div>
 
-        {/* Brand tag — top left, above panels */}
+        {/* Brand tag */}
         <div className="absolute top-8 left-10 z-20">
           <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase">
             Quietly Excellent &nbsp;·&nbsp; IT Services &nbsp;·&nbsp; South Africa
           </p>
         </div>
 
-        {/* 4 transparent overlay panels — background image shows through */}
+        {/* 4 transparent overlay panels */}
         <div className="absolute inset-0 flex z-10">
           {panels.map((panel, i) => (
             <div
@@ -68,14 +75,12 @@ export default function HeroPanels() {
               }}
               onMouseEnter={() => setActive(i)}
             >
-              {/* Per-panel overlay — lighter on active, darker on inactive */}
+              {/* Per-panel overlay — nearly transparent when active so building shows clearly */}
               <div
                 className="absolute inset-0 transition-all duration-500"
                 style={{
                   background:
-                    active === i
-                      ? "rgba(17,24,39,0.15)"
-                      : "rgba(17,24,39,0.55)",
+                    active === i ? "rgba(17,24,39,0.12)" : "rgba(17,24,39,0.52)",
                 }}
               />
 
@@ -98,7 +103,7 @@ export default function HeroPanels() {
                   {panel.title}
                 </h2>
 
-                {/* Revealed only when this panel is active */}
+                {/* Revealed only on active panel */}
                 <div
                   className="overflow-hidden transition-all duration-500"
                   style={{
@@ -123,19 +128,23 @@ export default function HeroPanels() {
         </div>
       </section>
 
-      {/* ── Mobile: full-bleed hero ── */}
+      {/* ── Mobile: full-bleed hero (no panel accordion) ── */}
       <section className="lg:hidden relative min-h-[88vh] flex items-center overflow-hidden">
-        <Image
-          src={HERO_IMAGE}
-          alt="Qzenta — IT Infrastructure"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-          priority
-          quality={90}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/88 to-gray-900/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-gray-900/20" />
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="hero-pan absolute inset-0">
+            <Image
+              src={HERO_IMAGE}
+              alt="Qzenta — IT Infrastructure"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+              priority
+              quality={90}
+            />
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/85 to-gray-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent" />
         <div className="relative z-10 w-full px-6 py-28">
           <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-6">
             Quietly Excellent &nbsp;·&nbsp; IT Services &nbsp;·&nbsp; South Africa

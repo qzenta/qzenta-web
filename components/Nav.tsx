@@ -72,6 +72,7 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-gray-900/97 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
+
           {/* Logo */}
           <Link href="/" className="shrink-0 flex items-center">
             <Image
@@ -84,13 +85,19 @@ export default function Nav() {
             />
           </Link>
 
-          {/* Desktop nav */}
+          {/* ── Desktop nav ── */}
           <nav className="hidden md:flex items-stretch gap-0">
             {navItems.map((item) => (
+              /*
+               * group-hover drives both the link highlight AND the dropdown.
+               * No chevron arrows — the dropdown simply appears on hover.
+               * Dropdown is positioned top-full + left-0 so it drops down
+               * and extends to the RIGHT from the nav item.
+               */
               <div key={item.href} className="relative group flex items-center">
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded transition-colors whitespace-nowrap ${
+                  className={`text-sm font-medium px-3 py-2 transition-colors whitespace-nowrap ${
                     isActive(item.href) && item.href !== "/"
                       ? "text-slate-100"
                       : item.href === "/" && isActive("/")
@@ -99,26 +106,23 @@ export default function Nav() {
                   }`}
                 >
                   {item.label}
-                  {item.submenu && (
-                    <svg
-                      className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  )}
                 </Link>
 
-                {/* Dropdown — shown on group hover (CSS, no JS) */}
+                {/* Dropdown — fades in on group hover, no arrows */}
                 {item.submenu && (
-                  <div className="absolute top-full left-0 hidden group-hover:block min-w-[220px] bg-gray-900 border border-gray-700 shadow-2xl z-50 py-1">
+                  <div
+                    className={`
+                      absolute top-full left-0
+                      min-w-[230px]
+                      bg-gray-900
+                      border-t-2 border-t-emerald-500
+                      border-l border-r border-b border-gray-700
+                      shadow-2xl z-50 py-2
+                      opacity-0 pointer-events-none
+                      group-hover:opacity-100 group-hover:pointer-events-auto
+                      transition-opacity duration-200
+                    `}
+                  >
                     {item.submenu.map((sub) => (
                       <Link
                         key={sub.href}
@@ -159,7 +163,7 @@ export default function Nav() {
           </button>
         </div>
 
-        {/* Mobile dropdown menu */}
+        {/* Mobile dropdown */}
         {mobileOpen && (
           <div className="md:hidden border-t border-gray-800 pt-4 pb-4">
             <nav className="flex flex-col gap-1">
