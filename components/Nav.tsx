@@ -90,10 +90,21 @@ export default function Nav() {
       {/* ── Dark nav strip ── */}
       <div className="bg-[#1a2236] backdrop-blur-sm border-b border-[#2d4060]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
+          <div className="flex items-center h-14">
 
-            {/* Desktop nav */}
-            <nav className="hidden md:flex items-stretch gap-0">
+            {/* Mobile: small logo on left */}
+            <Link href="/" className="md:hidden shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Qzenta"
+                width={721}
+                height={442}
+                style={{ height: "36px", width: "auto", filter: "brightness(0) invert(1)" }}
+              />
+            </Link>
+
+            {/* Desktop nav — centred in the strip */}
+            <nav className="hidden md:flex flex-1 items-center justify-center gap-0">
               {navItems.map((item) => (
                 <div key={item.href} className="relative group flex items-center">
                   <Link
@@ -145,18 +156,9 @@ export default function Nav() {
               </Link>
             </nav>
 
-            {/* Mobile: logo (small) + hamburger */}
-            <Link href="/" className="md:hidden shrink-0">
-              <Image
-                src="/logo.png"
-                alt="Qzenta"
-                width={721}
-                height={442}
-                style={{ height: "36px", width: "auto", filter: "brightness(0) invert(1)" }}
-              />
-            </Link>
+            {/* Mobile: hamburger on right */}
             <button
-              className="md:hidden text-[#94a3b8] hover:text-white transition-colors"
+              className="md:hidden ml-auto text-[#94a3b8] hover:text-white transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle navigation menu"
             >
