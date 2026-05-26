@@ -10,28 +10,32 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      {/* Header */}
       <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-600 text-xs font-semibold tracking-widest uppercase mb-4">
+        <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
           Say hello
         </p>
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">Get in Touch</h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-xl">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f1f5f9] tracking-tight">
+          Get in Touch
+        </h1>
+        <p className="mt-4 text-lg text-[#94a3b8] max-w-xl leading-relaxed">
           Tell us about your project or enquiry and we&apos;ll get back to you promptly.
         </p>
       </section>
 
       <section className="px-4 sm:px-6 lg:px-8 pb-24 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
           {/* Contact details */}
           <div className="lg:col-span-2">
             <div className="space-y-8">
               <div>
-                <h3 className="text-xs font-semibold text-gray-900 uppercase tracking-widest mb-3">
+                <h3 className="text-xs font-semibold text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
                   Email
                 </h3>
                 <a
                   href="mailto:info@qzenta.com"
-                  className="text-gray-600 hover:text-emerald-600 transition-colors text-sm"
+                  className="text-[#94a3b8] hover:text-emerald-400 transition-colors text-sm"
                 >
                   info@qzenta.com
                 </a>
@@ -39,7 +43,7 @@ export default function ContactPage() {
 
               {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
                 <div>
-                  <h3 className="text-xs font-semibold text-gray-900 uppercase tracking-widest mb-3">
+                  <h3 className="text-xs font-semibold text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
                     WhatsApp
                   </h3>
                   <a
@@ -57,21 +61,21 @@ export default function ContactPage() {
               )}
 
               <div>
-                <h3 className="text-xs font-semibold text-gray-900 uppercase tracking-widest mb-3">
+                <h3 className="text-xs font-semibold text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
                   Location
                 </h3>
-                <p className="text-sm text-gray-600">South Africa</p>
+                <p className="text-sm text-[#94a3b8]">South Africa</p>
               </div>
 
               <div>
-                <h3 className="text-xs font-semibold text-gray-900 uppercase tracking-widest mb-3">
+                <h3 className="text-xs font-semibold text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
                   GitHub
                 </h3>
                 <a
                   href="https://github.com/qzenta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-sm text-[#94a3b8] hover:text-[#f1f5f9] transition-colors"
                 >
                   github.com/qzenta
                 </a>
@@ -80,7 +84,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3 bg-white rounded-lg border border-gray-200 shadow-sm p-8">
+          <div className="lg:col-span-3 bg-[#1e2d45] rounded-lg border border-[#2d4060] p-8">
             <ContactForm />
           </div>
         </div>

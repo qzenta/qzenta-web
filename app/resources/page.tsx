@@ -36,7 +36,7 @@ export default function ResourcesPage() {
             <Link
               key={post.slug}
               href={`/resources/${post.slug}`}
-              className="group block bg-gray-800 rounded-lg border border-gray-700 hover:border-emerald-500/50 transition-colors overflow-hidden"
+              className="group block bg-[#1e2d45] rounded-lg border border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all overflow-hidden"
             >
               <div className="p-6">
                 <div className="flex items-center gap-3 text-xs text-slate-500 mb-4">

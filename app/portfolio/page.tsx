@@ -38,9 +38,9 @@ const projects = [
     cover: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
   },
   {
-    name: "Payroll Solutions Provider",
-    tag: "Payroll · HR",
-    desc: "Website and professional email infrastructure for a South African payroll outsourcing firm. Domain configuration, Cloudflare DNS, Brevo transactional email, and POPIA-compliant copy.",
+    name: "Legal Services Organisation",
+    tag: "Legal · Faith",
+    desc: "Website and professional infrastructure for a legal services and faith organisation. Domain configuration, Cloudflare DNS, Brevo email, and POPIA-compliant, accessible copy.",
     stack: ["Web Development", "Email Setup", "Domain Management", "POPIA"],
     cover: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
   },
@@ -49,22 +49,26 @@ const projects = [
 export default function PortfolioPage() {
   return (
     <>
+      {/* Header */}
       <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-600 text-xs font-semibold tracking-widest uppercase mb-4">
+        <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
           Our work
         </p>
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">Portfolio</h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f1f5f9] tracking-tight">
+          Portfolio
+        </h1>
+        <p className="mt-4 text-lg text-[#94a3b8] max-w-2xl leading-relaxed">
           Live projects built and managed under the Qzenta infrastructure umbrella.
         </p>
       </section>
 
+      {/* Project grid */}
       <section className="px-4 sm:px-6 lg:px-8 pb-24 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projects.map((p) => (
             <div
               key={p.name}
-              className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden hover:border-emerald-400/60 hover:shadow-md transition-all"
+              className="bg-[#1e2d45] rounded-lg border border-[#2d4060] overflow-hidden hover:border-emerald-500/40 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all"
             >
               {/* Cover image */}
               <div className="relative h-44 overflow-hidden">
@@ -75,27 +79,28 @@ export default function PortfolioPage() {
                   className="object-cover transition-transform duration-500 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gray-900/30" />
-                <span className="absolute top-4 left-4 text-xs font-semibold text-white uppercase tracking-wider bg-gray-900/70 px-2.5 py-1 rounded">
+                <div className="absolute inset-0 bg-[#0d1829]/60" />
+                <span className="absolute top-4 left-4 text-xs font-semibold text-emerald-400 uppercase tracking-wider bg-[#1a2236]/80 px-2.5 py-1 rounded border border-emerald-500/30">
                   {p.tag}
                 </span>
               </div>
+
               <div className="p-8">
-                <h2 className="text-xl font-semibold text-gray-900">{p.name}</h2>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+                <h2 className="text-xl font-semibold text-[#f1f5f9]">{p.name}</h2>
+                <p className="mt-3 text-sm text-[#94a3b8] leading-relaxed">{p.desc}</p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 rounded text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200"
+                      className="px-2.5 py-1 rounded text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <p className="mt-6 text-xs text-gray-400 italic">
+                <p className="mt-6 text-xs text-[#64748b] italic">
                   Live project — details shared with client permission.
                 </p>
               </div>
@@ -104,15 +109,16 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-900">
+      {/* CTA */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-[#111827] border-t border-[#2d4060]">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-white">Want your project here?</h2>
-          <p className="mt-3 text-gray-400 max-w-md mx-auto">
+          <h2 className="text-2xl font-bold text-[#f1f5f9]">Want your project here?</h2>
+          <p className="mt-3 text-[#94a3b8] max-w-md mx-auto">
             Get in touch and let&apos;s talk about what you&apos;re building.
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-block px-8 py-3 rounded-md bg-emerald-500 hover:bg-emerald-400 text-white font-medium transition-colors"
+            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors"
           >
             Start a Project
           </Link>

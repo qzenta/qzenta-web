@@ -11,7 +11,7 @@ export default function PrivacyPage() {
     <section className="px-4 sm:px-6 lg:px-8 py-20 max-w-3xl mx-auto">
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 transition-colors mb-8"
+        className="inline-flex items-center gap-1.5 text-sm text-[#64748b] hover:text-[#f1f5f9] transition-colors mb-8"
       >
         <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -19,17 +19,17 @@ export default function PrivacyPage() {
         Back to home
       </Link>
 
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-      <p className="text-sm text-gray-500 mb-8">Last updated: May 2026</p>
+      <h1 className="text-3xl font-bold text-[#f1f5f9] mb-2">Privacy Policy</h1>
+      <p className="text-sm text-[#64748b] mb-8">Last updated: May 2026</p>
 
-      <div className="space-y-6 text-gray-600 text-sm leading-relaxed">
+      <div className="space-y-6 text-[#94a3b8] text-sm leading-relaxed">
         <p>
           This Privacy Policy describes how Qzenta (Pty) Ltd (&quot;Qzenta&quot;, &quot;we&quot;, &quot;us&quot;) collects, uses,
           and protects information when you use our website at www.qzenta.com.
         </p>
 
         <div>
-          <h2 className="text-gray-900 font-semibold mb-2">Information we collect</h2>
+          <h2 className="text-[#f1f5f9] font-semibold mb-2">Information we collect</h2>
           <p>
             When you submit the contact form on this website, we collect your name, email address,
             and any information you include in your message. We do not collect any data automatically
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="text-gray-900 font-semibold mb-2">How we use your information</h2>
+          <h2 className="text-[#f1f5f9] font-semibold mb-2">How we use your information</h2>
           <p>
             Information submitted through our contact form is used solely to respond to your enquiry.
             We do not sell, share, or transfer your personal information to third parties, except as
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="text-gray-900 font-semibold mb-2">Data retention</h2>
+          <h2 className="text-[#f1f5f9] font-semibold mb-2">Data retention</h2>
           <p>
             Contact form submissions are retained only as long as necessary to respond to and resolve
             your enquiry.
@@ -55,11 +55,11 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="text-gray-900 font-semibold mb-2">Your rights</h2>
+          <h2 className="text-[#f1f5f9] font-semibold mb-2">Your rights</h2>
           <p>
             You have the right to request access to, correction of, or deletion of any personal
             information we hold about you. Contact us at{" "}
-            <a href="mailto:info@qzenta.com" className="text-emerald-500 hover:text-emerald-400">
+            <a href="mailto:info@qzenta.com" className="text-emerald-400 hover:text-emerald-300">
               info@qzenta.com
             </a>{" "}
             to exercise these rights.
@@ -67,10 +67,10 @@ export default function PrivacyPage() {
         </div>
 
         <div>
-          <h2 className="text-gray-900 font-semibold mb-2">Contact</h2>
+          <h2 className="text-[#f1f5f9] font-semibold mb-2">Contact</h2>
           <p>
             Questions about this policy can be directed to{" "}
-            <a href="mailto:info@qzenta.com" className="text-emerald-500 hover:text-emerald-400">
+            <a href="mailto:info@qzenta.com" className="text-emerald-400 hover:text-emerald-300">
               info@qzenta.com
             </a>
             .

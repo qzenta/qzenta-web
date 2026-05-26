@@ -59,7 +59,7 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full bg-gray-900 border border-gray-700 rounded-md px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors";
+    "w-full bg-[#1a2236] border border-[#2d4060] rounded-md px-4 py-3 text-sm text-[#f1f5f9] placeholder:text-[#475569] focus:outline-none focus:border-emerald-500 transition-colors";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">

@@ -61,7 +61,7 @@ export default async function BlogPostPage(props: PageProps<"/resources/[slug]">
       </section>
 
       <section className="px-4 sm:px-6 lg:px-8 pb-24 max-w-3xl mx-auto">
-        <div className="border-t border-gray-800 pt-10 space-y-5">
+        <div className="border-t border-[#2d4060] pt-10 space-y-5">
           {paragraphs.map((para, i) => {
             if (para.startsWith("## ")) {
               return (
@@ -91,7 +91,7 @@ export default async function BlogPostPage(props: PageProps<"/resources/[slug]">
           })}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-gray-800">
+        <div className="mt-16 pt-8 border-t border-[#2d4060]">
           <p className="text-sm text-slate-400">
             Questions about any of this?{" "}
             <Link href="/contact" className="text-emerald-500 hover:text-emerald-400 transition-colors">

@@ -24,7 +24,7 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-800 bg-gray-900 mt-auto">
+    <footer className="border-t border-[#2d4060] bg-[#0d1829] mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* ── 4-column grid ── */}
@@ -124,7 +124,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar: copyright then legal links ── */}
-        <div className="mt-10 pt-6 border-t border-gray-800">
+        <div className="mt-10 pt-6 border-t border-[#2d4060]">
           <p className="text-xs text-slate-500 mb-3">
             &copy; 2026 Qzenta (Pty) Ltd. All rights reserved. South Africa.
           </p>

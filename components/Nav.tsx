@@ -69,7 +69,7 @@ export default function Nav() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-900/97 backdrop-blur-sm border-b border-gray-800">
+    <header className="sticky top-0 z-50 bg-[#1a2236]/97 backdrop-blur-sm border-b border-[#2d4060]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
@@ -114,9 +114,9 @@ export default function Nav() {
                     className={`
                       absolute top-full left-0
                       min-w-[230px]
-                      bg-gray-900
+                      bg-[#1a2236]
                       border-t-2 border-t-emerald-500
-                      border-l border-r border-b border-gray-700
+                      border-l border-r border-b border-[#2d4060]
                       shadow-2xl z-50 py-2
                       opacity-0 pointer-events-none
                       group-hover:opacity-100 group-hover:pointer-events-auto
@@ -127,7 +127,7 @@ export default function Nav() {
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block px-5 py-2.5 text-sm text-slate-300 hover:text-emerald-400 hover:bg-gray-800 transition-colors"
+                        className="block px-5 py-2.5 text-sm text-[#94a3b8] hover:text-emerald-400 hover:bg-[#1e2d45] transition-colors"
                       >
                         {sub.label}
                       </Link>
@@ -165,7 +165,7 @@ export default function Nav() {
 
         {/* Mobile dropdown */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-gray-800 pt-4 pb-4">
+          <div className="md:hidden border-t border-[#2d4060] pt-4 pb-4">
             <nav className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <Link
@@ -174,8 +174,8 @@ export default function Nav() {
                   onClick={() => setMobileOpen(false)}
                   className={`text-sm font-medium py-2 px-2 rounded transition-colors ${
                     isActive(item.href)
-                      ? "text-slate-100 bg-gray-800"
-                      : "text-slate-400 hover:text-slate-100"
+                      ? "text-[#f1f5f9] bg-[#1e2d45]"
+                      : "text-[#94a3b8] hover:text-[#f1f5f9]"
                   }`}
                 >
                   {item.label}

@@ -86,11 +86,11 @@ export default function ServicesPage() {
   return (
     <>
       <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-500 text-xs font-semibold tracking-widest uppercase mb-4">
+        <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
           What we offer
         </p>
-        <h1 className="text-4xl sm:text-5xl font-bold text-slate-100">Services</h1>
-        <p className="mt-4 text-lg text-slate-400 max-w-2xl">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f1f5f9] tracking-tight">Services</h1>
+        <p className="mt-4 text-lg text-[#94a3b8] max-w-2xl leading-relaxed">
           End-to-end IT support for businesses that want to move fast without breaking things.
         </p>
       </section>
@@ -101,7 +101,7 @@ export default function ServicesPage() {
           {services.map((s) => (
             <div
               key={s.number}
-              className="bg-gray-800 rounded-lg p-8 border border-gray-700"
+              className="bg-[#1e2d45] rounded-lg p-8 border border-[#2d4060] hover:border-emerald-500/40 transition-all"
             >
               <span className="text-4xl font-bold text-emerald-500/20 select-none">
                 {s.number}
@@ -122,7 +122,7 @@ export default function ServicesPage() {
       </section>
 
       {/* How we work */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-800/30">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-[#111827] border-t border-[#2d4060]">
         <div className="max-w-7xl mx-auto">
           {/* Image + heading */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-14">
@@ -152,8 +152,8 @@ export default function ServicesPage() {
                 {/* Connector line */}
                 {i < process.length - 1 && (
                   <>
-                    <span className="absolute left-3 top-7 bottom-0 w-px bg-gray-700 md:hidden" />
-                    <span className="hidden md:block absolute top-3 left-1/2 right-0 h-px bg-gray-700" />
+                    <span className="absolute left-3 top-7 bottom-0 w-px bg-[#2d4060] md:hidden" />
+                    <span className="hidden md:block absolute top-3 left-1/2 right-0 h-px bg-[#2d4060]" />
                   </>
                 )}
                 <span className="absolute left-0 top-1 md:left-auto md:top-0 md:relative md:block w-6 h-6 rounded-full bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center">
