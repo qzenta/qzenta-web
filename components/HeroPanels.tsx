@@ -1,178 +1,152 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
 
-const panels = [
-  {
-    title: "Web Infrastructure",
-    desc: "Modern, fast websites deployed on Vercel with Cloudflare protection — built to last.",
-  },
-  {
-    title: "Domain Management",
-    desc: "DNS, SSL, and registrar management handled end-to-end with zero downtime.",
-  },
-  {
-    title: "SME Infrastructure",
-    desc: "GitHub, email, CI/CD pipelines — the complete digital foundation, set up right from day one.",
-  },
-  {
-    title: "Ongoing Support",
-    desc: "Your tech stack, managed. Updates, security patches, and performance monitoring included.",
-  },
+const stats = [
+  { value: "11+", label: "Domains" },
+  { value: "5+",  label: "Projects" },
+  { value: "4+",  label: "Sectors" },
+  { value: "24h", label: "Response" },
 ];
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=90";
+function GeometricQ() {
+  return (
+    <svg
+      viewBox="0 0 400 420"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-full h-full max-w-[380px] mx-auto"
+      aria-hidden="true"
+    >
+      {/* Grid dot texture */}
+      {Array.from({ length: 8 }, (_, row) =>
+        Array.from({ length: 8 }, (_, col) => (
+          <circle
+            key={`${row}-${col}`}
+            cx={col * 48 + 16}
+            cy={row * 48 + 16}
+            r={1.5}
+            fill="#2d4060"
+          />
+        ))
+      )}
+
+      {/* Subtle inner glow */}
+      <rect x="80" y="60" width="220" height="220" rx="8" fill="#10b981" fillOpacity="0.04" />
+
+      {/* Q outer frame */}
+      <rect x="80" y="60" width="220" height="220" rx="8" stroke="#10b981" strokeWidth="14" />
+
+      {/* Corner bracket accent — top-left */}
+      <path d="M38 108 L38 60 L86 60" stroke="#10b981" strokeWidth="4" strokeLinecap="square" opacity="0.35" />
+
+      {/* Corner bracket accent — bottom-right */}
+      <path d="M302 232 L302 278 L256 278" stroke="#10b981" strokeWidth="4" strokeLinecap="square" opacity="0.35" />
+
+      {/* Internal dashed cross — infrastructure grid feel */}
+      <line x1="80"  y1="170" x2="300" y2="170" stroke="#10b981" strokeWidth="1" strokeDasharray="4 8" opacity="0.18" />
+      <line x1="190" y1="60"  x2="190" y2="280" stroke="#10b981" strokeWidth="1" strokeDasharray="4 8" opacity="0.18" />
+
+      {/* Q tail — bold diagonal strike */}
+      <line x1="272" y1="252" x2="344" y2="336" stroke="#10b981" strokeWidth="14" strokeLinecap="square" />
+
+      {/* Speed lines — right */}
+      <line x1="318" y1="148" x2="390" y2="148" stroke="#10b981" strokeWidth="3"   strokeLinecap="square" />
+      <line x1="328" y1="168" x2="380" y2="168" stroke="#10b981" strokeWidth="2"   strokeLinecap="square" opacity="0.55" />
+      <line x1="338" y1="188" x2="368" y2="188" stroke="#10b981" strokeWidth="1.5" strokeLinecap="square" opacity="0.28" />
+
+      {/* Speed lines — top */}
+      <line x1="222" y1="18" x2="288" y2="18" stroke="#10b981" strokeWidth="2.5" strokeLinecap="square" opacity="0.45" />
+      <line x1="244" y1="34" x2="294" y2="34" stroke="#10b981" strokeWidth="1.5" strokeLinecap="square" opacity="0.25" />
+
+      {/* Diagonal accent — bottom-left */}
+      <line x1="26" y1="316" x2="78" y2="262" stroke="#10b981" strokeWidth="2" strokeLinecap="square" opacity="0.2" />
+    </svg>
+  );
+}
 
 export default function HeroPanels() {
-  const [active, setActive] = useState(1);
-
   return (
-    <>
-      {/* ── Desktop: 4-panel accordion over ONE slowly-panning building image ── */}
-      <section className="hidden lg:block relative h-[70vh] min-h-[480px] overflow-hidden">
+    <section className="relative flex items-center bg-[#1a2236] overflow-hidden">
 
-        {/* Shared background — pans left ↔ right via CSS @keyframes hero-pan */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/*
-            .hero-pan applies: scale(1.1) + translateX alternating ±4%
-            The 10 % extra scale hides the edges so no black bars appear.
-            This is a pure CSS animation — one image, no video needed.
-          */}
-          <div className="hero-pan absolute inset-0">
-            <Image
-              src={HERO_IMAGE}
-              alt="Modern glass office building"
-              fill
-              className="object-cover object-center"
-              sizes="100vw"
-              priority
-              quality={90}
-            />
-          </div>
-          {/* Base dark tint */}
-          <div className="absolute inset-0 bg-gray-900/45" />
-        </div>
+      {/* Grid-dot background texture */}
+      <div
+        className="absolute inset-0 opacity-30 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, #2d4060 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
 
-        {/* Brand tag */}
-        <div className="absolute top-8 left-10 z-20">
-          <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase">
-            Quietly Excellent &nbsp;·&nbsp; IT Services &nbsp;·&nbsp; South Africa
-          </p>
-        </div>
+      {/* Emerald ambient glow — bottom right */}
+      <div className="absolute bottom-0 right-0 w-[700px] h-[700px] rounded-full bg-emerald-500/5 blur-3xl pointer-events-none" />
 
-        {/* 4 transparent overlay panels */}
-        <div className="absolute inset-0 flex z-10">
-          {panels.map((panel, i) => (
-            <div
-              key={i}
-              className="relative flex flex-col justify-end cursor-pointer"
-              style={{
-                flex: active === i ? 2.5 : 1,
-                transition: "flex 500ms cubic-bezier(0.4,0,0.2,1)",
-              }}
-              onMouseEnter={() => setActive(i)}
-            >
-              {/* Per-panel overlay — nearly transparent when active so building shows clearly */}
-              <div
-                className="absolute inset-0 transition-all duration-500"
-                style={{
-                  background:
-                    active === i ? "rgba(17,24,39,0.12)" : "rgba(17,24,39,0.52)",
-                }}
-              />
+      {/* Emerald ambient glow — top left */}
+      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-emerald-500/4 blur-3xl pointer-events-none" />
 
-              {/* Emerald accent line between panels */}
-              {i > 0 && (
-                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-500 z-10" />
-              )}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-14 lg:pt-28 lg:pb-16">
+        <div className="grid lg:grid-cols-[55%_45%] gap-12 lg:gap-4 items-center">
 
-              {/* Panel content */}
-              <div className="relative z-10 p-8 pb-10">
-                <span className="text-xs font-semibold text-emerald-400 tracking-[0.3em] uppercase mb-3 block">
-                  0{i + 1}
-                </span>
+          {/* LEFT: copy */}
+          <div>
+            {/* Eyebrow label */}
+            <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-8">
+              Quietly Excellent &nbsp;·&nbsp; IT Services &nbsp;·&nbsp; South Africa
+            </p>
 
-                <h2
-                  className={`font-bold text-white leading-tight transition-all duration-500 ${
-                    active === i ? "text-3xl" : "text-xl"
-                  }`}
-                >
-                  {panel.title}
-                </h2>
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.6rem] font-extrabold text-[#f1f5f9] leading-[1.08] tracking-tight max-w-2xl">
+              Digital infrastructure for{" "}
+              <span className="text-emerald-400">ambitious</span> African businesses
+            </h1>
 
-                {/* Revealed only on active panel */}
-                <div
-                  className="overflow-hidden transition-all duration-500"
-                  style={{
-                    maxHeight: active === i ? "140px" : "0px",
-                    opacity: active === i ? 1 : 0,
-                  }}
-                >
-                  <p className="mt-3 text-sm text-slate-200 leading-relaxed max-w-xs">
-                    {panel.desc}
-                  </p>
-                  <Link
-                    href="/insights"
-                    className="mt-5 inline-block border border-white text-white text-xs font-bold tracking-[0.2em] uppercase px-8 py-3 hover:bg-white hover:text-gray-900 transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    EXPLORE
-                  </Link>
-                </div>
-              </div>
+            {/* Subheading */}
+            <p className="mt-6 text-lg text-[#94a3b8] leading-relaxed max-w-xl">
+              We build, deploy, and manage the tech foundations growing businesses depend on —
+              managed service, not DIY.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/solutions"
+                className="px-7 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors"
+              >
+                Our Solutions
+              </Link>
+              <Link
+                href="/portfolio"
+                className="px-7 py-3.5 rounded-md border border-emerald-500/60 hover:border-emerald-400 hover:bg-emerald-500/10 text-emerald-400 font-semibold text-sm transition-colors"
+              >
+                View Portfolio
+              </Link>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* ── Mobile: full-bleed hero (no panel accordion) ── */}
-      <section className="lg:hidden relative min-h-[88vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="hero-pan absolute inset-0">
-            <Image
-              src={HERO_IMAGE}
-              alt="Qzenta — IT Infrastructure"
-              fill
-              className="object-cover object-center"
-              sizes="100vw"
-              priority
-              quality={90}
-            />
+            {/* Stats row */}
+            <div className="mt-14 flex flex-wrap items-center gap-x-0 gap-y-6">
+              {stats.map((s, i) => (
+                <div key={s.label} className="flex items-center">
+                  {i > 0 && (
+                    <div className="hidden sm:block w-px h-10 bg-[#2d4060] mx-8" />
+                  )}
+                  <div className={i > 0 ? "sm:ml-0 ml-8" : ""}>
+                    <p className="text-3xl font-extrabold text-emerald-400 leading-none">{s.value}</p>
+                    <p className="text-xs text-[#64748b] uppercase tracking-[0.15em] mt-1">{s.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT: Geometric Q — desktop only */}
+          <div className="hidden lg:flex items-center justify-center min-h-[400px]">
+            <GeometricQ />
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/85 to-gray-900/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent" />
-        <div className="relative z-10 w-full px-6 py-28">
-          <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-6">
-            Quietly Excellent &nbsp;·&nbsp; IT Services &nbsp;·&nbsp; South Africa
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight max-w-sm">
-            Digital infrastructure for{" "}
-            <span className="text-emerald-400">ambitious</span> African businesses
-          </h1>
-          <p className="mt-6 text-lg text-slate-200 max-w-sm leading-relaxed">
-            We build, deploy, and manage the digital foundations growing businesses depend on —
-            managed service, not DIY.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/solutions"
-              className="px-7 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-400 text-white font-semibold transition-colors text-sm"
-            >
-              Our Solutions
-            </Link>
-            <Link
-              href="/portfolio"
-              className="px-7 py-3.5 rounded-md border border-white/30 hover:border-white/60 text-white font-semibold transition-colors text-sm"
-            >
-              View Portfolio
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+
+      {/* Bottom edge fade into next section */}
+      <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-[#111827] to-transparent pointer-events-none" />
+    </section>
   );
 }

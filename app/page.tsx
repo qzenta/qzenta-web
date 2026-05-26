@@ -3,9 +3,9 @@ import Link from "next/link";
 import HeroPanels from "@/components/HeroPanels";
 
 export const metadata: Metadata = {
-  title: "Qzenta — IT Infrastructure for South African Businesses",
+  title: "Qzenta — IT Infrastructure for Ambitious African Businesses",
   description:
-    "Qzenta builds and manages web infrastructure for ambitious South African businesses. Web development, domain management, hosting, and ongoing support.",
+    "Qzenta builds and manages digital infrastructure for ambitious African businesses. Web development, domain management, hosting, and ongoing technical support.",
 };
 
 const services = [
@@ -53,9 +53,9 @@ const portfolio = [
     tag: "NGO",
   },
   {
-    name: "Payroll Solutions Provider",
-    desc: "Website and email infrastructure for a South African payroll outsourcing firm. POPIA-compliant.",
-    tag: "Payroll · HR",
+    name: "Legal Services",
+    desc: "Website and infrastructure for a legal services and faith organisation. Professional, accessible, Africa-first.",
+    tag: "Legal · Faith",
   },
 ];
 
@@ -64,105 +64,112 @@ export default function HomePage() {
     <>
       <HeroPanels />
 
-      {/* Trust strip */}
-      <section className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="flex flex-wrap items-center justify-center sm:justify-between gap-6 sm:gap-4">
-            {[
-              { value: "11+", label: "Domains managed" },
-              { value: "5+", label: "Projects delivered" },
-              { value: "4+", label: "Sectors served" },
-              { value: "24h", label: "Response commitment" },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-2xl font-bold text-emerald-600">{s.value}</p>
-                <p className="text-xs text-gray-500 mt-0.5 tracking-wide uppercase">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-50">
+      {/* ── Services ── */}
+      <section className="bg-[#111827] px-4 sm:px-6 lg:px-8 pt-16 pb-24">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">What we do</h2>
-          <p className="text-gray-600 mb-10 max-w-xl">
-            End-to-end IT support for businesses that want to move fast without breaking things.
+          <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
+            What We Do
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#f1f5f9] mb-3">
+            End-to-end digital infrastructure
+          </h2>
+          <p className="text-[#94a3b8] mb-12 max-w-xl leading-relaxed">
+            Everything a growing business needs to build and maintain a credible digital presence —
+            without the DIY headaches.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((s) => (
               <div
                 key={s.number}
-                className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:border-emerald-400/60 hover:shadow-md transition-all"
+                className="bg-[#1e2d45] rounded-lg p-6 border border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all"
               >
-                <span className="text-3xl font-bold text-emerald-500/20 select-none">
+                <span className="text-3xl font-extrabold text-emerald-500/20 select-none leading-none">
                   {s.number}
                 </span>
-                <h3 className="mt-4 font-semibold text-gray-900">{s.title}</h3>
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">{s.desc}</p>
+                <h3 className="mt-4 font-semibold text-[#f1f5f9]">{s.title}</h3>
+                <p className="mt-2 text-sm text-[#94a3b8] leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
-          <div className="mt-8">
+
+          <div className="mt-10">
             <Link
               href="/solutions"
-              className="text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+              className="text-sm text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
             >
-              All solutions &rarr;
+              All solutions →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Portfolio */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-white">
+      {/* ── Portfolio ── */}
+      <section className="bg-[#1a2236] px-4 sm:px-6 lg:px-8 py-24 border-t border-[#2d4060]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Recent work</h2>
-          <p className="text-gray-600 mb-10 max-w-xl">
-            Live projects built and maintained under the Qzenta infrastructure umbrella.
+          <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
+            Recent Work
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#f1f5f9] mb-3">
+            Live projects. Real infrastructure.
+          </h2>
+          <p className="text-[#94a3b8] mb-12 max-w-xl leading-relaxed">
+            Built and maintained under the Qzenta infrastructure umbrella — anonymised until public maturity.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {portfolio.map((p) => (
               <div
                 key={p.name}
-                className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm"
+                className="bg-[#1e2d45] rounded-lg p-6 border border-[#2d4060] hover:border-emerald-500/40 transition-all"
               >
-                <span className="text-xs font-semibold text-emerald-600 uppercase tracking-wider">
+                <span className="inline-block text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded uppercase tracking-wide">
                   {p.tag}
                 </span>
-                <h3 className="mt-2 font-semibold text-gray-900">{p.name}</h3>
-                <p className="mt-1 text-sm text-gray-600">{p.desc}</p>
+                <h3 className="mt-3 font-semibold text-[#f1f5f9]">{p.name}</h3>
+                <p className="mt-2 text-sm text-[#94a3b8] leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
-          <div className="mt-8">
+
+          <div className="mt-10">
             <Link
               href="/portfolio"
-              className="text-sm text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+              className="text-sm text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
             >
-              Full portfolio &rarr;
+              Full portfolio →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA — dark band for contrast */}
-      <section className="px-4 sm:px-6 lg:px-8 py-24 bg-gray-900">
+      {/* ── CTA band ── */}
+      <section className="bg-[#111827] px-4 sm:px-6 lg:px-8 py-28 border-t border-[#2d4060]">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
+            Start a Project
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#f1f5f9] tracking-tight">
             Ready to build something?
           </h2>
-          <p className="mt-4 text-gray-400 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-[#94a3b8] max-w-xl mx-auto leading-relaxed">
             Whether you need a new website, help with your infrastructure, or ongoing technical
             support — we&apos;re here for it.
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block px-8 py-3 rounded-md bg-emerald-500 hover:bg-emerald-400 text-white font-medium transition-colors"
-          >
-            Get in Touch
-          </Link>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="px-8 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors"
+            >
+              Get in Touch
+            </Link>
+            <Link
+              href="/solutions"
+              className="px-8 py-3.5 rounded-md border border-[#2d4060] hover:border-emerald-500/50 text-[#94a3b8] hover:text-emerald-400 font-semibold text-sm transition-colors"
+            >
+              Explore Solutions
+            </Link>
+          </div>
         </div>
       </section>
     </>
