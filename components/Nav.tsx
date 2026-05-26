@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -73,16 +72,15 @@ export default function Nav() {
 
       {/* ── White logo strip ── */}
       <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-20 lg:h-24">
-          <Link href="/" className="shrink-0 flex items-center">
-            <Image
-              src="/logo.png"
-              alt="Qzenta"
-              width={721}
-              height={442}
-              style={{ height: "80px", width: "auto" }}
-              priority
-            />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-16 lg:h-20">
+          <Link href="/" className="shrink-0 flex flex-col leading-none">
+            <span className="text-3xl lg:text-4xl font-extrabold tracking-tight">
+              <span className="text-emerald-500">Q</span>
+              <span className="text-[#0f172a]">zenta</span>
+            </span>
+            <span className="text-[10px] font-semibold tracking-[0.25em] text-gray-400 uppercase mt-0.5">
+              Quietly Excellent
+            </span>
           </Link>
         </div>
       </div>
@@ -92,15 +90,12 @@ export default function Nav() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-14">
 
-            {/* Mobile: small logo on left */}
+            {/* Mobile: wordmark on left */}
             <Link href="/" className="md:hidden shrink-0">
-              <Image
-                src="/logo.png"
-                alt="Qzenta"
-                width={721}
-                height={442}
-                style={{ height: "36px", width: "auto", filter: "brightness(0) invert(1)" }}
-              />
+              <span className="text-xl font-extrabold tracking-tight">
+                <span className="text-emerald-400">Q</span>
+                <span className="text-white">zenta</span>
+              </span>
             </Link>
 
             {/* Desktop nav — centred in the strip */}

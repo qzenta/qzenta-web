@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const solutionLinks = [
   { href: "/solutions#web", label: "Web Development" },
@@ -33,13 +32,10 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div>
             <Link href="/" className="inline-flex items-center">
-              <Image
-                src="/logo.png"
-                alt="Qzenta"
-                width={721}
-                height={442}
-                style={{ height: "32px", width: "auto" }}
-              />
+              <span className="text-xl font-extrabold tracking-tight">
+                <span className="text-emerald-400">Q</span>
+                <span className="text-white">zenta</span>
+              </span>
             </Link>
             <p className="mt-4 text-sm text-slate-400 leading-relaxed">
               IT infrastructure and web services for ambitious South African businesses.
