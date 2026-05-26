@@ -3,6 +3,7 @@
   "configurations": [
     {
       "name": "qzenta-dev",
+      "cwd": "C:\\Users\\Daniel\\OneDrive - Ghana Diaspora SA\\Documents\\Dev\\qzenta",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
