@@ -58,7 +58,7 @@ export default function HeroPanels() {
           }}
         />
 
-        <div className="relative z-10 grid lg:grid-cols-2 min-h-[88vh]">
+        <div className="relative z-10 grid lg:grid-cols-2 min-h-[78vh]">
 
           {/* Left: copy */}
           <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 pt-28 pb-16 lg:py-0">
@@ -105,16 +105,19 @@ export default function HeroPanels() {
           {/* Right: hero image — desktop only */}
           <div className="relative hidden lg:block">
             <Image
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
-              alt="Modern professional office"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+              alt="Glass office building"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="50vw"
               priority
             />
-            {/* Left fade so text doesn't clash */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1a2236] via-[#1a2236]/40 to-transparent" />
-            <div className="absolute inset-0 bg-[#0d1829]/20" />
+            {/* Dark base — keeps the navy feel */}
+            <div className="absolute inset-0 bg-[#0d1829]/65" />
+            {/* Left fade into text column */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1a2236] via-[#1a2236]/50 to-transparent" />
+            {/* Subtle emerald tint at bottom */}
+            <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-emerald-900/10 to-transparent" />
           </div>
         </div>
       </section>
