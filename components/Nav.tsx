@@ -68,138 +68,121 @@ export default function Nav() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
 
-      {/* ── White logo strip ── */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-16 lg:h-20">
+          {/* Logo — wordmark */}
           <Link href="/" className="shrink-0 flex flex-col leading-none">
-            <span className="text-3xl lg:text-4xl font-extrabold tracking-tight">
+            <span className="text-2xl lg:text-3xl font-extrabold tracking-tight">
               <span className="text-emerald-500">Q</span>
               <span className="text-[#0f172a]">zenta</span>
             </span>
-            <span className="text-[10px] font-semibold tracking-[0.25em] text-gray-400 uppercase mt-0.5">
+            <span className="hidden lg:block text-[9px] font-semibold tracking-[0.22em] text-gray-400 uppercase mt-0.5">
               Quietly Excellent
             </span>
           </Link>
-        </div>
-      </div>
 
-      {/* ── Dark nav strip ── */}
-      <div className="bg-[#1a2236] backdrop-blur-sm border-b border-[#2d4060]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-14">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-stretch gap-0">
+            {navItems.map((item) => (
+              <div key={item.href} className="relative group flex items-center">
+                <Link
+                  href={item.href}
+                  className={`text-sm font-medium px-3 py-2 transition-colors whitespace-nowrap ${
+                    isActive(item.href) && item.href !== "/"
+                      ? "text-emerald-600"
+                      : item.href === "/" && isActive("/")
+                      ? "text-emerald-600"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  {item.label}
+                </Link>
 
-            {/* Mobile: wordmark on left */}
-            <Link href="/" className="md:hidden shrink-0">
-              <span className="text-xl font-extrabold tracking-tight">
-                <span className="text-emerald-400">Q</span>
-                <span className="text-white">zenta</span>
-              </span>
-            </Link>
-
-            {/* Desktop nav — centred in the strip */}
-            <nav className="hidden md:flex flex-1 items-center justify-center gap-0">
-              {navItems.map((item) => (
-                <div key={item.href} className="relative group flex items-center">
-                  <Link
-                    href={item.href}
-                    className={`text-sm font-medium px-3 py-2 transition-colors whitespace-nowrap ${
-                      isActive(item.href) && item.href !== "/"
-                        ? "text-white"
-                        : item.href === "/" && isActive("/")
-                        ? "text-white"
-                        : "text-[#94a3b8] hover:text-white"
-                    }`}
+                {item.submenu && (
+                  <div
+                    className={`
+                      absolute top-full left-0
+                      min-w-[230px]
+                      bg-white
+                      border-t-2 border-t-emerald-500
+                      border-l border-r border-b border-gray-200
+                      shadow-xl z-50 py-2
+                      opacity-0 pointer-events-none
+                      group-hover:opacity-100 group-hover:pointer-events-auto
+                      transition-opacity duration-200
+                    `}
                   >
-                    {item.label}
-                  </Link>
+                    {item.submenu.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className="block px-5 py-2.5 text-sm text-gray-600 hover:text-emerald-600 hover:bg-gray-50 transition-colors"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
 
-                  {item.submenu && (
-                    <div
-                      className={`
-                        absolute top-full left-0
-                        min-w-[230px]
-                        bg-[#1a2236]
-                        border-t-2 border-t-emerald-500
-                        border-l border-r border-b border-[#2d4060]
-                        shadow-2xl z-50 py-2
-                        opacity-0 pointer-events-none
-                        group-hover:opacity-100 group-hover:pointer-events-auto
-                        transition-opacity duration-200
-                      `}
-                    >
-                      {item.submenu.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          href={sub.href}
-                          className="block px-5 py-2.5 text-sm text-[#94a3b8] hover:text-emerald-400 hover:bg-[#1e2d45] transition-colors"
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+            <Link
+              href="/contact"
+              className="ml-3 self-center text-sm font-medium px-4 py-2 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white transition-colors whitespace-nowrap"
+            >
+              Get in Touch
+            </Link>
+          </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden text-gray-500 hover:text-gray-900 transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {mobileOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile dropdown */}
+        {mobileOpen && (
+          <div className="md:hidden border-t border-gray-200 pt-4 pb-4">
+            <nav className="flex flex-col gap-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`text-sm font-medium py-2 px-2 rounded transition-colors ${
+                    isActive(item.href)
+                      ? "text-emerald-600 bg-emerald-50"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  {item.label}
+                </Link>
               ))}
-
               <Link
                 href="/contact"
-                className="ml-3 self-center text-sm font-medium px-4 py-2 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white transition-colors whitespace-nowrap"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 text-sm font-medium px-4 py-2 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white text-center transition-colors"
               >
                 Get in Touch
               </Link>
             </nav>
-
-            {/* Mobile: hamburger on right */}
-            <button
-              className="md:hidden ml-auto text-[#94a3b8] hover:text-white transition-colors"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle navigation menu"
-            >
-              {mobileOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
           </div>
-
-          {/* Mobile dropdown */}
-          {mobileOpen && (
-            <div className="md:hidden border-t border-[#2d4060] pt-4 pb-4">
-              <nav className="flex flex-col gap-1">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={`text-sm font-medium py-2 px-2 rounded transition-colors ${
-                      isActive(item.href)
-                        ? "text-white bg-[#1e2d45]"
-                        : "text-[#94a3b8] hover:text-white"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileOpen(false)}
-                  className="mt-2 text-sm font-medium px-4 py-2 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white text-center transition-colors"
-                >
-                  Get in Touch
-                </Link>
-              </nav>
-            </div>
-          )}
-        </div>
+        )}
       </div>
-
     </header>
   );
 }
