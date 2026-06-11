@@ -72,7 +72,7 @@ export default function IndustriesPage() {
             <div
               key={ind.id}
               id={ind.id}
-              className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-[#1e2d45] rounded-xl border border-[#2d4060] overflow-hidden hover:border-emerald-500/40 hover:shadow-[0_0_24px_rgba(16,185,129,0.06)] transition-all"
+              className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white dark:bg-[#1e2d45] rounded-xl border border-slate-200 dark:border-[#2d4060] overflow-hidden hover:border-emerald-500/40 hover:shadow-[0_0_24px_rgba(16,185,129,0.06)] transition-all"
             >
               {/* Cover image */}
               <div className="relative h-48 lg:h-auto lg:col-span-2">
@@ -94,8 +94,8 @@ export default function IndustriesPage() {
                 <span className="inline-block text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded uppercase tracking-wide border border-emerald-500/20">
                   {ind.tag}
                 </span>
-                <h2 className="mt-3 text-2xl font-bold text-[#f1f5f9]">{ind.title}</h2>
-                <p className="mt-4 text-[#94a3b8] leading-relaxed">{ind.desc}</p>
+                <h2 className="mt-3 text-2xl font-bold text-slate-900 dark:text-[#f1f5f9]">{ind.title}</h2>
+                <p className="mt-4 text-slate-600 dark:text-[#94a3b8] leading-relaxed">{ind.desc}</p>
                 <Link
                   href="/contact"
                   className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
@@ -112,10 +112,10 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-[#111827] border-t border-[#2d4060]">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-[#111827] border-t border-slate-200 dark:border-[#2d4060]">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[#f1f5f9]">Don&apos;t see your industry?</h2>
-          <p className="mt-3 text-[#94a3b8] max-w-md mx-auto">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-[#f1f5f9]">Don&apos;t see your industry?</h2>
+          <p className="mt-3 text-slate-600 dark:text-[#94a3b8] max-w-md mx-auto">
             Good IT infrastructure is industry-agnostic. If you need a reliable digital
             foundation, get in touch — we&apos;ll make it work.
           </p>

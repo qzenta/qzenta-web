@@ -11,9 +11,9 @@ export default function TrustBar() {
   const doubled = [...partners, ...partners];
 
   return (
-    <section className="bg-[#111827] border-t border-b border-emerald-500/20 py-12 px-4 overflow-hidden">
+    <section className="bg-slate-100 dark:bg-[#111827] border-t border-b border-slate-200 dark:border-emerald-500/20 py-12 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto mb-8 text-center">
-        <p className="text-[#64748b] text-sm leading-relaxed max-w-2xl mx-auto">
+        <p className="text-slate-500 dark:text-[#64748b] text-sm leading-relaxed max-w-2xl mx-auto">
           Accounting firms, law practices, NGOs, and property agencies across Gauteng trust Qzenta to keep their digital operations running.
         </p>
       </div>
@@ -29,7 +29,7 @@ export default function TrustBar() {
           {doubled.map((p, i) => (
             <div
               key={i}
-              className="flex items-center gap-3 shrink-0 text-[#475569] hover:text-emerald-400 transition-colors"
+              className="flex items-center gap-3 shrink-0 text-slate-500 dark:text-[#475569] hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
             >
               <span className="text-emerald-500/60 text-lg">{p.icon}</span>
               <span className="text-sm font-semibold tracking-wide">{p.name}</span>

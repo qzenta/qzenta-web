@@ -51,14 +51,16 @@ const orgSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <head>
+        {/* Set theme class before first paint to prevent flash */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('qzenta-theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}}catch(e){document.documentElement.classList.add('dark')}})();` }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
       </head>
-      <body className="bg-[#1a2236] text-[#f1f5f9] antialiased flex flex-col min-h-screen font-sans">
+      <body className="bg-slate-50 dark:bg-[#1a2236] text-slate-900 dark:text-[#f1f5f9] antialiased flex flex-col min-h-screen font-sans">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -44,8 +44,8 @@ export default function ContactForm() {
         <svg className="w-10 h-10 text-emerald-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
-        <h3 className="text-lg font-semibold text-slate-100">Message sent</h3>
-        <p className="mt-2 text-sm text-slate-400">
+        <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">Message sent</h3>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
           Thanks for reaching out. We&apos;ll get back to you at {form.email || "your email"} shortly.
         </p>
         <button
@@ -59,13 +59,13 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full bg-[#1a2236] border border-[#2d4060] rounded-md px-4 py-3 text-sm text-[#f1f5f9] placeholder:text-[#475569] focus:outline-none focus:border-emerald-500 transition-colors";
+    "w-full bg-white dark:bg-[#1a2236] border border-slate-200 dark:border-[#2d4060] rounded-md px-4 py-3 text-sm text-slate-900 dark:text-[#f1f5f9] placeholder:text-slate-400 dark:placeholder:text-[#475569] focus:outline-none focus:border-emerald-500 transition-colors";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block text-xs font-medium text-slate-400 mb-1.5">
+          <label htmlFor="name" className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">
             Name <span className="text-emerald-500">*</span>
           </label>
           <input
@@ -80,7 +80,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-xs font-medium text-slate-400 mb-1.5">
+          <label htmlFor="email" className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">
             Email <span className="text-emerald-500">*</span>
           </label>
           <input
@@ -97,7 +97,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-xs font-medium text-slate-400 mb-1.5">
+        <label htmlFor="subject" className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">
           Subject
         </label>
         <input
@@ -112,7 +112,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-xs font-medium text-slate-400 mb-1.5">
+        <label htmlFor="message" className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">
           Message <span className="text-emerald-500">*</span>
         </label>
         <textarea

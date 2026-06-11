@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 type SubItem = { href: string; label: string };
 type NavItem = { href: string; label: string; submenu?: SubItem[] };
@@ -61,7 +62,7 @@ export default function Nav() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white dark:bg-[#0f172a] border-b border-gray-200 dark:border-[#2d4060] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
 
@@ -69,7 +70,7 @@ export default function Nav() {
           <Link href="/" className="shrink-0 flex flex-col leading-none">
             <span className="text-2xl lg:text-3xl font-extrabold tracking-tight">
               <span className="text-emerald-500">Q</span>
-              <span className="text-[#0f172a]">zenta</span>
+              <span className="text-[#0f172a] dark:text-white">zenta</span>
             </span>
             <span className="hidden lg:block text-[9px] font-semibold tracking-[0.22em] text-gray-400 uppercase mt-0.5">
               Quietly Excellent
@@ -87,7 +88,7 @@ export default function Nav() {
                       ? "text-emerald-600"
                       : item.href === "/" && isActive("/")
                       ? "text-emerald-600"
-                      : "text-gray-600 hover:text-gray-900"
+                      : "text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -98,9 +99,9 @@ export default function Nav() {
                     className={`
                       absolute top-full left-0
                       min-w-[230px]
-                      bg-white
+                      bg-white dark:bg-[#1e2d45]
                       border-t-2 border-t-emerald-500
-                      border-l border-r border-b border-gray-200
+                      border-l border-r border-b border-gray-200 dark:border-[#2d4060]
                       shadow-xl z-50 py-2
                       opacity-0 pointer-events-none
                       group-hover:opacity-100 group-hover:pointer-events-auto
@@ -111,7 +112,7 @@ export default function Nav() {
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block px-5 py-2.5 text-sm text-gray-600 hover:text-emerald-600 hover:bg-gray-50 transition-colors"
+                        className="block px-5 py-2.5 text-sm text-gray-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-[#2d4060]/40 transition-colors"
                       >
                         {sub.label}
                       </Link>
@@ -121,17 +122,20 @@ export default function Nav() {
               </div>
             ))}
 
+            <ThemeToggle />
             <Link
               href="/contact"
-              className="ml-3 self-center text-sm font-medium px-4 py-2 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white transition-colors whitespace-nowrap"
+              className="ml-2 self-center text-sm font-medium px-4 py-2 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white transition-colors whitespace-nowrap"
             >
               Get in Touch
             </Link>
           </nav>
 
           {/* Mobile hamburger */}
+          <div className="md:hidden flex items-center gap-1">
+            <ThemeToggle />
           <button
-            className="md:hidden text-gray-500 hover:text-gray-900 transition-colors"
+            className="text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -145,11 +149,12 @@ export default function Nav() {
               </svg>
             )}
           </button>
+          </div>
         </div>
 
         {/* Mobile dropdown */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-gray-200 pt-4 pb-4">
+          <div className="md:hidden border-t border-gray-200 dark:border-[#2d4060] pt-4 pb-4">
             <nav className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <Link
@@ -158,8 +163,8 @@ export default function Nav() {
                   onClick={() => setMobileOpen(false)}
                   className={`text-sm font-medium py-2 px-2 rounded transition-colors ${
                     isActive(item.href)
-                      ? "text-emerald-600 bg-emerald-50"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10"
+                      : "text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white"
                   }`}
                 >
                   {item.label}

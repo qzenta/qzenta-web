@@ -28,12 +28,12 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <div className="space-y-8">
               <div>
-                <h3 className="text-xs font-semibold text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
+                <h3 className="text-xs font-semibold text-slate-800 dark:text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
                   Email
                 </h3>
                 <a
                   href="mailto:info@qzenta.com"
-                  className="text-[#94a3b8] hover:text-emerald-400 transition-colors text-sm"
+                  className="text-slate-600 dark:text-[#94a3b8] hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors text-sm"
                 >
                   info@qzenta.com
                 </a>
@@ -41,7 +41,7 @@ export default function ContactPage() {
 
               {process.env.NEXT_PUBLIC_WHATSAPP_NUMBER && (
                 <div>
-                  <h3 className="text-xs font-semibold text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
+                  <h3 className="text-xs font-semibold text-slate-800 dark:text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
                     WhatsApp
                   </h3>
                   <a
@@ -59,21 +59,21 @@ export default function ContactPage() {
               )}
 
               <div>
-                <h3 className="text-xs font-semibold text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
+                <h3 className="text-xs font-semibold text-slate-800 dark:text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
                   Location
                 </h3>
-                <p className="text-sm text-[#94a3b8]">South Africa</p>
+                <p className="text-sm text-slate-600 dark:text-[#94a3b8]">South Africa</p>
               </div>
 
               <div>
-                <h3 className="text-xs font-semibold text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
+                <h3 className="text-xs font-semibold text-slate-800 dark:text-[#f1f5f9] uppercase tracking-[0.2em] mb-3">
                   GitHub
                 </h3>
                 <a
                   href="https://github.com/qzenta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-[#94a3b8] hover:text-[#f1f5f9] transition-colors"
+                  className="text-sm text-slate-600 dark:text-[#94a3b8] hover:text-slate-900 dark:hover:text-[#f1f5f9] transition-colors"
                 >
                   github.com/qzenta
                 </a>
@@ -82,7 +82,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3 bg-[#1e2d45] rounded-lg border border-[#2d4060] p-8">
+          <div className="lg:col-span-3 bg-white dark:bg-[#1e2d45] rounded-lg border border-slate-200 dark:border-[#2d4060] p-8">
             <ContactForm />
           </div>
         </div>
