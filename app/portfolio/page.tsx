@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "Work built and managed by Qzenta — web infrastructure, deployments, and digital operations across multiple sectors.",
+  openGraph: { url: "https://www.qzenta.com/portfolio" },
 };
 
 const projects = [

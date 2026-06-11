@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Industries",
   description:
     "Qzenta serves businesses across professional services, property, SaaS, NGOs, and payroll — delivering reliable IT infrastructure tailored to each sector.",
+  openGraph: { url: "https://www.qzenta.com/industries" },
 };
 
 const industries = [

@@ -50,14 +50,7 @@ const navItems: NavItem[] = [
       { href: "/about#stack", label: "Our Stack" },
     ],
   },
-  {
-    href: "/contact",
-    label: "Contact",
-    submenu: [
-      { href: "/contact", label: "Get in Touch" },
-      { href: "mailto:info@qzenta.com", label: "info@qzenta.com" },
-    ],
-  },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {

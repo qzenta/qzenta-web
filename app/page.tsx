@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import HeroPanels from "@/components/HeroPanels";
+import HeroCarousel from "@/components/HeroCarousel";
+import TrustBar from "@/components/TrustBar";
 
 export const metadata: Metadata = {
   title: "Qzenta — IT Infrastructure for Ambitious African Businesses",
@@ -62,7 +63,7 @@ const portfolio = [
 export default function HomePage() {
   return (
     <>
-      <HeroPanels />
+      <HeroCarousel />
 
       {/* ── Services ── */}
       <section className="bg-[#111827] px-4 sm:px-6 lg:px-8 pt-16 pb-24">
@@ -103,6 +104,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <TrustBar />
 
       {/* ── Portfolio ── */}
       <section className="bg-[#1a2236] px-4 sm:px-6 lg:px-8 py-24 border-t border-[#2d4060]">
@@ -153,8 +156,7 @@ export default function HomePage() {
             Ready to build something?
           </h2>
           <p className="mt-4 text-[#94a3b8] max-w-xl mx-auto leading-relaxed">
-            Whether you need a new website, help with your infrastructure, or ongoing technical
-            support — we&apos;re here for it.
+            Most clients are live within 5 working days. Get in touch today.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link

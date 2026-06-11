@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Qzenta. Whether you need a new website, IT infrastructure, or ongoing support — we'd love to hear from you.",
+  openGraph: { url: "https://www.qzenta.com/contact" },
 };
 
 export default function ContactPage() {

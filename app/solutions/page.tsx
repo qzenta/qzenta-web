@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Solutions",
   description:
     "Qzenta delivers web development, domain and hosting management, tech infrastructure setup, and ongoing maintenance for South African businesses.",
+  openGraph: { url: "https://www.qzenta.com/solutions" },
 };
 
 const services = [

@@ -7,7 +7,7 @@ import { useState } from "react";
 const stats = [
   { value: "11+", label: "Domains" },
   { value: "5+",  label: "Projects" },
-  { value: "4+",  label: "Sectors" },
+  { value: "5+",  label: "Sectors" },
   { value: "24h", label: "Response" },
 ];
 

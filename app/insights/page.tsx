@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Insights",
   description:
     "Guides, articles, and practical insights on web infrastructure, IT management, and digital presence for South African businesses.",
+  openGraph: { url: "https://www.qzenta.com/insights" },
 };
 
 function formatDate(dateStr: string) {

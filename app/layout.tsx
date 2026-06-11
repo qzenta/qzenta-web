@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     template: "%s | Qzenta",
   },
   description:
-    "IT infrastructure and web services for ambitious South African businesses. Web development, domain management, hosting, and ongoing technical support.",
-  keywords: ["IT services", "web development", "South Africa", "Qzenta", "domain hosting", "SME tech"],
+    "IT infrastructure and web services for ambitious African businesses. Web development, domain management, hosting, and ongoing technical support.",
   metadataBase: new URL("https://www.qzenta.com"),
   icons: {
     icon: "/qzenta-icon.svg",
@@ -25,13 +24,40 @@ export const metadata: Metadata = {
     locale: "en_ZA",
     url: "https://www.qzenta.com",
     siteName: "Qzenta",
-    description: "IT infrastructure and web services for ambitious South African businesses.",
+    description: "IT infrastructure and web services for ambitious African businesses.",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Qzenta (Pty) Ltd",
+  url: "https://www.qzenta.com",
+  logo: "https://www.qzenta.com/logo.png",
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "info@qzenta.com",
+    contactType: "customer service",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "Gauteng",
+    addressCountry: "ZA",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+      </head>
       <body className="bg-[#1a2236] text-[#f1f5f9] antialiased flex flex-col min-h-screen font-sans">
         <Nav />
         <main className="flex-1">{children}</main>
