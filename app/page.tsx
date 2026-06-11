@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
 import TrustBar from "@/components/TrustBar";
+import ServiceTagMarquee from "@/components/ServiceTagMarquee";
 
 export const metadata: Metadata = {
   title: "Qzenta — IT Infrastructure for Ambitious African Businesses",
@@ -87,18 +88,28 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#f1f5f9] mb-3">
             End-to-end digital infrastructure
           </h2>
-          <p className="text-[#94a3b8] mb-12 max-w-xl leading-relaxed">
+          <p className="text-[#94a3b8] mb-8 max-w-xl leading-relaxed">
             Everything a growing business needs to build and maintain a credible digital presence —
             without the DIY headaches.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <ServiceTagMarquee />
+
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((s) => (
               <div
                 key={s.number}
-                className="bg-[#1e2d45]/80 backdrop-blur-sm rounded-lg p-6 border border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.1)] transition-all"
+                className="relative bg-[#1e2d45]/80 backdrop-blur-sm rounded-lg p-6 border border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.1)] transition-all overflow-hidden group"
               >
-                <span className="text-3xl font-extrabold text-emerald-500/20 select-none leading-none">
+                {/* Editorial number watermark */}
+                <span
+                  aria-hidden
+                  className="absolute -top-3 -right-2 text-[7rem] font-black text-emerald-500/8 select-none leading-none group-hover:text-emerald-500/12 transition-colors"
+                >
+                  {s.number}
+                </span>
+                {/* Visible number pill */}
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-400 select-none">
                   {s.number}
                 </span>
                 <h3 className="mt-4 font-semibold text-[#f1f5f9]">{s.title}</h3>

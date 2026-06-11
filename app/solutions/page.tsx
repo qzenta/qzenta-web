@@ -107,9 +107,16 @@ export default function SolutionsPage() {
             <div
               id={s.id}
               key={s.number}
-              className="bg-white dark:bg-[#1e2d45] rounded-lg p-8 border border-slate-200 dark:border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all"
+              className="relative bg-white dark:bg-[#1e2d45] rounded-lg p-8 border border-slate-200 dark:border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all overflow-hidden group"
             >
-              <span className="text-4xl font-extrabold text-emerald-500/20 select-none leading-none">
+              {/* Editorial watermark */}
+              <span
+                aria-hidden
+                className="absolute -top-4 -right-2 text-[8rem] font-black text-emerald-500/8 dark:text-emerald-500/6 select-none leading-none group-hover:text-emerald-500/12 transition-colors"
+              >
+                {s.number}
+              </span>
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-sm font-bold text-emerald-500 dark:text-emerald-400 select-none">
                 {s.number}
               </span>
               <h2 className="mt-4 text-xl font-semibold text-slate-900 dark:text-[#f1f5f9]">{s.title}</h2>

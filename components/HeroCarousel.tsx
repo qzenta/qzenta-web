@@ -3,12 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const slides = [
   {
     headline: "Your digital foundation, built correctly from day one",
     sub: "Next.js websites, deployed on Vercel, protected by Cloudflare — fast, secure, and production-ready.",
-    cta: { label: "Explore Solutions →", href: "/solutions" },
+    cta: { label: "Explore Solutions", href: "/solutions" },
+    ctaSecondary: { label: "View Portfolio", href: "/portfolio" },
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
     alt: "Modern glass office building",
     tint: "from-[#0d1829]/70 via-[#0d1829]/40 to-transparent",
@@ -16,7 +18,8 @@ const slides = [
   {
     headline: "Never worry about your tech stack again",
     sub: "Domains, email, DNS, SSL, and performance monitoring — all managed under one roof, month to month.",
-    cta: { label: "See What We Manage →", href: "/solutions#support" },
+    cta: { label: "What We Manage", href: "/solutions#support" },
+    ctaSecondary: { label: "Get in Touch", href: "/contact" },
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80",
     alt: "Server infrastructure in a data centre",
     tint: "from-[#0d1829]/80 via-[#0d1829]/50 to-[#0d1829]/20",
@@ -24,7 +27,8 @@ const slides = [
   {
     headline: "5 live projects. 5 sectors. 11 domains managed.",
     sub: "From accounting practices to law firms to NGOs — Qzenta infrastructure is already running businesses like yours.",
-    cta: { label: "View Our Portfolio →", href: "/portfolio" },
+    cta: { label: "Our Portfolio", href: "/portfolio" },
+    ctaSecondary: { label: "Which sectors?", href: "/industries" },
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
     alt: "Network of connected nodes over city skyline",
     tint: "from-[#0d1829]/75 via-[#0d1829]/45 to-transparent",
@@ -32,21 +36,46 @@ const slides = [
 ];
 
 const stats = [
-  { value: "11+", label: "Domains" },
-  { value: "5+",  label: "Projects" },
-  { value: "5+",  label: "Sectors" },
-  { value: "24h", label: "Response" },
+  { value: 11, suffix: "+", label: "Domains" },
+  { value: 5,  suffix: "+", label: "Projects" },
+  { value: 5,  suffix: "+", label: "Sectors" },
+  { value: 24, suffix: "h", label: "Response" },
 ];
+
+function StatItem({ value, suffix, label, inView }: { value: number; suffix: string; label: string; inView: boolean }) {
+  const count = useCountUp(value, 1400, inView);
+  return (
+    <div>
+      <p className="text-2xl font-extrabold text-emerald-400 leading-none tabular-nums">
+        {count}{suffix}
+      </p>
+      <p className="text-xs text-[#64748b] uppercase tracking-[0.15em] mt-1">{label}</p>
+    </div>
+  );
+}
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [statsInView, setStatsInView] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReducedMotion(mq.matches);
+  }, []);
+
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setStatsInView(true); },
+      { threshold: 0.4 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
   }, []);
 
   const startTimer = () => {
@@ -94,13 +123,8 @@ export default function HeroCarousel() {
             sizes="100vw"
             priority={i === 0}
           />
-          {/* Dark gradient — heavier on the right so right-aligned text stays legible */}
-          <div
-            className={`absolute inset-0 bg-gradient-to-l ${s.tint}`}
-          />
-          {/* Bottom fade for stats bar */}
+          <div className={`absolute inset-0 bg-gradient-to-l ${s.tint}`} />
           <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#0d1829] to-transparent" />
-          {/* Subtle emerald tint at very bottom */}
           <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-emerald-900/20 to-transparent" />
         </div>
       ))}
@@ -127,12 +151,19 @@ export default function HeroCarousel() {
           {slide.sub}
         </p>
 
-        <div className="mt-10 flex items-center justify-end gap-4">
+        {/* Two CTAs: primary filled + secondary ghost */}
+        <div className="mt-10 flex items-center justify-end gap-3 flex-wrap">
           <Link
             href={slide.cta.href}
             className="px-7 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors inline-block"
           >
-            {slide.cta.label}
+            {slide.cta.label} →
+          </Link>
+          <Link
+            href={slide.ctaSecondary.href}
+            className="px-7 py-3.5 rounded-md border border-white/25 hover:border-emerald-400/60 text-white/80 hover:text-emerald-300 font-semibold text-sm transition-colors inline-block backdrop-blur-sm"
+          >
+            {slide.ctaSecondary.label}
           </Link>
         </div>
 
@@ -171,14 +202,16 @@ export default function HeroCarousel() {
         </div>
       </div>
 
-      {/* Stats bar */}
-      <div className="relative z-10 border-t border-white/10 bg-[#0d1829]/60 backdrop-blur-sm px-6 sm:px-10 lg:px-20 py-5 flex flex-wrap items-center gap-x-0 gap-y-4">
+      {/* Stats bar with animated counters */}
+      <div
+        ref={statsRef}
+        className="relative z-10 border-t border-white/10 bg-[#0d1829]/60 backdrop-blur-sm px-6 sm:px-10 lg:px-20 py-5 flex flex-wrap items-center gap-x-0 gap-y-4"
+      >
         {stats.map((s, i) => (
           <div key={s.label} className="flex items-center">
             {i > 0 && <div className="hidden sm:block w-px h-8 bg-white/10 mx-8" />}
             <div className={i > 0 ? "sm:ml-0 ml-8" : ""}>
-              <p className="text-2xl font-extrabold text-emerald-400 leading-none">{s.value}</p>
-              <p className="text-xs text-[#64748b] uppercase tracking-[0.15em] mt-1">{s.label}</p>
+              <StatItem value={s.value} suffix={s.suffix} label={s.label} inView={statsInView} />
             </div>
           </div>
         ))}
