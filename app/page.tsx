@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
 import TrustBar from "@/components/TrustBar";
 
@@ -65,9 +66,21 @@ export default function HomePage() {
     <>
       <HeroCarousel />
 
-      {/* ── Services ── */}
-      <section className="bg-[#111827] px-4 sm:px-6 lg:px-8 pt-16 pb-24">
-        <div className="max-w-7xl mx-auto">
+      {/* ── Services — image-backed section ── */}
+      <section className="relative px-4 sm:px-6 lg:px-8 pt-20 pb-28 overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=1800&q=60"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          aria-hidden
+        />
+        {/* Dark overlay — keeps slate brand feel */}
+        <div className="absolute inset-0 bg-[#111827]/90" />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
           <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
             What We Do
           </p>
@@ -83,7 +96,7 @@ export default function HomePage() {
             {services.map((s) => (
               <div
                 key={s.number}
-                className="bg-[#1e2d45] rounded-lg p-6 border border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all"
+                className="bg-[#1e2d45]/80 backdrop-blur-sm rounded-lg p-6 border border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.1)] transition-all"
               >
                 <span className="text-3xl font-extrabold text-emerald-500/20 select-none leading-none">
                   {s.number}
@@ -107,9 +120,19 @@ export default function HomePage() {
 
       <TrustBar />
 
-      {/* ── Portfolio ── */}
-      <section className="bg-[#1a2236] px-4 sm:px-6 lg:px-8 py-24 border-t border-[#2d4060]">
-        <div className="max-w-7xl mx-auto">
+      {/* ── Portfolio — lighter background for contrast ── */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-24 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1800&q=60"
+          alt=""
+          fill
+          className="object-cover object-bottom"
+          sizes="100vw"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-[#0f1c2e]/88" />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
           <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
             Recent Work
           </p>
@@ -124,7 +147,7 @@ export default function HomePage() {
             {portfolio.map((p) => (
               <div
                 key={p.name}
-                className="bg-[#1e2d45] rounded-lg p-6 border border-[#2d4060] hover:border-emerald-500/40 transition-all"
+                className="bg-[#1e2d45]/70 backdrop-blur-sm rounded-lg p-6 border border-[#2d4060] hover:border-emerald-500/40 transition-all"
               >
                 <span className="inline-block text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded uppercase tracking-wide">
                   {p.tag}
@@ -146,9 +169,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA band ── */}
-      <section className="bg-[#111827] px-4 sm:px-6 lg:px-8 py-28 border-t border-[#2d4060]">
-        <div className="max-w-7xl mx-auto text-center">
+      {/* ── CTA — strong image with emerald gradient ── */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-32 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1800&q=70"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          aria-hidden
+        />
+        {/* Deep emerald-tinted overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0d1829]/95 via-emerald-950/80 to-[#0d1829]/90" />
+
+        <div className="relative z-10 max-w-7xl mx-auto text-center">
           <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
             Start a Project
           </p>
@@ -167,7 +201,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/solutions"
-              className="px-8 py-3.5 rounded-md border border-[#2d4060] hover:border-emerald-500/50 text-[#94a3b8] hover:text-emerald-400 font-semibold text-sm transition-colors"
+              className="px-8 py-3.5 rounded-md border border-white/20 hover:border-emerald-500/50 text-[#94a3b8] hover:text-emerald-400 font-semibold text-sm transition-colors"
             >
               Explore Solutions
             </Link>

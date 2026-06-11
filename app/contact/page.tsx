@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -11,18 +12,14 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Header */}
-      <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
-          Say hello
-        </p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f1f5f9] tracking-tight">
-          Get in Touch
-        </h1>
-        <p className="mt-4 text-lg text-[#94a3b8] max-w-xl leading-relaxed">
-          Tell us about your project or enquiry and we&apos;ll get back to you promptly.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="Say hello"
+        title="Get in Touch"
+        sub="Tell us about your project or enquiry and we'll get back to you promptly."
+        image="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1800&q=80"
+        imageAlt="Professional handshake"
+        overlay="from-[#0d1829]/90 via-[#0d1829]/70 to-emerald-950/40"
+      />
 
       <section className="px-4 sm:px-6 lg:px-8 pb-24 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">

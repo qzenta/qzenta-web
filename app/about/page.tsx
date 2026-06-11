@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHero from "@/components/PageHero";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -40,18 +41,14 @@ const stack = [
 export default function AboutPage() {
   return (
     <>
-      {/* Header */}
-      <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-16 max-w-7xl mx-auto">
-        <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
-          Who we are
-        </p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f1f5f9] tracking-tight">
-          About Qzenta
-        </h1>
-        <p className="mt-4 text-lg text-[#94a3b8] max-w-2xl leading-relaxed">
-          Family-operated. South African. Built to last.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="Who we are"
+        title="About Qzenta"
+        sub="Family-operated. South African. Built to last."
+        image="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80"
+        imageAlt="Team collaboration"
+        overlay="from-[#0d1829]/88 via-[#0d1829]/65 to-[#0d1829]/30"
+      />
 
       {/* Story */}
       <section id="story" className="px-4 sm:px-6 lg:px-8 pb-20 max-w-7xl mx-auto">

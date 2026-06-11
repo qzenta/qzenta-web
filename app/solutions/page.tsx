@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Solutions",
@@ -90,18 +91,14 @@ const process = [
 export default function SolutionsPage() {
   return (
     <>
-      {/* Header */}
-      <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
-          What we offer
-        </p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f1f5f9] tracking-tight">
-          Solutions
-        </h1>
-        <p className="mt-4 text-lg text-[#94a3b8] max-w-2xl leading-relaxed">
-          End-to-end IT support for businesses that want to move fast without breaking things.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="What we offer"
+        title="Solutions"
+        sub="End-to-end IT support for businesses that want to move fast without breaking things."
+        image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80"
+        imageAlt="Server infrastructure"
+        overlay="from-[#0d1829]/90 via-[#0d1829]/70 to-[#0d1829]/40"
+      />
 
       {/* Service cards */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20 max-w-7xl mx-auto">

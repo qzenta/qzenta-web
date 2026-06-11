@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { posts } from "@/lib/posts";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -20,19 +21,14 @@ function formatDate(dateStr: string) {
 export default function InsightsPage() {
   return (
     <>
-      {/* Header */}
-      <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
-          Learn
-        </p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f1f5f9] tracking-tight">
-          Insights
-        </h1>
-        <p className="mt-4 text-lg text-[#94a3b8] max-w-2xl leading-relaxed">
-          Practical guides on web infrastructure, IT management, and building a reliable digital
-          presence in South Africa.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="Learn"
+        title="Insights"
+        sub="Practical guides on web infrastructure, IT management, and building a reliable digital presence in South Africa."
+        image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1800&q=80"
+        imageAlt="Laptop on desk with coffee"
+        overlay="from-[#0d1829]/88 via-[#0d1829]/65 to-[#0d1829]/30"
+      />
 
       {/* Posts grid */}
       <section className="px-4 sm:px-6 lg:px-8 pb-24 max-w-7xl mx-auto">
