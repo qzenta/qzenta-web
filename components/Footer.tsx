@@ -23,7 +23,7 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-[#2d4060] bg-slate-100 dark:bg-[#0d1829] mt-auto">
+    <footer className="border-t border-slate-200 dark:border-onyx-700 bg-slate-100 dark:bg-onyx-900 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* ── 4-column grid ── */}
@@ -33,7 +33,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-flex items-center">
               <span className="text-xl font-extrabold tracking-tight">
-                <span className="text-emerald-400">Q</span>
+                <span className="text-spring-400">Q</span>
                 <span className="text-slate-900 dark:text-white">zenta</span>
               </span>
             </Link>
@@ -53,7 +53,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-spring-700 dark:hover:text-spring-400 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@qzenta.com"
-                  className="text-sm text-slate-400 hover:text-emerald-400 transition-colors"
+                  className="text-sm text-slate-400 hover:text-spring-400 transition-colors"
                 >
                   info@qzenta.com
                 </a>
@@ -111,7 +111,7 @@ export default function Footer() {
             </ul>
             <Link
               href="/contact"
-              className="mt-6 inline-block text-xs font-semibold px-4 py-2 rounded-md border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-colors"
+              className="mt-6 inline-block text-xs font-semibold px-4 py-2 rounded-md border border-spring-500/50 text-spring-400 hover:bg-spring-500 hover:text-onyx-950 hover:border-spring-500 transition-colors"
             >
               Start a project →
             </Link>
@@ -120,7 +120,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar: copyright then legal links ── */}
-        <div className="mt-10 pt-6 border-t border-slate-200 dark:border-[#2d4060]">
+        <div className="mt-10 pt-6 border-t border-slate-200 dark:border-onyx-700">
           <p className="text-xs text-slate-500 mb-3">
             &copy; 2026 Qzenta (Pty) Ltd. All rights reserved. South Africa.
           </p>

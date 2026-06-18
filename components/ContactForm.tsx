@@ -40,8 +40,8 @@ export default function ContactForm() {
 
   if (state === "success") {
     return (
-      <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-8 text-center">
-        <svg className="w-10 h-10 text-emerald-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="bg-spring-500/10 border border-spring-500/30 rounded-lg p-8 text-center">
+        <svg className="w-10 h-10 text-spring-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
         <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">Message sent</h3>
@@ -50,7 +50,7 @@ export default function ContactForm() {
         </p>
         <button
           onClick={() => setState("idle")}
-          className="mt-5 text-sm text-emerald-500 hover:text-emerald-400 transition-colors"
+          className="mt-5 text-sm text-spring-500 hover:text-spring-400 transition-colors"
         >
           Send another message
         </button>
@@ -59,14 +59,14 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full bg-white dark:bg-[#1a2236] border border-slate-200 dark:border-[#2d4060] rounded-md px-4 py-3 text-sm text-slate-900 dark:text-[#f1f5f9] placeholder:text-slate-400 dark:placeholder:text-[#475569] focus:outline-none focus:border-emerald-500 transition-colors";
+    "w-full bg-white dark:bg-onyx-950 border border-slate-200 dark:border-onyx-700 rounded-md px-4 py-3 text-sm text-slate-900 dark:text-onyx-50 placeholder:text-slate-400 dark:placeholder:text-onyx-500 focus:outline-none focus:border-spring-500 transition-colors";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">
-            Name <span className="text-emerald-500">*</span>
+            Name <span className="text-spring-500">*</span>
           </label>
           <input
             id="name"
@@ -81,7 +81,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">
-            Email <span className="text-emerald-500">*</span>
+            Email <span className="text-spring-500">*</span>
           </label>
           <input
             id="email"
@@ -113,7 +113,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">
-          Message <span className="text-emerald-500">*</span>
+          Message <span className="text-spring-500">*</span>
         </label>
         <textarea
           id="message"
@@ -134,7 +134,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state === "loading"}
-        className="w-full sm:w-auto px-8 py-3 rounded-md bg-emerald-500 hover:bg-emerald-600 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium transition-colors text-sm"
+        className="w-full sm:w-auto px-8 py-3 rounded-md bg-spring-500 hover:bg-spring-600 disabled:opacity-60 disabled:cursor-not-allowed text-onyx-950 font-medium transition-colors text-sm"
       >
         {state === "loading" ? "Sending..." : "Send Message"}
       </button>

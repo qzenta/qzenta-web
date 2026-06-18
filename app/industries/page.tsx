@@ -62,7 +62,7 @@ export default function IndustriesPage() {
         sub="Reliable IT infrastructure for South African businesses — whatever your sector."
         image="https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?auto=format&fit=crop&w=1800&q=80"
         imageAlt="South African business district"
-        overlay="from-[#0d1829]/88 via-[#0d1829]/65 to-[#0d1829]/30"
+        overlay="from-[#0C2228]/88 via-[#0C2228]/65 to-[#0C2228]/30"
       />
 
       {/* Industry rows */}
@@ -72,7 +72,7 @@ export default function IndustriesPage() {
             <div
               key={ind.id}
               id={ind.id}
-              className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white dark:bg-[#1e2d45] rounded-xl border border-slate-200 dark:border-[#2d4060] overflow-hidden hover:border-emerald-500/40 hover:shadow-[0_0_24px_rgba(16,185,129,0.06)] transition-all"
+              className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white dark:bg-onyx-800 rounded-xl border border-slate-200 dark:border-onyx-700 overflow-hidden hover:border-spring-500/40 hover:shadow-[0_0_24px_rgba(2,245,161,0.06)] transition-all"
             >
               {/* Cover image */}
               <div className="relative h-48 lg:h-auto lg:col-span-2">
@@ -83,7 +83,7 @@ export default function IndustriesPage() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
-                <div className="absolute inset-0 bg-[#0d1829]/55" />
+                <div className="absolute inset-0 bg-[#0C2228]/55" />
                 <span className="absolute top-4 left-4 text-3xl font-extrabold text-white/15 select-none">
                   {ind.number}
                 </span>
@@ -91,14 +91,14 @@ export default function IndustriesPage() {
 
               {/* Content */}
               <div className="lg:col-span-3 p-8">
-                <span className="inline-block text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded uppercase tracking-wide border border-emerald-500/20">
+                <span className="inline-block text-xs font-semibold text-spring-400 bg-spring-500/10 px-3 py-1 rounded uppercase tracking-wide border border-spring-500/20">
                   {ind.tag}
                 </span>
-                <h2 className="mt-3 text-2xl font-bold text-slate-900 dark:text-[#f1f5f9]">{ind.title}</h2>
-                <p className="mt-4 text-slate-600 dark:text-[#94a3b8] leading-relaxed">{ind.desc}</p>
+                <h2 className="mt-3 text-2xl font-bold text-slate-900 dark:text-onyx-50">{ind.title}</h2>
+                <p className="mt-4 text-slate-600 dark:text-onyx-500 leading-relaxed">{ind.desc}</p>
                 <Link
                   href="/contact"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-spring-400 hover:text-spring-300 transition-colors"
                 >
                   Get started
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,16 +112,16 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-[#111827] border-t border-slate-200 dark:border-[#2d4060]">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-onyx-900 border-t border-slate-200 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-[#f1f5f9]">Don&apos;t see your industry?</h2>
-          <p className="mt-3 text-slate-600 dark:text-[#94a3b8] max-w-md mx-auto">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-onyx-50">Don&apos;t see your industry?</h2>
+          <p className="mt-3 text-slate-600 dark:text-onyx-500 max-w-md mx-auto">
             Good IT infrastructure is industry-agnostic. If you need a reliable digital
             foundation, get in touch — we&apos;ll make it work.
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors"
+            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors"
           >
             Get in Touch
           </Link>

@@ -97,7 +97,7 @@ export default function SolutionsPage() {
         sub="End-to-end IT support for businesses that want to move fast without breaking things."
         image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80"
         imageAlt="Server infrastructure"
-        overlay="from-[#0d1829]/90 via-[#0d1829]/70 to-[#0d1829]/40"
+        overlay="from-[#0C2228]/90 via-[#0C2228]/70 to-[#0C2228]/40"
       />
 
       {/* Service cards */}
@@ -107,24 +107,24 @@ export default function SolutionsPage() {
             <div
               id={s.id}
               key={s.number}
-              className="relative bg-white dark:bg-[#1e2d45] rounded-lg p-8 border border-slate-200 dark:border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all overflow-hidden group"
+              className="relative bg-white dark:bg-onyx-800 rounded-lg p-8 border border-slate-200 dark:border-onyx-700 hover:border-spring-500/50 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden group"
             >
               {/* Editorial watermark */}
               <span
                 aria-hidden
-                className="absolute -top-4 -right-2 text-[8rem] font-black text-emerald-500/8 dark:text-emerald-500/6 select-none leading-none group-hover:text-emerald-500/12 transition-colors"
+                className="absolute -top-4 -right-2 text-[8rem] font-black text-spring-500/8 dark:text-spring-500/6 select-none leading-none group-hover:text-spring-500/12 transition-colors"
               >
                 {s.number}
               </span>
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-sm font-bold text-emerald-500 dark:text-emerald-400 select-none">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-spring-500/10 border border-spring-500/30 text-sm font-bold text-spring-500 dark:text-spring-400 select-none">
                 {s.number}
               </span>
-              <h2 className="mt-4 text-xl font-semibold text-slate-900 dark:text-[#f1f5f9]">{s.title}</h2>
-              <p className="mt-2 text-slate-600 dark:text-[#94a3b8]">{s.summary}</p>
+              <h2 className="mt-4 text-xl font-semibold text-slate-900 dark:text-onyx-50">{s.title}</h2>
+              <p className="mt-2 text-slate-600 dark:text-onyx-500">{s.summary}</p>
               <ul className="mt-5 space-y-2.5">
                 {s.details.map((d) => (
-                  <li key={d} className="flex items-start gap-3 text-sm text-slate-600 dark:text-[#94a3b8]">
-                    <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <li key={d} className="flex items-start gap-3 text-sm text-slate-600 dark:text-onyx-500">
+                    <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-spring-500" />
                     {d}
                   </li>
                 ))}
@@ -135,19 +135,19 @@ export default function SolutionsPage() {
       </section>
 
       {/* How we work */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-[#111827]">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-onyx-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-14">
             <div>
-              <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
+              <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
                 Our Process
               </p>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-[#f1f5f9] mb-3">How we work</h2>
-              <p className="text-slate-600 dark:text-[#94a3b8] max-w-xl leading-relaxed">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-onyx-50 mb-3">How we work</h2>
+              <p className="text-slate-600 dark:text-onyx-500 max-w-xl leading-relaxed">
                 A consistent process across every engagement — no surprises.
               </p>
             </div>
-            <div className="relative h-52 sm:h-64 rounded-xl overflow-hidden border border-slate-200 dark:border-[#2d4060]">
+            <div className="relative h-52 sm:h-64 rounded-xl overflow-hidden border border-slate-200 dark:border-onyx-700">
               <Image
                 src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80"
                 alt="African business team collaborating with technology"
@@ -155,7 +155,7 @@ export default function SolutionsPage() {
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-[#1a2236]/50" />
+              <div className="absolute inset-0 bg-onyx-950/50" />
             </div>
           </div>
 
@@ -167,16 +167,16 @@ export default function SolutionsPage() {
               >
                 {i < process.length - 1 && (
                   <>
-                    <span className="absolute left-3 top-7 bottom-0 w-px bg-slate-200 dark:bg-[#2d4060] md:hidden" />
-                    <span className="hidden md:block absolute top-3 left-1/2 right-0 h-px bg-slate-200 dark:bg-[#2d4060]" />
+                    <span className="absolute left-3 top-7 bottom-0 w-px bg-slate-200 dark:bg-onyx-700 md:hidden" />
+                    <span className="hidden md:block absolute top-3 left-1/2 right-0 h-px bg-slate-200 dark:bg-onyx-700" />
                   </>
                 )}
-                <span className="absolute left-0 top-1 md:left-auto md:top-0 md:relative md:block w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/50 flex items-center justify-center">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 block" />
+                <span className="absolute left-0 top-1 md:left-auto md:top-0 md:relative md:block w-6 h-6 rounded-full bg-spring-500/10 border border-spring-500/50 flex items-center justify-center">
+                  <span className="w-2 h-2 rounded-full bg-spring-500 block" />
                 </span>
                 <div className="md:mt-4 ml-0">
-                  <h3 className="font-semibold text-slate-900 dark:text-[#f1f5f9] text-sm">{p.step}</h3>
-                  <p className="mt-1 text-sm text-slate-600 dark:text-[#94a3b8] leading-relaxed">{p.desc}</p>
+                  <h3 className="font-semibold text-slate-900 dark:text-onyx-50 text-sm">{p.step}</h3>
+                  <p className="mt-1 text-sm text-slate-600 dark:text-onyx-500 leading-relaxed">{p.desc}</p>
                 </div>
               </div>
             ))}
@@ -185,31 +185,31 @@ export default function SolutionsPage() {
       </section>
 
       {/* Pricing callout */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 dark:border-[#2d4060]">
+      <section className="px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white dark:bg-[#1e2d45] rounded-lg p-8 border border-slate-200 dark:border-[#2d4060]">
-            <p className="text-xs font-semibold text-emerald-400 uppercase tracking-[0.2em] mb-2">Once-off</p>
-            <p className="text-3xl font-extrabold text-slate-900 dark:text-[#f1f5f9]">R3,000</p>
-            <p className="mt-2 text-sm text-slate-600 dark:text-[#94a3b8]">Setup, build, and deployment — domain, hosting, email, and CI/CD included.</p>
+          <div className="bg-white dark:bg-onyx-800 rounded-lg p-8 border border-slate-200 dark:border-onyx-700">
+            <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.2em] mb-2">Once-off</p>
+            <p className="text-3xl font-extrabold text-slate-900 dark:text-onyx-50">R3,000</p>
+            <p className="mt-2 text-sm text-slate-600 dark:text-onyx-500">Setup, build, and deployment — domain, hosting, email, and CI/CD included.</p>
           </div>
-          <div className="bg-[#1e2d45] rounded-lg p-8 border border-emerald-500/40 shadow-[0_0_24px_rgba(16,185,129,0.08)]">
-            <p className="text-xs font-semibold text-emerald-400 uppercase tracking-[0.2em] mb-2">Monthly</p>
-            <p className="text-3xl font-extrabold text-slate-900 dark:text-[#f1f5f9]">R200 – R300<span className="text-lg font-semibold text-slate-600 dark:text-[#94a3b8]">/mo</span></p>
-            <p className="mt-2 text-sm text-slate-600 dark:text-[#94a3b8]">Ongoing maintenance, updates, monitoring, and support — managed service, not DIY.</p>
+          <div className="bg-onyx-800 rounded-lg p-8 border border-spring-500/40 shadow-[0_0_24px_rgba(2,245,161,0.08)]">
+            <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.2em] mb-2">Monthly</p>
+            <p className="text-3xl font-extrabold text-slate-900 dark:text-onyx-50">R200 – R300<span className="text-lg font-semibold text-slate-600 dark:text-onyx-500">/mo</span></p>
+            <p className="mt-2 text-sm text-slate-600 dark:text-onyx-500">Ongoing maintenance, updates, monitoring, and support — managed service, not DIY.</p>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-[#111827] border-t border-slate-200 dark:border-[#2d4060]">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-onyx-900 border-t border-slate-200 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-[#f1f5f9]">Ready to get started?</h2>
-          <p className="mt-3 text-slate-600 dark:text-[#94a3b8] max-w-md mx-auto">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-onyx-50">Ready to get started?</h2>
+          <p className="mt-3 text-slate-600 dark:text-onyx-500 max-w-md mx-auto">
             Tell us what you need and we&apos;ll put together a plan.
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors"
+            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors"
           >
             Get in Touch
           </Link>

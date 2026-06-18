@@ -61,7 +61,7 @@ export default async function BlogPostPage(props: PageProps<"/resources/[slug]">
       </section>
 
       <section className="px-4 sm:px-6 lg:px-8 pb-24 max-w-3xl mx-auto">
-        <div className="border-t border-[#2d4060] pt-10 space-y-5">
+        <div className="border-t border-onyx-700 pt-10 space-y-5">
           {paragraphs.map((para, i) => {
             if (para.startsWith("## ")) {
               return (
@@ -76,7 +76,7 @@ export default async function BlogPostPage(props: PageProps<"/resources/[slug]">
                 <ul key={i} className="space-y-2">
                   {items.map((item, j) => (
                     <li key={j} className="flex items-start gap-3 text-slate-400 text-sm leading-relaxed">
-                      <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-spring-500" />
                       {item.replace("- ", "")}
                     </li>
                   ))}
@@ -91,10 +91,10 @@ export default async function BlogPostPage(props: PageProps<"/resources/[slug]">
           })}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-[#2d4060]">
+        <div className="mt-16 pt-8 border-t border-onyx-700">
           <p className="text-sm text-slate-400">
             Questions about any of this?{" "}
-            <Link href="/contact" className="text-emerald-500 hover:text-emerald-400 transition-colors">
+            <Link href="/contact" className="text-spring-500 hover:text-spring-400 transition-colors">
               Get in touch
             </Link>{" "}
             and we&apos;ll help.

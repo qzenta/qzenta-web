@@ -13,7 +13,7 @@ const slides = [
     ctaSecondary: { label: "View Portfolio", href: "/portfolio" },
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
     alt: "Modern glass office building",
-    tint: "from-[#0d1829]/70 via-[#0d1829]/40 to-transparent",
+    tint: "from-[#0C2228]/70 via-[#0C2228]/40 to-transparent",
   },
   {
     headline: "Never worry about your tech stack again",
@@ -22,7 +22,7 @@ const slides = [
     ctaSecondary: { label: "Get in Touch", href: "/contact" },
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80",
     alt: "Server infrastructure in a data centre",
-    tint: "from-[#0d1829]/80 via-[#0d1829]/50 to-[#0d1829]/20",
+    tint: "from-[#0C2228]/80 via-[#0C2228]/50 to-[#0C2228]/20",
   },
   {
     headline: "5 live projects. 5 sectors. 11 domains managed.",
@@ -31,7 +31,7 @@ const slides = [
     ctaSecondary: { label: "Which sectors?", href: "/industries" },
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
     alt: "Network of connected nodes over city skyline",
-    tint: "from-[#0d1829]/75 via-[#0d1829]/45 to-transparent",
+    tint: "from-[#0C2228]/75 via-[#0C2228]/45 to-transparent",
   },
 ];
 
@@ -46,10 +46,10 @@ function StatItem({ value, suffix, label, inView }: { value: number; suffix: str
   const count = useCountUp(value, 1400, inView);
   return (
     <div>
-      <p className="text-2xl font-extrabold text-emerald-400 leading-none tabular-nums">
+      <p className="text-2xl font-extrabold text-spring-400 leading-none tabular-nums">
         {count}{suffix}
       </p>
-      <p className="text-xs text-[#64748b] uppercase tracking-[0.15em] mt-1">{label}</p>
+      <p className="text-xs text-onyx-500 uppercase tracking-[0.15em] mt-1">{label}</p>
     </div>
   );
 }
@@ -124,20 +124,20 @@ export default function HeroCarousel() {
             priority={i === 0}
           />
           <div className={`absolute inset-0 bg-gradient-to-l ${s.tint}`} />
-          <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#0d1829] to-transparent" />
-          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-emerald-900/20 to-transparent" />
+          <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#0C2228] to-transparent" />
+          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-spring-900/20 to-transparent" />
         </div>
       ))}
 
       {/* Content — right-aligned */}
       <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-20 pt-24 pb-12 text-right ml-auto max-w-3xl w-full">
-        <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-8">
+        <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-8">
           Quietly Excellent &nbsp;·&nbsp; IT Infrastructure &nbsp;·&nbsp; Africa
         </p>
 
         <h1
           key={`h-${current}`}
-          className="text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold text-[#f1f5f9] leading-[1.08] tracking-tight"
+          className="text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold text-onyx-50 leading-[1.08] tracking-tight"
           style={{ animation: "fadeSlideIn 0.6s ease both" }}
         >
           {slide.headline}
@@ -145,7 +145,7 @@ export default function HeroCarousel() {
 
         <p
           key={`p-${current}`}
-          className="mt-6 text-lg text-[#cbd5e1] leading-relaxed ml-auto max-w-xl"
+          className="mt-6 text-lg text-onyx-300 leading-relaxed ml-auto max-w-xl"
           style={{ animation: "fadeSlideIn 0.6s 0.1s ease both" }}
         >
           {slide.sub}
@@ -155,13 +155,13 @@ export default function HeroCarousel() {
         <div className="mt-10 flex items-center justify-end gap-3 flex-wrap">
           <Link
             href={slide.cta.href}
-            className="px-7 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors inline-block"
+            className="px-7 py-3.5 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors inline-block"
           >
             {slide.cta.label} →
           </Link>
           <Link
             href={slide.ctaSecondary.href}
-            className="px-7 py-3.5 rounded-md border border-white/25 hover:border-emerald-400/60 text-white/80 hover:text-emerald-300 font-semibold text-sm transition-colors inline-block backdrop-blur-sm"
+            className="px-7 py-3.5 rounded-md border border-white/25 hover:border-spring-400/60 text-white/80 hover:text-spring-300 font-semibold text-sm transition-colors inline-block backdrop-blur-sm"
           >
             {slide.ctaSecondary.label}
           </Link>
@@ -172,7 +172,7 @@ export default function HeroCarousel() {
           <button
             onClick={() => go((current - 1 + slides.length) % slides.length)}
             aria-label="Previous slide"
-            className="w-8 h-8 rounded-full border border-white/20 hover:border-emerald-500/60 flex items-center justify-center text-white/40 hover:text-emerald-400 transition-colors"
+            className="w-8 h-8 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/40 hover:text-spring-400 transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -185,7 +185,7 @@ export default function HeroCarousel() {
               onClick={() => go(i)}
               aria-label={`Go to slide ${i + 1}`}
               className={`rounded-full transition-all duration-300 ${
-                i === current ? "w-6 h-2 bg-emerald-400" : "w-2 h-2 bg-white/30 hover:bg-emerald-400/60"
+                i === current ? "w-6 h-2 bg-spring-400" : "w-2 h-2 bg-white/30 hover:bg-spring-400/60"
               }`}
             />
           ))}
@@ -193,7 +193,7 @@ export default function HeroCarousel() {
           <button
             onClick={() => go((current + 1) % slides.length)}
             aria-label="Next slide"
-            className="w-8 h-8 rounded-full border border-white/20 hover:border-emerald-500/60 flex items-center justify-center text-white/40 hover:text-emerald-400 transition-colors"
+            className="w-8 h-8 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/40 hover:text-spring-400 transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -205,7 +205,7 @@ export default function HeroCarousel() {
       {/* Stats bar with animated counters */}
       <div
         ref={statsRef}
-        className="relative z-10 border-t border-white/10 bg-[#0d1829]/60 backdrop-blur-sm px-6 sm:px-10 lg:px-20 py-5 flex flex-wrap items-center gap-x-0 gap-y-4"
+        className="relative z-10 border-t border-white/10 bg-[#0C2228]/60 backdrop-blur-sm px-6 sm:px-10 lg:px-20 py-5 flex flex-wrap items-center gap-x-0 gap-y-4"
       >
         {stats.map((s, i) => (
           <div key={s.label} className="flex items-center">

@@ -47,7 +47,7 @@ export default function AboutPage() {
         sub="Family-operated. South African. Built to last."
         image="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80"
         imageAlt="Team collaboration"
-        overlay="from-[#0d1829]/88 via-[#0d1829]/65 to-[#0d1829]/30"
+        overlay="from-[#0C2228]/88 via-[#0C2228]/65 to-[#0C2228]/30"
       />
 
       {/* Story */}
@@ -59,17 +59,17 @@ export default function AboutPage() {
               for the kind of infrastructure work that every growing business accumulates but few
               businesses manage intentionally.
             </p>
-            <p className="mt-5 text-slate-600 dark:text-[#94a3b8] leading-relaxed">
+            <p className="mt-5 text-slate-600 dark:text-onyx-500 leading-relaxed">
               The logic was simple: good IT infrastructure deserves its own structure. Managing domains,
               hosting, deployments, and digital operations as a side function of other business
               activity made no sense. Qzenta gives it a name, a mandate, and the attention it deserves.
             </p>
-            <p className="mt-5 text-slate-600 dark:text-[#94a3b8] leading-relaxed">
+            <p className="mt-5 text-slate-600 dark:text-onyx-500 leading-relaxed">
               We are a boutique operation — deliberately so. We work with a small number of clients at a
               time, which means every project gets the attention it deserves. No ticket queues. No
               account managers between you and the person doing the work.
             </p>
-            <p className="mt-5 text-slate-600 dark:text-[#94a3b8] leading-relaxed">
+            <p className="mt-5 text-slate-600 dark:text-onyx-500 leading-relaxed">
               Our stack is consistent across every project: Next.js for the frontend, Vercel for
               deployment, Cloudflare for DNS and security, Brevo for transactional email. This
               consistency means fewer moving parts, faster troubleshooting, and infrastructure that
@@ -78,7 +78,7 @@ export default function AboutPage() {
           </div>
 
           {/* Story image */}
-          <div className="relative h-[460px] rounded-xl overflow-hidden border border-slate-200 dark:border-[#2d4060]">
+          <div className="relative h-[460px] rounded-xl overflow-hidden border border-slate-200 dark:border-onyx-700">
             <Image
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
               alt="Professional working on a laptop"
@@ -86,7 +86,7 @@ export default function AboutPage() {
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0d1829]/80 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0C2228]/80 via-transparent to-transparent" />
             <p className="absolute bottom-5 left-5 right-5 text-slate-200 text-sm italic leading-relaxed">
               &ldquo;Your technology should work quietly so you can work loudly.&rdquo;
             </p>
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
       {/* City banner */}
       <section className="px-4 sm:px-6 lg:px-8 pb-4 max-w-7xl mx-auto">
-        <div className="relative h-52 sm:h-72 rounded-xl overflow-hidden border border-slate-200 dark:border-[#2d4060]">
+        <div className="relative h-52 sm:h-72 rounded-xl overflow-hidden border border-slate-200 dark:border-onyx-700">
           <Image
             src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1400&q=80"
             alt="Johannesburg city skyline — Qzenta's home base"
@@ -104,9 +104,9 @@ export default function AboutPage() {
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-[#0d1829]/60" />
+          <div className="absolute inset-0 bg-[#0C2228]/60" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-[#f1f5f9] text-lg sm:text-2xl font-semibold tracking-wide text-center px-4">
+            <p className="text-onyx-50 text-lg sm:text-2xl font-semibold tracking-wide text-center px-4">
               Built in South Africa. Built for Africa.
             </p>
           </div>
@@ -114,20 +114,20 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section id="values" className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-[#111827]">
+      <section id="values" className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-onyx-900">
         <div className="max-w-7xl mx-auto">
-          <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
+          <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
             What we believe
           </p>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-[#f1f5f9] mb-10">How we approach the work</h2>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-onyx-50 mb-10">How we approach the work</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {values.map((v) => (
               <div
                 key={v.title}
-                className="bg-white dark:bg-[#1e2d45] rounded-lg p-6 border border-slate-200 dark:border-[#2d4060] hover:border-emerald-500/40 transition-all"
+                className="bg-white dark:bg-onyx-800 rounded-lg p-6 border border-slate-200 dark:border-onyx-700 hover:border-spring-500/40 transition-all"
               >
-                <h3 className="font-semibold text-slate-900 dark:text-[#f1f5f9] text-lg">{v.title}</h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-[#94a3b8] leading-relaxed">{v.desc}</p>
+                <h3 className="font-semibold text-slate-900 dark:text-onyx-50 text-lg">{v.title}</h3>
+                <p className="mt-2 text-sm text-slate-600 dark:text-onyx-500 leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -135,23 +135,23 @@ export default function AboutPage() {
       </section>
 
       {/* Tech stack */}
-      <section id="stack" className="px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-[#2d4060]">
+      <section id="stack" className="px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto">
-          <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
+          <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
             Standard tooling
           </p>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-[#f1f5f9] mb-3">Our standard stack</h2>
-          <p className="text-slate-600 dark:text-[#94a3b8] mb-10 max-w-xl leading-relaxed">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-onyx-50 mb-3">Our standard stack</h2>
+          <p className="text-slate-600 dark:text-onyx-500 mb-10 max-w-xl leading-relaxed">
             Consistent tooling across every project means faster delivery and easier handoffs.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {stack.map((tech) => (
               <div
                 key={tech.name}
-                className="bg-white dark:bg-[#1e2d45] rounded-lg p-4 border border-slate-200 dark:border-[#2d4060] text-center hover:border-emerald-500/40 transition-all"
+                className="bg-white dark:bg-onyx-800 rounded-lg p-4 border border-slate-200 dark:border-onyx-700 text-center hover:border-spring-500/40 transition-all"
               >
-                <p className="font-semibold text-slate-900 dark:text-[#f1f5f9] text-sm">{tech.name}</p>
-                <p className="mt-1 text-xs text-slate-500 dark:text-[#64748b]">{tech.role}</p>
+                <p className="font-semibold text-slate-900 dark:text-onyx-50 text-sm">{tech.name}</p>
+                <p className="mt-1 text-xs text-slate-500 dark:text-onyx-500">{tech.role}</p>
               </div>
             ))}
           </div>
@@ -159,15 +159,15 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-[#111827] border-t border-slate-200 dark:border-[#2d4060]">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-onyx-900 border-t border-slate-200 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-[#f1f5f9]">Work with us</h2>
-          <p className="mt-3 text-slate-600 dark:text-[#94a3b8] max-w-md mx-auto">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-onyx-50">Work with us</h2>
+          <p className="mt-3 text-slate-600 dark:text-onyx-500 max-w-md mx-auto">
             If you need reliable IT infrastructure from people who care about the detail, let&apos;s talk.
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors"
+            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors"
           >
             Get in Touch
           </Link>

@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200">
-  <!-- Background -->
-  <rect width="600" height="200" fill="#111827" rx="16"/>
-  <!-- Wordmark: Q in emerald, zenta in white -->
+  <!-- Wordmark: Q in Spring Green, zenta in near-white -->
   <text
     x="300"
     y="118"
@@ -11,7 +9,7 @@
     letter-spacing="-2"
     text-anchor="middle"
   >
-    <tspan fill="#10b981">Q</tspan><tspan fill="#f1f5f9">zenta</tspan>
+    <tspan fill="#02F5A1">Q</tspan><tspan fill="#F2F8F7">zenta</tspan>
   </text>
   <!-- Tagline -->
   <text
@@ -22,6 +20,6 @@
     font-weight="400"
     letter-spacing="3"
     text-anchor="middle"
-    fill="#6b7280"
+    fill="#3E6168"
   >QUIETLY EXCELLENT.</text>
 </svg>

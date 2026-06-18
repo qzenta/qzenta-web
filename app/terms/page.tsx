@@ -66,7 +66,7 @@ export default function TermsPage() {
           <h2 className="text-slate-100 font-semibold mb-2">Contact</h2>
           <p>
             Questions about these terms can be directed to{" "}
-            <a href="mailto:info@qzenta.com" className="text-emerald-500 hover:text-emerald-400">
+            <a href="mailto:info@qzenta.com" className="text-spring-500 hover:text-spring-400">
               info@qzenta.com
             </a>
             .

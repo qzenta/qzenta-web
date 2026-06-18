@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       : `[Qzenta] New enquiry from ${name.trim()}`,
     htmlContent: `
       <div style="font-family:sans-serif;max-width:600px">
-        <h2 style="color:#10b981">New contact form submission — Qzenta</h2>
+        <h2 style="color:#02F5A1">New contact form submission — Qzenta</h2>
         <table style="width:100%;border-collapse:collapse">
           <tr><td style="padding:8px 0;color:#6b7280;width:100px">Name</td><td style="padding:8px 0;color:#111">${escapeHtml(name)}</td></tr>
           <tr><td style="padding:8px 0;color:#6b7280">Email</td><td style="padding:8px 0;color:#111">${escapeHtml(email)}</td></tr>

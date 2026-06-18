@@ -27,7 +27,7 @@ export default function InsightsPage() {
         sub="Practical guides on web infrastructure, IT management, and building a reliable digital presence in South Africa."
         image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1800&q=80"
         imageAlt="Laptop on desk with coffee"
-        overlay="from-[#0d1829]/88 via-[#0d1829]/65 to-[#0d1829]/30"
+        overlay="from-[#0C2228]/88 via-[#0C2228]/65 to-[#0C2228]/30"
       />
 
       {/* Posts grid */}
@@ -37,21 +37,21 @@ export default function InsightsPage() {
             <Link
               key={post.slug}
               href={`/insights/${post.slug}`}
-              className="group block bg-white dark:bg-[#1e2d45] rounded-lg border border-slate-200 dark:border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all overflow-hidden"
+              className="group block bg-white dark:bg-onyx-800 rounded-lg border border-slate-200 dark:border-onyx-700 hover:border-spring-500/50 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden"
             >
               <div className="p-6">
-                <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-[#64748b] mb-4">
+                <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-onyx-500 mb-4">
                   <time dateTime={post.date}>{formatDate(post.date)}</time>
                   <span>&middot;</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h2 className="font-semibold text-slate-900 dark:text-[#f1f5f9] group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors leading-snug">
+                <h2 className="font-semibold text-slate-900 dark:text-onyx-50 group-hover:text-spring-700 dark:group-hover:text-spring-400 transition-colors leading-snug">
                   {post.title}
                 </h2>
-                <p className="mt-3 text-sm text-slate-600 dark:text-[#94a3b8] leading-relaxed line-clamp-3">
+                <p className="mt-3 text-sm text-slate-600 dark:text-onyx-500 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-emerald-400 group-hover:text-emerald-300 transition-colors">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-spring-400 group-hover:text-spring-300 transition-colors">
                   Read more
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

@@ -1,10 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Background -->
-  <rect width="512" height="512" fill="#111827" rx="96"/>
-  <!-- Outer square ring of the Q -->
-  <rect x="96" y="96" width="230" height="230" rx="22" fill="none" stroke="#10b981" stroke-width="38"/>
-  <!-- Gap/opening at bottom-right of the Q ring -->
-  <rect x="272" y="272" width="80" height="80" fill="#111827"/>
+  <defs>
+    <!-- Mask punches out the gap area so the background shows through -->
+    <mask id="q-mask">
+      <rect width="512" height="512" fill="white"/>
+      <rect x="272" y="272" width="80" height="80" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Outer square ring of the Q (masked to create gap at bottom-right) -->
+  <g mask="url(#q-mask)">
+    <rect x="96" y="96" width="230" height="230" rx="22" fill="none" stroke="#02F5A1" stroke-width="38"/>
+  </g>
   <!-- Q tail / search handle -->
-  <line x1="298" y1="298" x2="400" y2="400" stroke="#10b981" stroke-width="38" stroke-linecap="round"/>
+  <line x1="298" y1="298" x2="400" y2="400" stroke="#02F5A1" stroke-width="38" stroke-linecap="round"/>
 </svg>

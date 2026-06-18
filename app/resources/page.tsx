@@ -20,7 +20,7 @@ export default function ResourcesPage() {
   return (
     <>
       <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-500 text-xs font-semibold tracking-widest uppercase mb-4">
+        <p className="text-spring-500 text-xs font-semibold tracking-widest uppercase mb-4">
           Learn
         </p>
         <h1 className="text-4xl sm:text-5xl font-bold text-slate-100">Resources</h1>
@@ -36,7 +36,7 @@ export default function ResourcesPage() {
             <Link
               key={post.slug}
               href={`/resources/${post.slug}`}
-              className="group block bg-[#1e2d45] rounded-lg border border-[#2d4060] hover:border-emerald-500/50 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all overflow-hidden"
+              className="group block bg-onyx-800 rounded-lg border border-onyx-700 hover:border-spring-500/50 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden"
             >
               <div className="p-6">
                 <div className="flex items-center gap-3 text-xs text-slate-500 mb-4">
@@ -44,13 +44,13 @@ export default function ResourcesPage() {
                   <span>&middot;</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h2 className="font-semibold text-slate-100 group-hover:text-emerald-400 transition-colors leading-snug">
+                <h2 className="font-semibold text-slate-100 group-hover:text-spring-400 transition-colors leading-snug">
                   {post.title}
                 </h2>
                 <p className="mt-3 text-sm text-slate-400 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-emerald-500 group-hover:text-emerald-400 transition-colors">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-spring-500 group-hover:text-spring-400 transition-colors">
                   Read more
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

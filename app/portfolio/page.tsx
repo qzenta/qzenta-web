@@ -57,7 +57,7 @@ export default function PortfolioPage() {
         sub="Live projects built and managed under the Qzenta infrastructure umbrella."
         image="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1800&q=80"
         imageAlt="City buildings at dusk"
-        overlay="from-[#0d1829]/85 via-[#0d1829]/65 to-[#0d1829]/35"
+        overlay="from-[#0C2228]/85 via-[#0C2228]/65 to-[#0C2228]/35"
       />
 
       {/* Project grid */}
@@ -66,7 +66,7 @@ export default function PortfolioPage() {
           {projects.map((p) => (
             <div
               key={p.name}
-              className="bg-[#1e2d45] rounded-lg border border-[#2d4060] overflow-hidden hover:border-emerald-500/40 hover:shadow-[0_0_24px_rgba(16,185,129,0.08)] transition-all"
+              className="bg-onyx-800 rounded-lg border border-onyx-700 overflow-hidden hover:border-spring-500/40 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all"
             >
               {/* Cover image */}
               <div className="relative h-44 overflow-hidden">
@@ -77,28 +77,28 @@ export default function PortfolioPage() {
                   className="object-cover transition-transform duration-500 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-[#0d1829]/60" />
-                <span className="absolute top-4 left-4 text-xs font-semibold text-emerald-400 uppercase tracking-wider bg-[#1a2236]/80 px-2.5 py-1 rounded border border-emerald-500/30">
+                <div className="absolute inset-0 bg-[#0C2228]/60" />
+                <span className="absolute top-4 left-4 text-xs font-semibold text-spring-400 uppercase tracking-wider bg-onyx-950/80 px-2.5 py-1 rounded border border-spring-500/30">
                   {p.tag}
                 </span>
               </div>
 
               <div className="p-8">
-                <h2 className="text-xl font-semibold text-[#f1f5f9]">{p.name}</h2>
-                <p className="mt-3 text-sm text-[#94a3b8] leading-relaxed">{p.desc}</p>
+                <h2 className="text-xl font-semibold text-onyx-50">{p.name}</h2>
+                <p className="mt-3 text-sm text-onyx-500 leading-relaxed">{p.desc}</p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 rounded text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                      className="px-2.5 py-1 rounded text-xs font-medium bg-spring-500/10 text-spring-400 border border-spring-500/20"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <p className="mt-6 text-xs text-[#64748b] italic">
+                <p className="mt-6 text-xs text-onyx-500 italic">
                   Live project — details shared with client permission.
                 </p>
               </div>
@@ -108,15 +108,15 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-[#111827] border-t border-[#2d4060]">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-900 border-t border-onyx-700">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[#f1f5f9]">Want your project here?</h2>
-          <p className="mt-3 text-[#94a3b8] max-w-md mx-auto">
+          <h2 className="text-2xl font-bold text-onyx-50">Want your project here?</h2>
+          <p className="mt-3 text-onyx-500 max-w-md mx-auto">
             Get in touch and let&apos;s talk about what you&apos;re building.
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors"
+            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors"
           >
             Start a Project
           </Link>

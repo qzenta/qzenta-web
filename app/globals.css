@@ -5,6 +5,25 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* ── Spring Green (accent) — replaces emerald-* ── */
+  --color-spring-300: #7FF7CC;
+  --color-spring-400: #3DF6B7;
+  --color-spring-500: #02F5A1;
+  --color-spring-600: #00CC85;
+  --color-spring-700: #00A06A;
+  --color-spring-900: #014A33;
+  --color-spring-950: #012619;
+
+  /* ── Deep Onyx (ink/canvas) — replaces the navy hex family ── */
+  --color-onyx-50:  #F2F8F7;
+  --color-onyx-100: #DCEAEA;
+  --color-onyx-300: #87A6AA;
+  --color-onyx-500: #3E6168;
+  --color-onyx-700: #1D3D44;
+  --color-onyx-800: #122B32;
+  --color-onyx-900: #0C2228;
+  --color-onyx-950: #07191E;
 }
 
 html {

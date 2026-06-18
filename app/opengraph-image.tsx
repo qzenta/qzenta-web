@@ -10,7 +10,7 @@ export default function OgImage() {
     (
       <div
         style={{
-          background: "#1a2236",
+          background: "#07191E",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -27,13 +27,13 @@ export default function OgImage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "radial-gradient(circle, #2d4060 1px, transparent 1px)",
+              "radial-gradient(circle, #1D3D44 1px, transparent 1px)",
             backgroundSize: "40px 40px",
             opacity: 0.4,
           }}
         />
 
-        {/* Emerald top bar */}
+        {/* Spring Green top bar */}
         <div
           style={{
             position: "absolute",
@@ -41,7 +41,7 @@ export default function OgImage() {
             left: 0,
             right: 0,
             height: "6px",
-            background: "linear-gradient(to right, #10b981, #059669)",
+            background: "linear-gradient(to right, #02F5A1, #00CC85)",
           }}
         />
 
@@ -58,14 +58,14 @@ export default function OgImage() {
             style={{
               width: "56px",
               height: "56px",
-              background: "#10b981",
+              background: "#02F5A1",
               borderRadius: "12px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: "32px",
               fontWeight: 900,
-              color: "#0f172a",
+              color: "#07191E",
             }}
           >
             Q
@@ -74,7 +74,7 @@ export default function OgImage() {
             style={{
               fontSize: "36px",
               fontWeight: 800,
-              color: "#f1f5f9",
+              color: "#F2F8F7",
               letterSpacing: "-0.5px",
             }}
           >
@@ -87,14 +87,14 @@ export default function OgImage() {
           style={{
             fontSize: "58px",
             fontWeight: 800,
-            color: "#f1f5f9",
+            color: "#F2F8F7",
             lineHeight: 1.1,
             letterSpacing: "-1px",
             maxWidth: "900px",
           }}
         >
           IT Infrastructure for{" "}
-          <span style={{ color: "#10b981" }}>Ambitious</span> African Businesses
+          <span style={{ color: "#02F5A1" }}>Ambitious</span> African Businesses
         </div>
 
         {/* Tagline */}
@@ -102,7 +102,7 @@ export default function OgImage() {
           style={{
             marginTop: "32px",
             fontSize: "24px",
-            color: "#64748b",
+            color: "#3E6168",
             letterSpacing: "0.1em",
             textTransform: "uppercase",
           }}

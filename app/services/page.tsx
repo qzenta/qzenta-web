@@ -86,11 +86,11 @@ export default function ServicesPage() {
   return (
     <>
       <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-12 max-w-7xl mx-auto">
-        <p className="text-emerald-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
+        <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
           What we offer
         </p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#f1f5f9] tracking-tight">Services</h1>
-        <p className="mt-4 text-lg text-[#94a3b8] max-w-2xl leading-relaxed">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-onyx-50 tracking-tight">Services</h1>
+        <p className="mt-4 text-lg text-onyx-500 max-w-2xl leading-relaxed">
           End-to-end IT support for businesses that want to move fast without breaking things.
         </p>
       </section>
@@ -101,9 +101,9 @@ export default function ServicesPage() {
           {services.map((s) => (
             <div
               key={s.number}
-              className="bg-[#1e2d45] rounded-lg p-8 border border-[#2d4060] hover:border-emerald-500/40 transition-all"
+              className="bg-onyx-800 rounded-lg p-8 border border-onyx-700 hover:border-spring-500/40 transition-all"
             >
-              <span className="text-4xl font-bold text-emerald-500/20 select-none">
+              <span className="text-4xl font-bold text-spring-500/20 select-none">
                 {s.number}
               </span>
               <h2 className="mt-4 text-xl font-semibold text-slate-100">{s.title}</h2>
@@ -111,7 +111,7 @@ export default function ServicesPage() {
               <ul className="mt-5 space-y-2">
                 {s.details.map((d) => (
                   <li key={d} className="flex items-start gap-3 text-sm text-slate-400">
-                    <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-spring-500" />
                     {d}
                   </li>
                 ))}
@@ -122,7 +122,7 @@ export default function ServicesPage() {
       </section>
 
       {/* How we work */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-[#111827] border-t border-[#2d4060]">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-900 border-t border-onyx-700">
         <div className="max-w-7xl mx-auto">
           {/* Image + heading */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-14">
@@ -140,7 +140,7 @@ export default function ServicesPage() {
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-emerald-900/30" />
+              <div className="absolute inset-0 bg-spring-900/30" />
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-0">
@@ -152,12 +152,12 @@ export default function ServicesPage() {
                 {/* Connector line */}
                 {i < process.length - 1 && (
                   <>
-                    <span className="absolute left-3 top-7 bottom-0 w-px bg-[#2d4060] md:hidden" />
-                    <span className="hidden md:block absolute top-3 left-1/2 right-0 h-px bg-[#2d4060]" />
+                    <span className="absolute left-3 top-7 bottom-0 w-px bg-onyx-700 md:hidden" />
+                    <span className="hidden md:block absolute top-3 left-1/2 right-0 h-px bg-onyx-700" />
                   </>
                 )}
-                <span className="absolute left-0 top-1 md:left-auto md:top-0 md:relative md:block w-6 h-6 rounded-full bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 block" />
+                <span className="absolute left-0 top-1 md:left-auto md:top-0 md:relative md:block w-6 h-6 rounded-full bg-spring-500/15 border border-spring-500/40 flex items-center justify-center">
+                  <span className="w-2 h-2 rounded-full bg-spring-500 block" />
                 </span>
                 <div className="md:mt-4 ml-0">
                   <h3 className="font-semibold text-slate-100 text-sm">{p.step}</h3>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
         </p>
         <Link
           href="/contact"
-          className="mt-6 inline-block px-8 py-3 rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-medium transition-colors"
+          className="mt-6 inline-block px-8 py-3 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-medium transition-colors"
         >
           Get in Touch
         </Link>

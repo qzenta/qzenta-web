@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
       </head>
-      <body className="bg-slate-50 dark:bg-[#1a2236] text-slate-900 dark:text-[#f1f5f9] antialiased flex flex-col min-h-screen font-sans">
+      <body className="bg-onyx-50 dark:bg-onyx-950 text-onyx-950 dark:text-onyx-50 antialiased flex flex-col min-h-screen font-sans">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
