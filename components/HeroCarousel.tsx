@@ -13,16 +13,16 @@ const slides = [
     ctaSecondary: { label: "View Portfolio", href: "/portfolio" },
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
     alt: "Modern glass office building",
-    tint: "from-[#0C2228]/70 via-[#0C2228]/40 to-transparent",
+    tint: "from-[#0C2228]/50 via-[#0C2228]/25 to-transparent",
   },
   {
     headline: "Never worry about your tech stack again",
     sub: "Domains, email, DNS, SSL, and performance monitoring — all managed under one roof, month to month.",
     cta: { label: "What We Manage", href: "/solutions#support" },
     ctaSecondary: { label: "Get in Touch", href: "/contact" },
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80",
-    alt: "Server infrastructure in a data centre",
-    tint: "from-[#0C2228]/80 via-[#0C2228]/50 to-[#0C2228]/20",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80",
+    alt: "Modern open-plan office workspace",
+    tint: "from-[#0C2228]/55 via-[#0C2228]/30 to-[#0C2228]/10",
   },
   {
     headline: "5 live projects. 5 sectors. 11 domains managed.",
@@ -31,25 +31,30 @@ const slides = [
     ctaSecondary: { label: "Which sectors?", href: "/industries" },
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
     alt: "Network of connected nodes over city skyline",
-    tint: "from-[#0C2228]/75 via-[#0C2228]/45 to-transparent",
+    tint: "from-[#0C2228]/50 via-[#0C2228]/25 to-transparent",
   },
 ];
 
 const stats = [
-  { value: 11, suffix: "+", label: "Domains" },
-  { value: 5,  suffix: "+", label: "Projects" },
-  { value: 5,  suffix: "+", label: "Sectors" },
-  { value: 24, suffix: "h", label: "Response" },
+  { value: 11, suffix: "+", label: "Domains",  detail: "Managed across multiple clients & sectors" },
+  { value: 5,  suffix: "+", label: "Projects",  detail: "Live sites built & actively maintained" },
+  { value: 5,  suffix: "+", label: "Sectors",   detail: "Legal, NGO, SaaS, finance & more" },
+  { value: 24, suffix: "h", label: "Response",  detail: "Average support turnaround time" },
 ];
 
-function StatItem({ value, suffix, label, inView }: { value: number; suffix: string; label: string; inView: boolean }) {
-  const count = useCountUp(value, 1400, inView);
+function StatCard({ stat, inView }: { stat: typeof stats[number]; inView: boolean }) {
+  const count = useCountUp(stat.value, 1400, inView);
   return (
-    <div>
-      <p className="text-2xl font-extrabold text-spring-400 leading-none tabular-nums">
-        {count}{suffix}
-      </p>
-      <p className="text-xs text-onyx-500 uppercase tracking-[0.15em] mt-1">{label}</p>
+    <div className="stat-flip-card">
+      <div className="stat-flip-inner">
+        <div className="stat-flip-front">
+          <p className="text-2xl font-extrabold text-spring-400 leading-none tabular-nums">{count}{stat.suffix}</p>
+          <p className="text-xs text-onyx-300 uppercase tracking-[0.15em] mt-1.5">{stat.label}</p>
+        </div>
+        <div className="stat-flip-back">
+          <p className="text-xs text-onyx-50 text-center leading-relaxed px-1">{stat.detail}</p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -104,7 +109,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative overflow-hidden min-h-[88vh] flex flex-col"
+      className="relative overflow-hidden flex flex-col hero-height"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -124,20 +129,19 @@ export default function HeroCarousel() {
             priority={i === 0}
           />
           <div className={`absolute inset-0 bg-gradient-to-l ${s.tint}`} />
-          <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#0C2228] to-transparent" />
-          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-spring-900/20 to-transparent" />
+          <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#0C2228] to-transparent" />
         </div>
       ))}
 
       {/* Content — right-aligned */}
-      <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-20 pt-24 pb-12 text-right ml-auto max-w-3xl w-full">
-        <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-8">
+      <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-20 pt-20 pb-6 text-right ml-auto max-w-3xl w-full">
+        <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-6">
           Quietly Excellent &nbsp;·&nbsp; IT Infrastructure &nbsp;·&nbsp; Africa
         </p>
 
         <h1
           key={`h-${current}`}
-          className="text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold text-onyx-50 leading-[1.08] tracking-tight"
+          className="text-3xl sm:text-4xl lg:text-[2.8rem] font-extrabold text-onyx-50 leading-[1.08] tracking-tight"
           style={{ animation: "fadeSlideIn 0.6s ease both" }}
         >
           {slide.headline}
@@ -145,30 +149,30 @@ export default function HeroCarousel() {
 
         <p
           key={`p-${current}`}
-          className="mt-6 text-lg text-onyx-300 leading-relaxed ml-auto max-w-xl"
+          className="mt-4 text-base sm:text-lg text-onyx-300 leading-relaxed ml-auto max-w-xl"
           style={{ animation: "fadeSlideIn 0.6s 0.1s ease both" }}
         >
           {slide.sub}
         </p>
 
         {/* Two CTAs: primary filled + secondary ghost */}
-        <div className="mt-10 flex items-center justify-end gap-3 flex-wrap">
+        <div className="mt-7 flex items-center justify-end gap-3 flex-wrap">
           <Link
             href={slide.cta.href}
-            className="px-7 py-3.5 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors inline-block"
+            className="px-6 py-3 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors inline-block"
           >
             {slide.cta.label} →
           </Link>
           <Link
             href={slide.ctaSecondary.href}
-            className="px-7 py-3.5 rounded-md border border-white/25 hover:border-spring-400/60 text-white/80 hover:text-spring-300 font-semibold text-sm transition-colors inline-block backdrop-blur-sm"
+            className="px-6 py-3 rounded-md border border-white/25 hover:border-spring-400/60 text-white/80 hover:text-spring-300 font-semibold text-sm transition-colors inline-block backdrop-blur-sm"
           >
             {slide.ctaSecondary.label}
           </Link>
         </div>
 
         {/* Dot navigation */}
-        <div className="mt-10 flex items-center justify-end gap-3">
+        <div className="mt-6 flex items-center justify-end gap-3">
           <button
             onClick={() => go((current - 1 + slides.length) % slides.length)}
             aria-label="Previous slide"
@@ -202,25 +206,52 @@ export default function HeroCarousel() {
         </div>
       </div>
 
-      {/* Stats bar with animated counters */}
+      {/* Stats — 4 flip cards */}
       <div
         ref={statsRef}
-        className="relative z-10 border-t border-white/10 bg-[#0C2228]/60 backdrop-blur-sm px-6 sm:px-10 lg:px-20 py-5 flex flex-wrap items-center gap-x-0 gap-y-4"
+        className="relative z-10 border-t border-white/10 bg-[#0C2228]/70 backdrop-blur-sm px-6 sm:px-10 lg:px-20 py-4"
       >
-        {stats.map((s, i) => (
-          <div key={s.label} className="flex items-center">
-            {i > 0 && <div className="hidden sm:block w-px h-8 bg-white/10 mx-8" />}
-            <div className={i > 0 ? "sm:ml-0 ml-8" : ""}>
-              <StatItem value={s.value} suffix={s.suffix} label={s.label} inView={statsInView} />
-            </div>
-          </div>
-        ))}
+        <div className="grid grid-cols-4 gap-3">
+          {stats.map((s) => (
+            <StatCard key={s.label} stat={s} inView={statsInView} />
+          ))}
+        </div>
       </div>
 
       <style>{`
+        .hero-height {
+          height: calc(100dvh - 4rem);
+          min-height: 520px;
+        }
+        @media (min-width: 1024px) {
+          .hero-height { height: calc(100dvh - 5rem); }
+        }
         @keyframes fadeSlideIn {
           from { opacity: 0; transform: translateX(24px); }
           to   { opacity: 1; transform: translateX(0); }
+        }
+        .stat-flip-card { perspective: 600px; height: 76px; }
+        .stat-flip-inner {
+          position: relative; width: 100%; height: 100%;
+          transition: transform 0.5s ease;
+          transform-style: preserve-3d;
+        }
+        .stat-flip-card:hover .stat-flip-inner { transform: rotateY(180deg); }
+        .stat-flip-front, .stat-flip-back {
+          position: absolute; inset: 0;
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          backface-visibility: hidden; -webkit-backface-visibility: hidden;
+          border-radius: 0.5rem;
+        }
+        .stat-flip-front {
+          background: rgba(255,255,255,0.07);
+          border: 1px solid rgba(255,255,255,0.14);
+        }
+        .stat-flip-back {
+          background: rgba(2,245,161,0.14);
+          border: 1px solid rgba(2,245,161,0.32);
+          transform: rotateY(180deg);
         }
       `}</style>
     </section>
