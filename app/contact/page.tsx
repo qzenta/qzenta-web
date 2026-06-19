@@ -33,7 +33,7 @@ export default function ContactPage() {
                 </h3>
                 <a
                   href="mailto:info@qzenta.com"
-                  className="text-onyx-300 dark:text-onyx-500 hover:text-spring-700 dark:hover:text-spring-400 transition-colors text-sm"
+                  className="text-onyx-500 dark:text-onyx-300 hover:text-spring-700 dark:hover:text-spring-400 transition-colors text-sm"
                 >
                   info@qzenta.com
                 </a>
@@ -62,7 +62,7 @@ export default function ContactPage() {
                 <h3 className="text-xs font-semibold text-onyx-950 dark:text-onyx-50 uppercase tracking-[0.2em] mb-3">
                   Location
                 </h3>
-                <p className="text-sm text-onyx-300 dark:text-onyx-500">South Africa</p>
+                <p className="text-sm text-onyx-500 dark:text-onyx-300">South Africa</p>
               </div>
 
               <div>
@@ -73,7 +73,7 @@ export default function ContactPage() {
                   href="https://github.com/qzenta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-onyx-300 dark:text-onyx-500 hover:text-onyx-950 dark:hover:text-onyx-50 transition-colors"
+                  className="text-sm text-onyx-500 dark:text-onyx-300 hover:text-onyx-950 dark:hover:text-onyx-50 transition-colors"
                 >
                   github.com/qzenta
                 </a>

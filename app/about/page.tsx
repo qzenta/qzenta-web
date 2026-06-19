@@ -59,17 +59,17 @@ export default function AboutPage() {
               for the kind of infrastructure work that every growing business accumulates but few
               businesses manage intentionally.
             </p>
-            <p className="mt-5 text-onyx-300 dark:text-onyx-500 leading-relaxed">
+            <p className="mt-5 text-onyx-500 dark:text-onyx-300 leading-relaxed">
               The logic was simple: good IT infrastructure deserves its own structure. Managing domains,
               hosting, deployments, and digital operations as a side function of other business
               activity made no sense. Qzenta gives it a name, a mandate, and the attention it deserves.
             </p>
-            <p className="mt-5 text-onyx-300 dark:text-onyx-500 leading-relaxed">
+            <p className="mt-5 text-onyx-500 dark:text-onyx-300 leading-relaxed">
               We are a boutique operation — deliberately so. We work with a small number of clients at a
               time, which means every project gets the attention it deserves. No ticket queues. No
               account managers between you and the person doing the work.
             </p>
-            <p className="mt-5 text-onyx-300 dark:text-onyx-500 leading-relaxed">
+            <p className="mt-5 text-onyx-500 dark:text-onyx-300 leading-relaxed">
               Our stack is consistent across every project: Next.js for the frontend, Vercel for
               deployment, Cloudflare for DNS and security, Brevo for transactional email. This
               consistency means fewer moving parts, faster troubleshooting, and infrastructure that
@@ -127,7 +127,7 @@ export default function AboutPage() {
                 className="bg-white dark:bg-white/5 dark:backdrop-blur-sm rounded-lg p-6 border border-onyx-100 dark:border-white/10 hover:border-spring-500/40 dark:hover:border-spring-500/30 transition-all"
               >
                 <h3 className="font-semibold text-onyx-950 dark:text-onyx-50 text-lg">{v.title}</h3>
-                <p className="mt-2 text-sm text-onyx-300 dark:text-onyx-500 leading-relaxed">{v.desc}</p>
+                <p className="mt-2 text-sm text-onyx-500 dark:text-onyx-300 leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
             Standard tooling
           </p>
           <h2 className="text-2xl font-bold text-onyx-950 dark:text-onyx-50 mb-3">Our standard stack</h2>
-          <p className="text-onyx-300 dark:text-onyx-500 mb-10 max-w-xl leading-relaxed">
+          <p className="text-onyx-500 dark:text-onyx-300 mb-10 max-w-xl leading-relaxed">
             Consistent tooling across every project means faster delivery and easier handoffs.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -151,7 +151,7 @@ export default function AboutPage() {
                 className="bg-white dark:bg-onyx-800 rounded-lg p-4 border border-onyx-100 dark:border-onyx-700 text-center hover:border-spring-500/40 transition-all"
               >
                 <p className="font-semibold text-onyx-950 dark:text-onyx-50 text-sm">{tech.name}</p>
-                <p className="mt-1 text-xs text-onyx-300 dark:text-onyx-500">{tech.role}</p>
+                <p className="mt-1 text-xs text-onyx-500 dark:text-onyx-300">{tech.role}</p>
               </div>
             ))}
           </div>
@@ -162,7 +162,7 @@ export default function AboutPage() {
       <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-50 dark:bg-onyx-900 border-t border-onyx-100 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-onyx-950 dark:text-onyx-50">Work with us</h2>
-          <p className="mt-3 text-onyx-300 dark:text-onyx-500 max-w-md mx-auto">
+          <p className="mt-3 text-onyx-500 dark:text-onyx-300 max-w-md mx-auto">
             If you need reliable IT infrastructure from people who care about the detail, let&apos;s talk.
           </p>
           <Link

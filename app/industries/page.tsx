@@ -95,7 +95,7 @@ export default function IndustriesPage() {
                   {ind.tag}
                 </span>
                 <h2 className="mt-3 text-2xl font-bold text-onyx-950 dark:text-onyx-50">{ind.title}</h2>
-                <p className="mt-4 text-onyx-300 dark:text-onyx-500 leading-relaxed">{ind.desc}</p>
+                <p className="mt-4 text-onyx-500 dark:text-onyx-300 leading-relaxed">{ind.desc}</p>
                 <Link
                   href="/contact"
                   className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-spring-400 hover:text-spring-300 transition-colors"
@@ -115,7 +115,7 @@ export default function IndustriesPage() {
       <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-50 dark:bg-onyx-900 border-t border-onyx-100 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-onyx-950 dark:text-onyx-50">Don&apos;t see your industry?</h2>
-          <p className="mt-3 text-onyx-300 dark:text-onyx-500 max-w-md mx-auto">
+          <p className="mt-3 text-onyx-500 dark:text-onyx-300 max-w-md mx-auto">
             Good IT infrastructure is industry-agnostic. If you need a reliable digital
             foundation, get in touch — we&apos;ll make it work.
           </p>

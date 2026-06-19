@@ -40,7 +40,7 @@ export default function InsightsPage() {
               className="group block bg-white dark:bg-white/5 dark:backdrop-blur-sm rounded-lg border border-onyx-100 dark:border-white/10 hover:border-spring-500/40 dark:hover:border-spring-500/30 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden"
             >
               <div className="p-6">
-                <div className="flex items-center gap-3 text-xs text-onyx-300 dark:text-onyx-500 mb-4">
+                <div className="flex items-center gap-3 text-xs text-onyx-500 dark:text-onyx-300 mb-4">
                   <time dateTime={post.date}>{formatDate(post.date)}</time>
                   <span>&middot;</span>
                   <span>{post.readTime}</span>
@@ -48,7 +48,7 @@ export default function InsightsPage() {
                 <h2 className="font-semibold text-onyx-950 dark:text-onyx-50 group-hover:text-spring-700 dark:group-hover:text-spring-400 transition-colors leading-snug">
                   {post.title}
                 </h2>
-                <p className="mt-3 text-sm text-onyx-300 dark:text-onyx-500 leading-relaxed line-clamp-3">
+                <p className="mt-3 text-sm text-onyx-500 dark:text-onyx-300 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-spring-400 group-hover:text-spring-300 transition-colors">

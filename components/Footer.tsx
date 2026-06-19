@@ -37,7 +37,7 @@ export default function Footer() {
                 <span className="text-onyx-950 dark:text-onyx-50">zenta</span>
               </span>
             </Link>
-            <p className="mt-4 text-sm text-onyx-300 dark:text-onyx-500 leading-relaxed">
+            <p className="mt-4 text-sm text-onyx-500 dark:text-onyx-300 leading-relaxed">
               IT infrastructure and web services for ambitious South African businesses.
               Family-operated. Boutique. Professional.
             </p>
@@ -53,7 +53,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-onyx-300 dark:text-onyx-500 hover:text-spring-700 dark:hover:text-spring-400 transition-colors"
+                    className="text-sm text-onyx-500 dark:text-onyx-300 hover:text-spring-700 dark:hover:text-spring-400 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -72,7 +72,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-onyx-300 dark:text-onyx-500 hover:text-onyx-950 dark:hover:text-onyx-50 transition-colors"
+                    className="text-sm text-onyx-500 dark:text-onyx-300 hover:text-onyx-950 dark:hover:text-onyx-50 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -106,7 +106,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <span className="text-sm text-onyx-500">South Africa</span>
+                <span className="text-sm text-onyx-500 dark:text-onyx-300">South Africa</span>
               </li>
             </ul>
             <Link
@@ -121,7 +121,7 @@ export default function Footer() {
 
         {/* ── Bottom bar: copyright then legal links ── */}
         <div className="mt-10 pt-6 border-t border-onyx-100 dark:border-onyx-700">
-          <p className="text-xs text-onyx-500 mb-3">
+          <p className="text-xs text-onyx-500 dark:text-onyx-300 mb-3">
             &copy; 2026 Qzenta (Pty) Ltd. All rights reserved. South Africa.
           </p>
           <div className="flex flex-wrap gap-5">
@@ -129,7 +129,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs text-onyx-500 hover:text-onyx-950 dark:hover:text-onyx-300 transition-colors"
+                className="text-xs text-onyx-500 dark:text-onyx-300 hover:text-onyx-950 dark:hover:text-onyx-300 transition-colors"
               >
                 {link.label}
               </Link>

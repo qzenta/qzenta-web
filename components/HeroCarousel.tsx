@@ -126,12 +126,12 @@ export default function HeroCarousel() {
       ))}
 
       {/* Dark base overlay */}
-      <div className="absolute inset-0 bg-onyx-950/80" />
+      <div className="absolute inset-0 bg-onyx-950/60" />
 
       {/* Radial spring glow — centered accent */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 70% 55% at 50% 42%, rgba(2,245,161,0.08) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 70% 55% at 50% 42%, rgba(2,245,161,0.18) 0%, transparent 70%)" }}
       />
 
       {/* Bottom fade into next section */}

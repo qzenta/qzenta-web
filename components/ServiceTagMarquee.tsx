@@ -29,7 +29,7 @@ export default function ServiceTagMarquee() {
         {doubled.map((tag, i) => (
           <span
             key={i}
-            className="shrink-0 text-xs font-semibold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full border border-onyx-100 dark:border-onyx-700 text-onyx-300 dark:text-onyx-500 bg-transparent hover:border-spring-500/50 hover:text-spring-700 dark:hover:text-spring-400 transition-colors"
+            className="shrink-0 text-xs font-semibold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full border border-onyx-100 dark:border-onyx-700 text-onyx-300 bg-transparent hover:border-spring-500/50 hover:text-spring-700 dark:hover:text-spring-400 transition-colors"
           >
             {tag}
           </span>

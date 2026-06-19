@@ -120,10 +120,10 @@ export default function SolutionsPage() {
                 {s.number}
               </span>
               <h2 className="mt-4 text-xl font-semibold text-onyx-950 dark:text-onyx-50">{s.title}</h2>
-              <p className="mt-2 text-onyx-300 dark:text-onyx-500">{s.summary}</p>
+              <p className="mt-2 text-onyx-500 dark:text-onyx-300">{s.summary}</p>
               <ul className="mt-5 space-y-2.5">
                 {s.details.map((d) => (
-                  <li key={d} className="flex items-start gap-3 text-sm text-onyx-300 dark:text-onyx-500">
+                  <li key={d} className="flex items-start gap-3 text-sm text-onyx-500 dark:text-onyx-300">
                     <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-spring-500" />
                     {d}
                   </li>
@@ -143,7 +143,7 @@ export default function SolutionsPage() {
                 Our Process
               </p>
               <h2 className="text-2xl font-bold text-onyx-950 dark:text-onyx-50 mb-3">How we work</h2>
-              <p className="text-onyx-300 dark:text-onyx-500 max-w-xl leading-relaxed">
+              <p className="text-onyx-500 dark:text-onyx-300 max-w-xl leading-relaxed">
                 A consistent process across every engagement — no surprises.
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function SolutionsPage() {
                 </span>
                 <div className="md:mt-4 ml-0">
                   <h3 className="font-semibold text-onyx-950 dark:text-onyx-50 text-sm">{p.step}</h3>
-                  <p className="mt-1 text-sm text-onyx-300 dark:text-onyx-500 leading-relaxed">{p.desc}</p>
+                  <p className="mt-1 text-sm text-onyx-500 dark:text-onyx-300 leading-relaxed">{p.desc}</p>
                 </div>
               </div>
             ))}
@@ -190,12 +190,12 @@ export default function SolutionsPage() {
           <div className="bg-white dark:bg-onyx-800 rounded-lg p-8 border border-onyx-100 dark:border-onyx-700">
             <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.2em] mb-2">Once-off</p>
             <p className="text-3xl font-extrabold text-onyx-950 dark:text-onyx-50">R3,000</p>
-            <p className="mt-2 text-sm text-onyx-300 dark:text-onyx-500">Setup, build, and deployment — domain, hosting, email, and CI/CD included.</p>
+            <p className="mt-2 text-sm text-onyx-500 dark:text-onyx-300">Setup, build, and deployment — domain, hosting, email, and CI/CD included.</p>
           </div>
           <div className="bg-onyx-800 rounded-lg p-8 border border-spring-500/40 shadow-[0_0_24px_rgba(2,245,161,0.08)]">
             <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.2em] mb-2">Monthly</p>
-            <p className="text-3xl font-extrabold text-onyx-950 dark:text-onyx-50">R200 – R300<span className="text-lg font-semibold text-onyx-300 dark:text-onyx-500">/mo</span></p>
-            <p className="mt-2 text-sm text-onyx-300 dark:text-onyx-500">Ongoing maintenance, updates, monitoring, and support — managed service, not DIY.</p>
+            <p className="text-3xl font-extrabold text-onyx-950 dark:text-onyx-50">R200 – R300<span className="text-lg font-semibold text-onyx-300">/mo</span></p>
+            <p className="mt-2 text-sm text-onyx-300">Ongoing maintenance, updates, monitoring, and support — managed service, not DIY.</p>
           </div>
         </div>
       </section>
@@ -204,7 +204,7 @@ export default function SolutionsPage() {
       <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-50 dark:bg-onyx-900 border-t border-onyx-100 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-onyx-950 dark:text-onyx-50">Ready to get started?</h2>
-          <p className="mt-3 text-onyx-300 dark:text-onyx-500 max-w-md mx-auto">
+          <p className="mt-3 text-onyx-500 dark:text-onyx-300 max-w-md mx-auto">
             Tell us what you need and we&apos;ll put together a plan.
           </p>
           <Link

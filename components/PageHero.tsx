@@ -41,7 +41,7 @@ export default function PageHero({
           {title}
         </h1>
         {sub && (
-          <p className="mt-4 text-lg text-onyx-500 max-w-2xl leading-relaxed">{sub}</p>
+          <p className="mt-4 text-lg text-onyx-300 max-w-2xl leading-relaxed">{sub}</p>
         )}
       </div>
     </section>

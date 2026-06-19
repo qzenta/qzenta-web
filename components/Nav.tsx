@@ -160,7 +160,7 @@ export default function Nav() {
           <div className="md:hidden flex items-center gap-1">
             <ThemeToggle />
             <button
-              className="p-1 text-onyx-300 dark:text-onyx-500 hover:text-onyx-950 dark:hover:text-onyx-50 transition-colors"
+              className="p-1 text-onyx-500 dark:text-onyx-300 hover:text-onyx-950 dark:hover:text-onyx-50 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle navigation menu"
             >
@@ -195,7 +195,7 @@ export default function Nav() {
                     <p className="text-sm font-semibold text-onyx-950 dark:text-onyx-50 group-hover:text-spring-700 dark:group-hover:text-spring-400 transition-colors leading-snug">
                       {sub.label}
                     </p>
-                    <p className="mt-0.5 text-xs text-onyx-300 dark:text-onyx-500 leading-relaxed">
+                    <p className="mt-0.5 text-xs text-onyx-500 dark:text-onyx-300 leading-relaxed">
                       {sub.description}
                     </p>
                   </div>

@@ -85,7 +85,7 @@ export default function PortfolioPage() {
 
               <div className="p-8">
                 <h2 className="text-xl font-semibold text-onyx-50">{p.name}</h2>
-                <p className="mt-3 text-sm text-onyx-500 leading-relaxed">{p.desc}</p>
+                <p className="mt-3 text-sm text-onyx-300 leading-relaxed">{p.desc}</p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.stack.map((tech) => (
@@ -98,7 +98,7 @@ export default function PortfolioPage() {
                   ))}
                 </div>
 
-                <p className="mt-6 text-xs text-onyx-500 italic">
+                <p className="mt-6 text-xs text-onyx-300 italic">
                   Live project — details shared with client permission.
                 </p>
               </div>
@@ -111,7 +111,7 @@ export default function PortfolioPage() {
       <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-900 border-t border-onyx-700">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-onyx-50">Want your project here?</h2>
-          <p className="mt-3 text-onyx-500 max-w-md mx-auto">
+          <p className="mt-3 text-onyx-300 max-w-md mx-auto">
             Get in touch and let&apos;s talk about what you&apos;re building.
           </p>
           <Link

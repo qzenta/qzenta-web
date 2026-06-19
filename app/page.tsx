@@ -79,7 +79,7 @@ export default function HomePage() {
           aria-hidden
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-onyx-900/90" />
+        <div className="absolute inset-0 bg-onyx-900/65" />
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
@@ -88,7 +88,7 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl font-bold text-onyx-50 mb-3">
             End-to-end digital infrastructure
           </h2>
-          <p className="text-onyx-500 mb-8 max-w-xl leading-relaxed">
+          <p className="text-onyx-300 mb-8 max-w-xl leading-relaxed">
             Everything a growing business needs to build and maintain a credible digital presence —
             without the DIY headaches.
           </p>
@@ -113,7 +113,7 @@ export default function HomePage() {
                   {s.number}
                 </span>
                 <h3 className="mt-4 font-semibold text-onyx-50">{s.title}</h3>
-                <p className="mt-2 text-sm text-onyx-500 leading-relaxed">{s.desc}</p>
+                <p className="mt-2 text-sm text-onyx-300 leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ export default function HomePage() {
           sizes="100vw"
           aria-hidden
         />
-        <div className="absolute inset-0 bg-onyx-950/88" />
+        <div className="absolute inset-0 bg-onyx-950/65" />
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
@@ -150,7 +150,7 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl font-bold text-onyx-50 mb-3">
             Live projects. Real infrastructure.
           </h2>
-          <p className="text-onyx-500 mb-12 max-w-xl leading-relaxed">
+          <p className="text-onyx-300 mb-12 max-w-xl leading-relaxed">
             Built and maintained under the Qzenta infrastructure umbrella — anonymised until public maturity.
           </p>
 
@@ -164,7 +164,7 @@ export default function HomePage() {
                   {p.tag}
                 </span>
                 <h3 className="mt-3 font-semibold text-onyx-50">{p.name}</h3>
-                <p className="mt-2 text-sm text-onyx-500 leading-relaxed">{p.desc}</p>
+                <p className="mt-2 text-sm text-onyx-300 leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -191,7 +191,7 @@ export default function HomePage() {
           aria-hidden
         />
         {/* Deep spring-tinted overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0C2228]/95 via-spring-950/80 to-[#0C2228]/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0C2228]/70 via-spring-950/55 to-[#0C2228]/65" />
 
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
@@ -200,7 +200,7 @@ export default function HomePage() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-onyx-50 tracking-tight">
             Ready to build something?
           </h2>
-          <p className="mt-4 text-onyx-500 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-onyx-300 max-w-xl mx-auto leading-relaxed">
             Most clients are live within 5 working days. Get in touch today.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -212,7 +212,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/solutions"
-              className="px-8 py-3.5 rounded-md border border-white/20 hover:border-spring-500/50 text-onyx-500 hover:text-spring-400 font-semibold text-sm transition-colors"
+              className="px-8 py-3.5 rounded-md border border-white/20 hover:border-spring-500/50 text-onyx-300 hover:text-spring-400 font-semibold text-sm transition-colors"
             >
               Explore Solutions
             </Link>
