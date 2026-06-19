@@ -99,7 +99,7 @@ export default function HomePage() {
             {services.map((s) => (
               <div
                 key={s.number}
-                className="relative bg-onyx-800/80 backdrop-blur-sm rounded-lg p-6 border border-onyx-700 hover:border-spring-500/50 hover:shadow-[0_0_24px_rgba(2,245,161,0.1)] transition-all overflow-hidden group"
+                className="relative bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-spring-500/40 hover:shadow-[0_0_24px_rgba(2,245,161,0.14)] transition-all overflow-hidden group"
               >
                 {/* Editorial number watermark */}
                 <span
@@ -158,7 +158,7 @@ export default function HomePage() {
             {portfolio.map((p) => (
               <div
                 key={p.name}
-                className="bg-onyx-800/70 backdrop-blur-sm rounded-lg p-6 border border-onyx-700 hover:border-spring-500/40 transition-all"
+                className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-spring-500/40 transition-all"
               >
                 <span className="inline-block text-xs font-semibold text-spring-400 bg-spring-500/10 px-3 py-1 rounded uppercase tracking-wide">
                   {p.tag}

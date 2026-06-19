@@ -37,7 +37,7 @@ export default function InsightsPage() {
             <Link
               key={post.slug}
               href={`/insights/${post.slug}`}
-              className="group block bg-white dark:bg-onyx-800 rounded-lg border border-onyx-100 dark:border-onyx-700 hover:border-spring-500/50 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden"
+              className="group block bg-white dark:bg-white/5 dark:backdrop-blur-sm rounded-lg border border-onyx-100 dark:border-white/10 hover:border-spring-500/40 dark:hover:border-spring-500/30 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden"
             >
               <div className="p-6">
                 <div className="flex items-center gap-3 text-xs text-onyx-300 dark:text-onyx-500 mb-4">

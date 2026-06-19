@@ -124,7 +124,7 @@ export default function AboutPage() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="bg-white dark:bg-onyx-800 rounded-lg p-6 border border-onyx-100 dark:border-onyx-700 hover:border-spring-500/40 transition-all"
+                className="bg-white dark:bg-white/5 dark:backdrop-blur-sm rounded-lg p-6 border border-onyx-100 dark:border-white/10 hover:border-spring-500/40 dark:hover:border-spring-500/30 transition-all"
               >
                 <h3 className="font-semibold text-onyx-950 dark:text-onyx-50 text-lg">{v.title}</h3>
                 <p className="mt-2 text-sm text-onyx-300 dark:text-onyx-500 leading-relaxed">{v.desc}</p>

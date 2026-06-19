@@ -72,7 +72,7 @@ export default function IndustriesPage() {
             <div
               key={ind.id}
               id={ind.id}
-              className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white dark:bg-onyx-800 rounded-xl border border-onyx-100 dark:border-onyx-700 overflow-hidden hover:border-spring-500/40 hover:shadow-[0_0_24px_rgba(2,245,161,0.06)] transition-all"
+              className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white dark:bg-white/5 dark:backdrop-blur-sm rounded-xl border border-onyx-100 dark:border-white/10 overflow-hidden hover:border-spring-500/40 dark:hover:border-spring-500/30 hover:shadow-[0_0_24px_rgba(2,245,161,0.06)] transition-all"
             >
               {/* Cover image */}
               <div className="relative h-48 lg:h-auto lg:col-span-2">

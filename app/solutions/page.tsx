@@ -107,7 +107,7 @@ export default function SolutionsPage() {
             <div
               id={s.id}
               key={s.number}
-              className="relative bg-white dark:bg-onyx-800 rounded-lg p-8 border border-onyx-100 dark:border-onyx-700 hover:border-spring-500/50 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden group"
+              className="relative bg-white dark:bg-white/5 dark:backdrop-blur-sm rounded-lg p-8 border border-onyx-100 dark:border-white/10 hover:border-spring-500/40 dark:hover:border-spring-500/30 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden group"
             >
               {/* Editorial watermark */}
               <span

@@ -7,31 +7,25 @@ import { useCountUp } from "@/hooks/useCountUp";
 
 const slides = [
   {
-    headline: "Your digital foundation, built correctly from day one",
-    sub: "Next.js websites, deployed on Vercel, protected by Cloudflare — fast, secure, and production-ready.",
+    sub: "Next.js websites on Vercel, protected by Cloudflare — fast, secure, and production-ready.",
     cta: { label: "Explore Solutions", href: "/solutions" },
     ctaSecondary: { label: "View Portfolio", href: "/portfolio" },
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
     alt: "Modern glass office building",
-    tint: "from-[#0C2228]/50 via-[#0C2228]/25 to-transparent",
   },
   {
-    headline: "Never worry about your tech stack again",
     sub: "Domains, email, DNS, SSL, and performance monitoring — all managed under one roof, month to month.",
     cta: { label: "What We Manage", href: "/solutions#support" },
     ctaSecondary: { label: "Get in Touch", href: "/contact" },
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80",
     alt: "Modern open-plan office workspace",
-    tint: "from-[#0C2228]/55 via-[#0C2228]/30 to-[#0C2228]/10",
   },
   {
-    headline: "5 live projects. 5 sectors. 11 domains managed.",
-    sub: "From accounting practices to law firms to NGOs — Qzenta infrastructure is already running businesses like yours.",
+    sub: "5 live projects across legal, NGO, SaaS, finance, and property — Qzenta infrastructure running right now.",
     cta: { label: "Our Portfolio", href: "/portfolio" },
     ctaSecondary: { label: "Which sectors?", href: "/industries" },
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
     alt: "Network of connected nodes over city skyline",
-    tint: "from-[#0C2228]/50 via-[#0C2228]/25 to-transparent",
   },
 ];
 
@@ -113,7 +107,7 @@ export default function HeroCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Background images — crossfade between slides */}
+      {/* Background images — crossfade */}
       {slides.map((s, i) => (
         <div
           key={i}
@@ -128,35 +122,44 @@ export default function HeroCarousel() {
             sizes="100vw"
             priority={i === 0}
           />
-          <div className={`absolute inset-0 bg-gradient-to-l ${s.tint}`} />
-          <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#0C2228] to-transparent" />
         </div>
       ))}
 
-      {/* Content — right-aligned */}
-      <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-20 pt-20 pb-6 text-right ml-auto max-w-3xl w-full">
+      {/* Dark base overlay */}
+      <div className="absolute inset-0 bg-onyx-950/80" />
+
+      {/* Radial spring glow — centered accent */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 70% 55% at 50% 42%, rgba(2,245,161,0.08) 0%, transparent 70%)" }}
+      />
+
+      {/* Bottom fade into next section */}
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-onyx-950 to-transparent" />
+
+      {/* Content — centered */}
+      <div className="relative z-10 flex flex-col justify-center items-center text-center flex-1 px-6 sm:px-10 lg:px-20 pt-20 pb-6 max-w-4xl mx-auto w-full">
         <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-6">
           Quietly Excellent &nbsp;·&nbsp; IT Infrastructure &nbsp;·&nbsp; Africa
         </p>
 
-        <h1
-          key={`h-${current}`}
-          className="text-3xl sm:text-4xl lg:text-[2.8rem] font-extrabold text-onyx-50 leading-[1.08] tracking-tight"
-          style={{ animation: "fadeSlideIn 0.6s ease both" }}
-        >
-          {slide.headline}
+        {/* Static H1 with spring keyword */}
+        <h1 className="text-3xl sm:text-4xl lg:text-[2.8rem] font-extrabold text-onyx-50 leading-[1.08] tracking-tight">
+          Your digital foundation,{" "}
+          <span className="text-spring-500">built</span> correctly from day one
         </h1>
 
+        {/* Rotating subheadline */}
         <p
-          key={`p-${current}`}
-          className="mt-4 text-base sm:text-lg text-onyx-300 leading-relaxed ml-auto max-w-xl"
-          style={{ animation: "fadeSlideIn 0.6s 0.1s ease both" }}
+          key={`sub-${current}`}
+          className="mt-5 text-base sm:text-lg text-onyx-300 leading-relaxed max-w-2xl"
+          style={{ animation: "subFadeIn 0.5s ease both" }}
         >
           {slide.sub}
         </p>
 
-        {/* Two CTAs: primary filled + secondary ghost */}
-        <div className="mt-7 flex items-center justify-end gap-3 flex-wrap">
+        {/* CTAs */}
+        <div className="mt-8 flex items-center justify-center gap-3 flex-wrap">
           <Link
             href={slide.cta.href}
             className="px-6 py-3 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors inline-block"
@@ -165,24 +168,23 @@ export default function HeroCarousel() {
           </Link>
           <Link
             href={slide.ctaSecondary.href}
-            className="px-6 py-3 rounded-md border border-white/25 hover:border-spring-400/60 text-white/80 hover:text-spring-300 font-semibold text-sm transition-colors inline-block backdrop-blur-sm"
+            className="px-6 py-3 rounded-md border border-white/20 hover:border-spring-400/50 text-white/80 hover:text-spring-300 font-semibold text-sm transition-colors inline-block backdrop-blur-sm"
           >
             {slide.ctaSecondary.label}
           </Link>
         </div>
 
         {/* Dot navigation */}
-        <div className="mt-6 flex items-center justify-end gap-3">
+        <div className="mt-8 flex items-center justify-center gap-3">
           <button
             onClick={() => go((current - 1 + slides.length) % slides.length)}
-            aria-label="Previous slide"
-            className="w-8 h-8 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/40 hover:text-spring-400 transition-colors"
+            aria-label="Previous"
+            className="w-7 h-7 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/40 hover:text-spring-400 transition-colors"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-
           {slides.map((_, i) => (
             <button
               key={i}
@@ -193,25 +195,24 @@ export default function HeroCarousel() {
               }`}
             />
           ))}
-
           <button
             onClick={() => go((current + 1) % slides.length)}
-            aria-label="Next slide"
-            className="w-8 h-8 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/40 hover:text-spring-400 transition-colors"
+            aria-label="Next"
+            className="w-7 h-7 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/40 hover:text-spring-400 transition-colors"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
       </div>
 
-      {/* Stats — 4 flip cards */}
+      {/* Stats bar */}
       <div
         ref={statsRef}
-        className="relative z-10 border-t border-white/10 bg-[#0C2228]/70 backdrop-blur-sm px-6 sm:px-10 lg:px-20 py-4"
+        className="relative z-10 border-t border-white/10 bg-onyx-950/70 backdrop-blur-sm px-6 sm:px-10 lg:px-20 py-4"
       >
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-4 gap-3 max-w-4xl mx-auto">
           {stats.map((s) => (
             <StatCard key={s.label} stat={s} inView={statsInView} />
           ))}
@@ -221,14 +222,14 @@ export default function HeroCarousel() {
       <style>{`
         .hero-height {
           height: calc(100dvh - 4rem);
-          min-height: 520px;
+          min-height: 560px;
         }
         @media (min-width: 1024px) {
           .hero-height { height: calc(100dvh - 5rem); }
         }
-        @keyframes fadeSlideIn {
-          from { opacity: 0; transform: translateX(24px); }
-          to   { opacity: 1; transform: translateX(0); }
+        @keyframes subFadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to   { opacity: 1; transform: translateY(0); }
         }
         .stat-flip-card { perspective: 600px; height: 76px; }
         .stat-flip-inner {
@@ -245,8 +246,8 @@ export default function HeroCarousel() {
           border-radius: 0.5rem;
         }
         .stat-flip-front {
-          background: rgba(255,255,255,0.07);
-          border: 1px solid rgba(255,255,255,0.14);
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.12);
         }
         .stat-flip-back {
           background: rgba(2,245,161,0.14);
