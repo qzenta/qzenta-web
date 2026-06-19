@@ -72,7 +72,7 @@ export default function IndustriesPage() {
             <div
               key={ind.id}
               id={ind.id}
-              className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white dark:bg-onyx-800 rounded-xl border border-slate-200 dark:border-onyx-700 overflow-hidden hover:border-spring-500/40 hover:shadow-[0_0_24px_rgba(2,245,161,0.06)] transition-all"
+              className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white dark:bg-onyx-800 rounded-xl border border-onyx-100 dark:border-onyx-700 overflow-hidden hover:border-spring-500/40 hover:shadow-[0_0_24px_rgba(2,245,161,0.06)] transition-all"
             >
               {/* Cover image */}
               <div className="relative h-48 lg:h-auto lg:col-span-2">
@@ -94,8 +94,8 @@ export default function IndustriesPage() {
                 <span className="inline-block text-xs font-semibold text-spring-400 bg-spring-500/10 px-3 py-1 rounded uppercase tracking-wide border border-spring-500/20">
                   {ind.tag}
                 </span>
-                <h2 className="mt-3 text-2xl font-bold text-slate-900 dark:text-onyx-50">{ind.title}</h2>
-                <p className="mt-4 text-slate-600 dark:text-onyx-500 leading-relaxed">{ind.desc}</p>
+                <h2 className="mt-3 text-2xl font-bold text-onyx-950 dark:text-onyx-50">{ind.title}</h2>
+                <p className="mt-4 text-onyx-300 dark:text-onyx-500 leading-relaxed">{ind.desc}</p>
                 <Link
                   href="/contact"
                   className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-spring-400 hover:text-spring-300 transition-colors"
@@ -112,10 +112,10 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-100 dark:bg-onyx-900 border-t border-slate-200 dark:border-onyx-700">
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-50 dark:bg-onyx-900 border-t border-onyx-100 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-onyx-50">Don&apos;t see your industry?</h2>
-          <p className="mt-3 text-slate-600 dark:text-onyx-500 max-w-md mx-auto">
+          <h2 className="text-2xl font-bold text-onyx-950 dark:text-onyx-50">Don&apos;t see your industry?</h2>
+          <p className="mt-3 text-onyx-300 dark:text-onyx-500 max-w-md mx-auto">
             Good IT infrastructure is industry-agnostic. If you need a reliable digital
             foundation, get in touch — we&apos;ll make it work.
           </p>

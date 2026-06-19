@@ -106,11 +106,11 @@ export default function ServicesPage() {
               <span className="text-4xl font-bold text-spring-500/20 select-none">
                 {s.number}
               </span>
-              <h2 className="mt-4 text-xl font-semibold text-slate-100">{s.title}</h2>
-              <p className="mt-2 text-slate-400">{s.summary}</p>
+              <h2 className="mt-4 text-xl font-semibold text-onyx-50">{s.title}</h2>
+              <p className="mt-2 text-onyx-500">{s.summary}</p>
               <ul className="mt-5 space-y-2">
                 {s.details.map((d) => (
-                  <li key={d} className="flex items-start gap-3 text-sm text-slate-400">
+                  <li key={d} className="flex items-start gap-3 text-sm text-onyx-500">
                     <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-spring-500" />
                     {d}
                   </li>
@@ -127,8 +127,8 @@ export default function ServicesPage() {
           {/* Image + heading */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-14">
             <div>
-              <h2 className="text-2xl font-bold text-slate-100 mb-3">How we work</h2>
-              <p className="text-slate-400 max-w-xl">
+              <h2 className="text-2xl font-bold text-onyx-50 mb-3">How we work</h2>
+              <p className="text-onyx-500 max-w-xl">
                 A consistent process across every engagement — no surprises.
               </p>
             </div>
@@ -160,8 +160,8 @@ export default function ServicesPage() {
                   <span className="w-2 h-2 rounded-full bg-spring-500 block" />
                 </span>
                 <div className="md:mt-4 ml-0">
-                  <h3 className="font-semibold text-slate-100 text-sm">{p.step}</h3>
-                  <p className="mt-1 text-sm text-slate-400 leading-relaxed">{p.desc}</p>
+                  <h3 className="font-semibold text-onyx-50 text-sm">{p.step}</h3>
+                  <p className="mt-1 text-sm text-onyx-500 leading-relaxed">{p.desc}</p>
                 </div>
               </div>
             ))}
@@ -171,8 +171,8 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-20 max-w-7xl mx-auto text-center">
-        <h2 className="text-2xl font-bold text-slate-100">Ready to get started?</h2>
-        <p className="mt-3 text-slate-400 max-w-md mx-auto">
+        <h2 className="text-2xl font-bold text-onyx-50">Ready to get started?</h2>
+        <p className="mt-3 text-onyx-500 max-w-md mx-auto">
           Tell us what you need and we&apos;ll put together a plan.
         </p>
         <Link

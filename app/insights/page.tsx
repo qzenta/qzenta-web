@@ -37,18 +37,18 @@ export default function InsightsPage() {
             <Link
               key={post.slug}
               href={`/insights/${post.slug}`}
-              className="group block bg-white dark:bg-onyx-800 rounded-lg border border-slate-200 dark:border-onyx-700 hover:border-spring-500/50 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden"
+              className="group block bg-white dark:bg-onyx-800 rounded-lg border border-onyx-100 dark:border-onyx-700 hover:border-spring-500/50 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden"
             >
               <div className="p-6">
-                <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-onyx-500 mb-4">
+                <div className="flex items-center gap-3 text-xs text-onyx-300 dark:text-onyx-500 mb-4">
                   <time dateTime={post.date}>{formatDate(post.date)}</time>
                   <span>&middot;</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h2 className="font-semibold text-slate-900 dark:text-onyx-50 group-hover:text-spring-700 dark:group-hover:text-spring-400 transition-colors leading-snug">
+                <h2 className="font-semibold text-onyx-950 dark:text-onyx-50 group-hover:text-spring-700 dark:group-hover:text-spring-400 transition-colors leading-snug">
                   {post.title}
                 </h2>
-                <p className="mt-3 text-sm text-slate-600 dark:text-onyx-500 leading-relaxed line-clamp-3">
+                <p className="mt-3 text-sm text-onyx-300 dark:text-onyx-500 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-spring-400 group-hover:text-spring-300 transition-colors">

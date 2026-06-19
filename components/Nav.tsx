@@ -63,7 +63,7 @@ export default function Nav() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-onyx-900 border-b border-gray-200 dark:border-onyx-700 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white dark:bg-onyx-900 border-b border-onyx-100 dark:border-onyx-700 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
 
@@ -79,9 +79,9 @@ export default function Nav() {
             />
             <span className="text-2xl lg:text-3xl font-extrabold tracking-tight">
               <span className="text-spring-500">Q</span>
-              <span className="text-onyx-950 dark:text-white">zenta</span>
+              <span className="text-onyx-950 dark:text-onyx-50">zenta</span>
             </span>
-            <span className="hidden lg:block text-[9px] font-semibold tracking-[0.22em] text-gray-400 uppercase mt-0.5 self-end mb-0.5">
+            <span className="hidden lg:block text-[9px] font-semibold tracking-[0.22em] text-onyx-300 uppercase mt-0.5 self-end mb-0.5">
               Quietly Excellent
             </span>
           </Link>
@@ -97,7 +97,7 @@ export default function Nav() {
                       ? "text-spring-700 dark:text-spring-400"
                       : item.href === "/" && isActive("/")
                       ? "text-spring-700 dark:text-spring-400"
-                      : "text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white"
+                      : "text-onyx-500 dark:text-onyx-300 hover:text-onyx-950 dark:hover:text-onyx-50"
                   }`}
                 >
                   {item.label}
@@ -110,7 +110,7 @@ export default function Nav() {
                       min-w-[230px]
                       bg-white dark:bg-onyx-800
                       border-t-2 border-t-spring-500
-                      border-l border-r border-b border-gray-200 dark:border-onyx-700
+                      border-l border-r border-b border-onyx-100 dark:border-onyx-700
                       shadow-xl z-50 py-2
                       opacity-0 pointer-events-none
                       group-hover:opacity-100 group-hover:pointer-events-auto
@@ -121,7 +121,7 @@ export default function Nav() {
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block px-5 py-2.5 text-sm text-gray-600 dark:text-slate-300 hover:text-spring-700 dark:hover:text-spring-400 hover:bg-gray-50 dark:hover:bg-onyx-700/40 transition-colors"
+                        className="block px-5 py-2.5 text-sm text-onyx-500 dark:text-onyx-300 hover:text-spring-700 dark:hover:text-spring-400 hover:bg-onyx-50 dark:hover:bg-onyx-700/40 transition-colors"
                       >
                         {sub.label}
                       </Link>
@@ -144,7 +144,7 @@ export default function Nav() {
           <div className="md:hidden flex items-center gap-1">
             <ThemeToggle />
           <button
-            className="text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="text-onyx-300 dark:text-onyx-500 hover:text-onyx-950 dark:hover:text-onyx-50 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -163,7 +163,7 @@ export default function Nav() {
 
         {/* Mobile dropdown */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-gray-200 dark:border-onyx-700 pt-4 pb-4">
+          <div className="md:hidden border-t border-onyx-100 dark:border-onyx-700 pt-4 pb-4">
             <nav className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <Link
@@ -173,7 +173,7 @@ export default function Nav() {
                   className={`text-sm font-medium py-2 px-2 rounded transition-colors ${
                     isActive(item.href)
                       ? "text-spring-700 dark:text-spring-400 bg-spring-500/10"
-                      : "text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-white"
+                      : "text-onyx-500 dark:text-onyx-300 hover:text-onyx-950 dark:hover:text-onyx-50"
                   }`}
                 >
                   {item.label}

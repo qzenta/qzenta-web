@@ -23,7 +23,7 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-onyx-700 bg-slate-100 dark:bg-onyx-900 mt-auto">
+    <footer className="border-t border-onyx-100 dark:border-onyx-700 bg-onyx-50 dark:bg-onyx-900 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* ── 4-column grid ── */}
@@ -34,10 +34,10 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center">
               <span className="text-xl font-extrabold tracking-tight">
                 <span className="text-spring-400">Q</span>
-                <span className="text-slate-900 dark:text-white">zenta</span>
+                <span className="text-onyx-950 dark:text-onyx-50">zenta</span>
               </span>
             </Link>
-            <p className="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="mt-4 text-sm text-onyx-300 dark:text-onyx-500 leading-relaxed">
               IT infrastructure and web services for ambitious South African businesses.
               Family-operated. Boutique. Professional.
             </p>
@@ -45,7 +45,7 @@ export default function Footer() {
 
           {/* Col 2 — Solutions */}
           <div>
-            <h3 className="text-xs font-semibold text-slate-800 dark:text-slate-100 uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-semibold text-onyx-950 dark:text-onyx-50 uppercase tracking-widest mb-4">
               Solutions
             </h3>
             <ul className="space-y-2.5">
@@ -53,7 +53,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-spring-700 dark:hover:text-spring-400 transition-colors"
+                    className="text-sm text-onyx-300 dark:text-onyx-500 hover:text-spring-700 dark:hover:text-spring-400 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -64,7 +64,7 @@ export default function Footer() {
 
           {/* Col 3 — Company */}
           <div>
-            <h3 className="text-xs font-semibold text-slate-800 dark:text-slate-100 uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-semibold text-onyx-950 dark:text-onyx-50 uppercase tracking-widest mb-4">
               Company
             </h3>
             <ul className="space-y-2.5">
@@ -72,7 +72,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                    className="text-sm text-onyx-300 dark:text-onyx-500 hover:text-onyx-950 dark:hover:text-onyx-50 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -83,14 +83,14 @@ export default function Footer() {
 
           {/* Col 4 — Get in Touch */}
           <div>
-            <h3 className="text-xs font-semibold text-slate-800 dark:text-slate-100 uppercase tracking-widest mb-4">
+            <h3 className="text-xs font-semibold text-onyx-950 dark:text-onyx-50 uppercase tracking-widest mb-4">
               Get in Touch
             </h3>
             <ul className="space-y-2.5">
               <li>
                 <a
                   href="mailto:info@qzenta.com"
-                  className="text-sm text-slate-400 hover:text-spring-400 transition-colors"
+                  className="text-sm text-onyx-300 hover:text-spring-400 transition-colors"
                 >
                   info@qzenta.com
                 </a>
@@ -100,13 +100,13 @@ export default function Footer() {
                   href="https://github.com/qzenta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-slate-400 hover:text-slate-100 transition-colors"
+                  className="text-sm text-onyx-300 hover:text-onyx-50 transition-colors"
                 >
                   github.com/qzenta
                 </a>
               </li>
               <li>
-                <span className="text-sm text-slate-500 dark:text-slate-500">South Africa</span>
+                <span className="text-sm text-onyx-500">South Africa</span>
               </li>
             </ul>
             <Link
@@ -120,8 +120,8 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar: copyright then legal links ── */}
-        <div className="mt-10 pt-6 border-t border-slate-200 dark:border-onyx-700">
-          <p className="text-xs text-slate-500 mb-3">
+        <div className="mt-10 pt-6 border-t border-onyx-100 dark:border-onyx-700">
+          <p className="text-xs text-onyx-500 mb-3">
             &copy; 2026 Qzenta (Pty) Ltd. All rights reserved. South Africa.
           </p>
           <div className="flex flex-wrap gap-5">
@@ -129,7 +129,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs text-slate-500 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-400 transition-colors"
+                className="text-xs text-onyx-500 hover:text-onyx-950 dark:hover:text-onyx-300 transition-colors"
               >
                 {link.label}
               </Link>
