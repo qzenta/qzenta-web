@@ -24,8 +24,8 @@ const slides = [
     sub: "5 live projects across legal, NGO, SaaS, finance, and property — Qzenta infrastructure running right now.",
     cta: { label: "Our Portfolio", href: "/portfolio" },
     ctaSecondary: { label: "Which sectors?", href: "/industries" },
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80",
-    alt: "Network of connected nodes over city skyline",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80",
+    alt: "Glass-fronted server rack in a data centre",
   },
 ];
 
@@ -126,12 +126,12 @@ export default function HeroCarousel() {
       ))}
 
       {/* Dark base overlay */}
-      <div className="absolute inset-0 bg-onyx-950/60" />
+      <div className="absolute inset-0 bg-onyx-950/35" />
 
       {/* Radial spring glow — centered accent */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 70% 55% at 50% 42%, rgba(2,245,161,0.18) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 70% 55% at 50% 42%, rgba(2,245,161,0.26) 0%, transparent 70%)" }}
       />
 
       {/* Bottom fade into next section */}
@@ -221,11 +221,11 @@ export default function HeroCarousel() {
 
       <style>{`
         .hero-height {
-          height: calc(100dvh - 4rem);
-          min-height: 560px;
+          height: 70dvh;
+          min-height: 420px;
         }
         @media (min-width: 1024px) {
-          .hero-height { height: calc(100dvh - 5rem); }
+          .hero-height { height: 70dvh; }
         }
         @keyframes subFadeIn {
           from { opacity: 0; transform: translateY(10px); }
