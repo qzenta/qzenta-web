@@ -53,14 +53,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <head>
-        {/* Set theme class before first paint to prevent flash */}
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('qzenta-theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}}catch(e){document.documentElement.classList.add('dark')}})();` }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
       </head>
-      <body className="bg-onyx-50 dark:bg-onyx-950 text-onyx-950 dark:text-onyx-50 antialiased flex flex-col min-h-screen font-sans">
+      <body className="bg-white text-slate-900 antialiased flex flex-col min-h-screen font-sans">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
