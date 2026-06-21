@@ -237,13 +237,13 @@ export default function HomePage() {
       </section>
 
       {/* Stats Strip */}
-      <section className="bg-white border-y border-slate-100 px-4 sm:px-6 lg:px-8 py-8">
+      <section className="bg-slate-900 px-4 sm:px-6 lg:px-8 py-10">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {stats.map((s) => (
               <div key={s.value}>
-                <p className="text-3xl font-extrabold text-slate-900 tracking-tight">{s.value}</p>
-                <p className="mt-1 text-xs text-slate-500 leading-snug">{s.label}</p>
+                <p className="text-3xl font-extrabold text-emerald-400 tracking-tight">{s.value}</p>
+                <p className="mt-1 text-xs text-slate-400 leading-snug">{s.label}</p>
               </div>
             ))}
           </div>
@@ -392,7 +392,7 @@ export default function HomePage() {
       </section>
 
       {/* AI Agent Showcase */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-24">
+      <section className="bg-slate-50 px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-xs font-semibold text-emerald-600 uppercase tracking-[0.25em] mb-3">
             AI Workforce
@@ -408,7 +408,7 @@ export default function HomePage() {
             {agents.map((agent) => (
               <div
                 key={agent.name}
-                className="flex items-start gap-4 bg-slate-50 rounded-xl p-6 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/20 hover:shadow-sm transition-all duration-200"
+                className="flex items-start gap-4 bg-white rounded-xl p-6 border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all duration-200"
               >
                 <div className="shrink-0 w-11 h-11 rounded-xl bg-white border border-emerald-200 shadow-sm flex items-center justify-center">
                   <agent.Icon className="w-5 h-5 text-emerald-600" />
@@ -420,7 +420,7 @@ export default function HomePage() {
               </div>
             ))}
             <div className="sm:col-span-2 sm:max-w-md sm:mx-auto w-full">
-              <div className="flex items-start gap-4 bg-slate-50 rounded-xl p-6 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/20 hover:shadow-sm transition-all duration-200">
+              <div className="flex items-start gap-4 bg-white rounded-xl p-6 border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all duration-200">
                 <div className="shrink-0 w-11 h-11 rounded-xl bg-white border border-emerald-200 shadow-sm flex items-center justify-center">
                   <Bot className="w-5 h-5 text-emerald-600" />
                 </div>
@@ -455,7 +455,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Qzenta */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-24">
+      <section className="bg-slate-50 px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-xs font-semibold text-emerald-600 uppercase tracking-[0.25em] mb-3">
             Why Qzenta
