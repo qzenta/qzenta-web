@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import {
+  PhoneIncoming, TrendingUp, FileText, MessageCircle, Shield, Bot,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Solutions",
@@ -62,6 +65,34 @@ const services = [
       "Content and copy updates on request",
       "Monthly reporting on site health and infrastructure status",
     ],
+  },
+];
+
+const agents = [
+  {
+    Icon: PhoneIncoming,
+    name: "AI Receptionist",
+    desc: "Receives, classifies and routes every enquiry automatically -- no human needed for triage.",
+  },
+  {
+    Icon: TrendingUp,
+    name: "AI Sales Agent",
+    desc: "Qualifies leads, sends follow-ups and nurtures prospects to conversion around the clock.",
+  },
+  {
+    Icon: FileText,
+    name: "AI Proposal Agent",
+    desc: "Generates professional, branded proposals from lead data in minutes, not hours.",
+  },
+  {
+    Icon: MessageCircle,
+    name: "AI Support Agent",
+    desc: "Answers client questions 24/7 using your knowledge base -- accurate, instant, consistent.",
+  },
+  {
+    Icon: Shield,
+    name: "AI Compliance Agent",
+    desc: "Keeps SA businesses on top of VAT, PAYE and CIPC deadlines so nothing slips through.",
   },
 ];
 
@@ -131,6 +162,52 @@ export default function SolutionsPage() {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* AI Agents */}
+      <section id="ai-agents" className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-50 dark:bg-onyx-900 border-t border-onyx-100 dark:border-onyx-700">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
+            AI Workforce
+          </p>
+          <h2 className="text-center text-2xl font-bold text-onyx-950 dark:text-onyx-50 mb-3">
+            Your AI agents, working around the clock
+          </h2>
+          <p className="text-center text-onyx-500 dark:text-onyx-300 max-w-xl mx-auto leading-relaxed mb-10">
+            Each agent handles a specific business function -- autonomously, accurately, and at scale. From R35,000.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {agents.map((agent) => (
+              <div
+                key={agent.name}
+                className="flex items-start gap-4 bg-white dark:bg-onyx-800 rounded-lg p-6 border border-onyx-100 dark:border-onyx-700 hover:border-spring-500/40 transition-all"
+              >
+                <div className="shrink-0 w-11 h-11 rounded-xl bg-white dark:bg-onyx-900 border border-spring-500/30 shadow-sm flex items-center justify-center">
+                  <agent.Icon className="w-5 h-5 text-spring-500 dark:text-spring-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-onyx-950 dark:text-onyx-50 text-sm mb-1.5">{agent.name}</h3>
+                  <p className="text-xs text-onyx-500 dark:text-onyx-300 leading-relaxed">{agent.desc}</p>
+                </div>
+              </div>
+            ))}
+            <div className="sm:col-span-2 sm:max-w-md sm:mx-auto w-full">
+              <div className="flex items-start gap-4 bg-white dark:bg-onyx-800 rounded-lg p-6 border border-onyx-100 dark:border-onyx-700 hover:border-spring-500/40 transition-all">
+                <div className="shrink-0 w-11 h-11 rounded-xl bg-white dark:bg-onyx-900 border border-spring-500/30 shadow-sm flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-spring-500 dark:text-spring-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-onyx-950 dark:text-onyx-50 text-sm mb-1.5">Custom AI Agent</h3>
+                  <p className="text-xs text-onyx-500 dark:text-onyx-300 leading-relaxed">
+                    Need something specific? We design, train and deploy bespoke agents for your
+                    exact business workflow.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

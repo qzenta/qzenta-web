@@ -43,10 +43,10 @@ const mainNavItems: NavItem[] = [
     ],
   },
   {
-    href: "/#ai-agents",
+    href: "/solutions#ai-agents",
     label: "AI Agents",
     submenu: [
-      { href: "/#ai-agents",  label: "AI Agents",              description: "Receptionist, sales, proposal, support, compliance & custom", price: "from R35,000", Icon: Bot      },
+      { href: "/solutions#ai-agents", label: "AI Agents",       description: "Receptionist, sales, proposal, support, compliance & custom", price: "from R35,000", Icon: Bot      },
       { href: "/contact",     label: "Custom Solutions",       description: "Built around what you already have",                          price: "on request",   Icon: Wrench   },
       { href: "/#assessment", label: "AI Business Assessment", description: "Find out where AI and automation can save you time",           price: "free",          Icon: Sparkles },
     ],
