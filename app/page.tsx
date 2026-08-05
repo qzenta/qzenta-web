@@ -237,36 +237,37 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1800&q=80"
-            alt="African business team collaborating with technology"
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80"
+            alt="Modern open-plan office workspace"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover"
+            style={{ objectPosition: "center 30%" }}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/92 via-slate-900/75 to-slate-900/35" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
 
-        <div className="relative flex items-center min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+        <div className="relative flex items-center min-h-[400px] sm:min-h-[440px] lg:min-h-[480px] px-4 sm:px-6 lg:px-8 pt-16 pb-10">
           <div className="max-w-7xl mx-auto w-full">
             <div className="max-w-xl lg:max-w-2xl">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-emerald-300 text-xs font-semibold px-3.5 py-1.5 rounded-full mb-7 border border-white/15">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-emerald-300 text-xs font-semibold px-3.5 py-1.5 rounded-full mb-5 border border-white/15">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
                 AI-powered digital transformation for South African SMEs
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.06] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.08] tracking-tight">
                 AI, Automation &amp; Digital Transformation{" "}
                 <span className="text-emerald-400">for Growing Businesses</span>
               </h1>
 
-              <p className="mt-6 text-lg text-slate-200 max-w-lg leading-relaxed">
+              <p className="mt-4 text-base sm:text-lg text-slate-200 max-w-lg leading-relaxed">
                 We build your digital presence, automate your workflows, and deploy AI agents that help
                 your business scale -- without growing your headcount.
               </p>
 
-              <div className="mt-10 flex flex-wrap items-center gap-4">
+              <div className="mt-7 flex flex-wrap items-center gap-4">
                 <a
                   href="#assessment"
                   className="px-7 py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-emerald-950/30"
@@ -281,7 +282,7 @@ export default function HomePage() {
                 </a>
               </div>
 
-              <p className="mt-8 text-xs text-slate-300 tracking-wide">
+              <p className="mt-6 text-xs text-slate-300 tracking-wide">
                 Trusted by businesses in accounting, legal, property &amp; education &nbsp;&middot;&nbsp; 100% South African
               </p>
             </div>
