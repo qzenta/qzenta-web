@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   UserMinus, Clock, Database, MessageSquare,
   Globe, Server, Users, Zap, Bot, Sparkles,
   PhoneIncoming, TrendingUp, FileText, MessageCircle, Shield,
-  Briefcase, Layers, Rocket, Check, ArrowRight,
+  Briefcase, Layers, Rocket, Check, ArrowRight, ChevronDown,
 } from "lucide-react";
 import AssessmentForm from "@/components/AssessmentForm";
 import { posts } from "@/lib/posts";
@@ -233,48 +234,67 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section
-        className="relative bg-white px-4 sm:px-6 lg:px-8 pt-20 pb-28 sm:pt-28 sm:pb-36 overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 55% at 50% -5%, rgba(16,185,129,0.07) 0%, transparent 65%), #ffffff",
-        }}
-      >
-        <div className="relative max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 text-xs font-semibold px-3.5 py-1.5 rounded-full mb-8 border border-emerald-100">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-            AI-powered digital transformation for South African SMEs
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold text-slate-900 leading-[1.07] tracking-tight">
-            AI, Automation &amp; Digital Transformation{" "}
-            <span className="text-emerald-500">for Growing Businesses</span>
-          </h1>
-
-          <p className="mt-6 text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
-            We build your digital presence, automate your workflows, and deploy AI agents that help
-            your business scale -- without growing your headcount.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#assessment"
-              className="px-7 py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors shadow-sm"
-            >
-              Get Your Free AI Business Assessment
-            </a>
-            <a
-              href="#how-it-works"
-              className="px-7 py-3.5 rounded-lg border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 font-semibold text-sm transition-colors"
-            >
-              See How It Works
-            </a>
-          </div>
-
-          <p className="mt-8 text-xs text-slate-400 tracking-wide">
-            Trusted by businesses in accounting, legal, property &amp; education &nbsp;&middot;&nbsp; 100% South African
-          </p>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1800&q=80"
+            alt="African business team collaborating with technology"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/92 via-slate-900/75 to-slate-900/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+
+        <div className="relative flex items-center min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="max-w-xl lg:max-w-2xl">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-emerald-300 text-xs font-semibold px-3.5 py-1.5 rounded-full mb-7 border border-white/15">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                AI-powered digital transformation for South African SMEs
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.06] tracking-tight">
+                AI, Automation &amp; Digital Transformation{" "}
+                <span className="text-emerald-400">for Growing Businesses</span>
+              </h1>
+
+              <p className="mt-6 text-lg text-slate-200 max-w-lg leading-relaxed">
+                We build your digital presence, automate your workflows, and deploy AI agents that help
+                your business scale -- without growing your headcount.
+              </p>
+
+              <div className="mt-10 flex flex-wrap items-center gap-4">
+                <a
+                  href="#assessment"
+                  className="px-7 py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-emerald-950/30"
+                >
+                  Get Your Free AI Business Assessment
+                </a>
+                <a
+                  href="#how-it-works"
+                  className="px-7 py-3.5 rounded-lg border border-white/30 hover:border-white/60 text-white font-semibold text-sm transition-colors backdrop-blur-sm"
+                >
+                  See How It Works
+                </a>
+              </div>
+
+              <p className="mt-8 text-xs text-slate-300 tracking-wide">
+                Trusted by businesses in accounting, legal, property &amp; education &nbsp;&middot;&nbsp; 100% South African
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="#how-it-works"
+          className="hidden sm:flex absolute bottom-6 inset-x-0 flex-col items-center gap-1 text-white/70 hover:text-white transition-colors text-[10px] font-semibold uppercase tracking-[0.2em]"
+        >
+          Scroll
+          <ChevronDown className="w-4 h-4 animate-bounce" />
+        </a>
       </section>
 
       {/* Stats Strip */}
