@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   UserMinus, Clock, Database, MessageSquare,
-  Globe, Users, Zap, Bot,
+  Globe, Server, Users, Zap, Bot, Sparkles,
   PhoneIncoming, TrendingUp, FileText, MessageCircle, Shield,
-  Briefcase, Layers, Rocket, Check,
+  Briefcase, Layers, Rocket, Check, ArrowRight,
 } from "lucide-react";
 import AssessmentForm from "@/components/AssessmentForm";
+import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Qzenta -- AI, Automation & Digital Transformation for Growing Businesses",
@@ -22,6 +23,46 @@ const stats = [
   { value: "10+",   label: "Domains under management" },
   { value: "24/7",  label: "AI agents uptime" },
 ];
+
+const productOverview = [
+  {
+    Icon: Globe,
+    name: "Website Development",
+    desc: "A professional site built and live in days, not months.",
+    price: "Starting at R8,500",
+    href: "/solutions#web",
+  },
+  {
+    Icon: Server,
+    name: "Hosting & Domains",
+    desc: "Your domain, hosting, SSL and email, handled.",
+    price: "Starting at R750/mo",
+    href: "/solutions#domains",
+  },
+  {
+    Icon: Zap,
+    name: "Workflow Automation",
+    desc: "Stop losing leads to slow follow-up.",
+    price: "Starting at R18,000",
+    href: "/#how-it-works",
+  },
+  {
+    Icon: Bot,
+    name: "AI Agents",
+    desc: "A receptionist, sales rep, or support agent that never sleeps.",
+    price: "Starting at R35,000",
+    href: "/#ai-agents",
+  },
+  {
+    Icon: Sparkles,
+    name: "Custom Solutions",
+    desc: "Built around what you already have.",
+    price: "On request",
+    href: "/contact",
+  },
+];
+
+const sectors = ["Professional Services", "Property", "SaaS", "NGO", "Legal & Faith"];
 
 const painPoints = [
   {
@@ -279,6 +320,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Product Overview */}
+      <section className="bg-white px-4 sm:px-6 lg:px-8 py-24">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-xs font-semibold text-emerald-600 uppercase tracking-[0.25em] mb-3">
+            What We Offer
+          </p>
+          <h2 className="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            Everything you need, one place to start
+          </h2>
+          <p className="text-center text-sm text-slate-500 mb-14 max-w-xl mx-auto leading-relaxed">
+            Know exactly what you need? Pick it below. Every service is priced up front -- no quote required to see where you stand.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {productOverview.map((p) => (
+              <Link
+                key={p.name}
+                href={p.href}
+                className="group flex flex-col bg-white rounded-xl p-6 border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all duration-200"
+              >
+                <div className="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-5 group-hover:bg-emerald-100 transition-colors">
+                  <p.Icon className="w-5 h-5 text-emerald-600" />
+                </div>
+                <h3 className="font-semibold text-slate-900 text-sm mb-2">{p.name}</h3>
+                <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{p.desc}</p>
+                <p className="text-xs font-semibold text-slate-900 mb-3">{p.price}</p>
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 group-hover:gap-1.5 transition-all">
+                  Overview
+                  <ArrowRight className="w-3 h-3" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Transformation Framework */}
       <section id="how-it-works" className="bg-white px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-7xl mx-auto">
@@ -315,6 +391,35 @@ export default function HomePage() {
                   <p className="text-sm text-slate-500 leading-relaxed md:px-4">{step.desc}</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Differentiator Banner */}
+      <section
+        className="relative bg-slate-900 px-4 sm:px-6 lg:px-8 py-20 sm:py-28 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(16,185,129,0.18) 0%, transparent 65%), #0f172a",
+        }}
+      >
+        <div className="relative max-w-4xl mx-auto text-center">
+          <p className="text-xs font-semibold text-emerald-400 uppercase tracking-[0.25em] mb-5">
+            Our Difference
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.15] tracking-tight">
+            Direct to the builder.
+            <br className="hidden sm:block" /> No account managers, no outsourcing, no handoffs.
+          </h2>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            {["Boutique & direct access", "Builds on your existing stack", "1-5 day delivery"].map((badge) => (
+              <span
+                key={badge}
+                className="text-xs font-semibold text-emerald-300 bg-white/5 border border-white/10 px-4 py-2 rounded-full"
+              >
+                {badge}
+              </span>
             ))}
           </div>
         </div>
@@ -392,7 +497,7 @@ export default function HomePage() {
       </section>
 
       {/* AI Agent Showcase */}
-      <section className="bg-slate-50 px-4 sm:px-6 lg:px-8 py-24">
+      <section id="ai-agents" className="bg-slate-50 px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-xs font-semibold text-emerald-600 uppercase tracking-[0.25em] mb-3">
             AI Workforce
@@ -478,6 +583,81 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Insights Feed */}
+      <section className="bg-white px-4 sm:px-6 lg:px-8 py-24">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-xs font-semibold text-emerald-600 uppercase tracking-[0.25em] mb-3">
+            From the Blog
+          </p>
+          <h2 className="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            Latest insights
+          </h2>
+          <p className="text-center text-sm text-slate-500 mb-14 max-w-xl mx-auto leading-relaxed">
+            Practical guides on IT, AI and digital presence for South African businesses.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {posts.slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/insights/${post.slug}`}
+                className="group flex flex-col bg-white rounded-xl p-6 border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all duration-200"
+              >
+                <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                  <time dateTime={post.date}>
+                    {new Date(post.date).toLocaleDateString("en-ZA", { year: "numeric", month: "long", day: "numeric" })}
+                  </time>
+                  <span>&middot;</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3 className="font-semibold text-slate-900 text-sm mb-2 leading-snug group-hover:text-emerald-600 transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed line-clamp-3 mb-4 flex-1">{post.excerpt}</p>
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 group-hover:gap-1.5 transition-all">
+                  Read more
+                  <ArrowRight className="w-3 h-3" />
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              href="/insights"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors"
+            >
+              View all insights
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Row */}
+      <section className="bg-slate-50 border-y border-slate-100 px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-[0.25em] mb-6">
+            Trusted Across Sectors
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {sectors.map((tag) => (
+              <span
+                key={tag}
+                className="text-sm font-medium text-slate-600 bg-white border border-slate-200 px-4 py-2 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <Link
+            href="/portfolio"
+            className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
+          >
+            See our work
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
       </section>
 

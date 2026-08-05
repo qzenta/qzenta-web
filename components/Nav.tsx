@@ -5,28 +5,58 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import {
-  Globe, Server, Cpu, Wrench,
+  Globe, Server, Wrench,
   Briefcase, Building2, Rocket, Heart, Users,
-  BookOpen, Laptop, Shield, Flag,
-  Sparkles, Star, Layers,
+  BookOpen, Laptop, Shield, ShieldCheck, Flag,
+  Sparkles, Star, Layers, Link2, ShoppingBag,
   X, Menu, Bot, Zap,
 } from "lucide-react";
 
-type SubItem = { href: string; label: string; description: string; Icon: React.ElementType };
-type NavItem = { href: string; label: string; submenu?: SubItem[] };
+type SubItem = { href: string; label: string; description: string; price?: string; Icon: React.ElementType };
+type SubGroup = { heading: string; items: SubItem[] };
+type NavItem = { href: string; label: string; submenu?: SubItem[]; submenuGroups?: SubGroup[] };
 
 const navItems: NavItem[] = [
   { href: "/", label: "Home" },
   {
     href: "/solutions",
     label: "Solutions",
-    submenu: [
-      { href: "/solutions#web",            label: "Web Development",    description: "Next.js sites on Vercel with Cloudflare CDN protection",       Icon: Globe   },
-      { href: "/solutions#domains",        label: "Domain Management",  description: "Register, configure, and maintain your domains end-to-end",     Icon: Server  },
-      { href: "/solutions#infrastructure", label: "Tech Infrastructure",description: "GitHub, email, DNS, SSL, and CI/CD pipelines -- set up right",  Icon: Cpu     },
-      { href: "/solutions#support",        label: "Ongoing Support",    description: "Monthly maintenance, monitoring, and security patches",          Icon: Wrench  },
-      { href: "/#how-it-works",            label: "Workflow Automation",description: "Automated follow-ups, admin tasks and system integrations",      Icon: Zap     },
-      { href: "/#assessment",              label: "AI Agents",          description: "AI receptionist, sales, proposal and compliance agents",          Icon: Bot     },
+    submenuGroups: [
+      {
+        heading: "Websites",
+        items: [
+          { href: "/solutions#web", label: "Website Development", description: "Next.js sites on Vercel with Cloudflare CDN protection", price: "from R8,500", Icon: Globe },
+          { href: "/contact",       label: "E-commerce & Catalogue Builds", description: "Online stores and product catalogues built to convert", price: "on request", Icon: ShoppingBag },
+        ],
+      },
+      {
+        heading: "Hosting & Domains",
+        items: [
+          { href: "/solutions#domains", label: "Managed Hosting",         description: "Vercel hosting, monitoring, and uptime -- handled for you", price: "from R750/mo", Icon: Server },
+          { href: "/solutions#domains", label: "Domain Registration & DNS", description: "Register, configure, and maintain your domains end-to-end", price: "from R150", Icon: Link2 },
+          { href: "/solutions#domains", label: "SSL & Security",           description: "Certificates and Cloudflare protection on every project", price: "included", Icon: ShieldCheck },
+        ],
+      },
+      {
+        heading: "Automation",
+        items: [
+          { href: "/#how-it-works", label: "Workflow Automation", description: "Automated follow-ups, admin tasks and system integrations", price: "from R18,000", Icon: Zap },
+          { href: "/#how-it-works", label: "CRM & Lead Capture",  description: "Contact management, lead forms and pipeline tracking",       price: "included in Growth", Icon: Users },
+        ],
+      },
+      {
+        heading: "AI Agents",
+        items: [
+          { href: "/#ai-agents", label: "AI Agents", description: "Receptionist, sales, proposal, support, compliance & custom", price: "from R35,000", Icon: Bot },
+        ],
+      },
+      {
+        heading: "Services",
+        items: [
+          { href: "/contact",     label: "Custom Solutions",         description: "Built around what you already have",                     price: "on request", Icon: Wrench },
+          { href: "/#assessment", label: "AI Business Assessment",   description: "Find out where AI and automation can save you time",     price: "free", Icon: Sparkles },
+        ],
+      },
     ],
   },
   {
@@ -112,7 +142,7 @@ export default function Nav() {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-stretch gap-0">
             {navItems.map((item) =>
-              item.submenu ? (
+              item.submenu || item.submenuGroups ? (
                 <button
                   key={item.href}
                   onClick={() => toggleMenu(item.label)}
@@ -171,6 +201,48 @@ export default function Nav() {
       </div>
 
       {/* Full-width megamenu panel */}
+      {openMenu && activeItem?.submenuGroups && (
+        <div className="hidden md:block border-t border-slate-100 bg-white shadow-lg">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="grid grid-cols-5 gap-6">
+              {activeItem.submenuGroups.map((group) => (
+                <div key={group.heading}>
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+                    {group.heading}
+                  </p>
+                  <div className="flex flex-col gap-1">
+                    {group.items.map((sub) => (
+                      <Link
+                        key={sub.label}
+                        href={sub.href}
+                        onClick={() => setOpenMenu(null)}
+                        className="group flex items-start gap-2.5 p-2 -mx-2 rounded-lg hover:bg-slate-50 transition-colors"
+                      >
+                        <span className="shrink-0 mt-0.5 w-7 h-7 rounded-md bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-100 transition-colors">
+                          <sub.Icon className="w-3.5 h-3.5" />
+                        </span>
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors leading-snug">
+                            {sub.label}
+                          </p>
+                          <p className="mt-0.5 text-xs text-slate-500 leading-relaxed">
+                            {sub.description}
+                          </p>
+                          {sub.price && (
+                            <p className="mt-1 text-xs font-semibold text-emerald-600">{sub.price}</p>
+                          )}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Full-width megamenu panel (flat, non-grouped items) */}
       {openMenu && activeItem?.submenu && (
         <div className="hidden md:block border-t border-slate-100 bg-white shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
