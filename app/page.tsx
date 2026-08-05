@@ -234,23 +234,15 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80"
-            alt="Modern open-plan office workspace"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: "center 30%" }}
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/92 via-slate-900/75 to-slate-900/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-
+      <section
+        className="relative overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(ellipse 65% 75% at 78% 45%, rgba(16,185,129,0.35) 0%, transparent 60%), linear-gradient(135deg, #0f172a 0%, #111827 55%, #1e293b 100%)",
+        }}
+      >
         <div className="relative flex items-center min-h-[400px] sm:min-h-[440px] lg:min-h-[480px] px-4 sm:px-6 lg:px-8 pt-16 pb-10">
-          <div className="max-w-7xl mx-auto w-full">
+          <div className="max-w-7xl mx-auto w-full relative">
             <div className="max-w-xl lg:max-w-2xl">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-emerald-300 text-xs font-semibold px-3.5 py-1.5 rounded-full mb-5 border border-white/15">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
@@ -285,6 +277,19 @@ export default function HomePage() {
               <p className="mt-6 text-xs text-slate-300 tracking-wide">
                 Trusted by businesses in accounting, legal, property &amp; education &nbsp;&middot;&nbsp; 100% South African
               </p>
+            </div>
+
+            {/* Floating illustration */}
+            <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[280px] xl:w-[340px] pointer-events-none">
+              <Image
+                src="/hero-ai-illustration.png"
+                alt=""
+                width={860}
+                height={1147}
+                priority
+                aria-hidden
+                className="w-full h-auto drop-shadow-[0_20px_50px_rgba(16,185,129,0.25)]"
+              />
             </div>
           </div>
         </div>
