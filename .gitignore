@@ -42,3 +42,8 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# Playwright session state - holds live TikTok/social login cookies, never commit
+.playwright-*.json
+playwright-report/
+test-results/
