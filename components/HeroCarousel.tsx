@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import { useCountUp } from "@/hooks/useCountUp";
 
 const slides = [
@@ -53,18 +53,32 @@ function StatCard({ stat, inView }: { stat: typeof stats[number]; inView: boolea
   );
 }
 
+function subscribeReducedMotion(callback: () => void) {
+  const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mq.addEventListener("change", callback);
+  return () => mq.removeEventListener("change", callback);
+}
+
+function getReducedMotionSnapshot() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function getServerReducedMotionSnapshot() {
+  return false;
+}
+
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const reducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    getServerReducedMotionSnapshot
+  );
   const [paused, setPaused] = useState(false);
   const [statsInView, setStatsInView] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-  }, []);
 
   useEffect(() => {
     const el = statsRef.current;
@@ -91,7 +105,6 @@ export default function HeroCarousel() {
     }
     startTimer();
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reducedMotion, paused]);
 
   const go = (i: number) => {

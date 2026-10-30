@@ -118,10 +118,12 @@ export default function Nav() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setOpenMenu(null);
     setMobileOpen(false);
-  }, [pathname]);
+  }
 
   const toggleMenu = (label: string) =>
     setOpenMenu((prev) => (prev === label ? null : label));
