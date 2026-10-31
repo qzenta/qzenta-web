@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import {
   UserMinus,
   Clock,
@@ -18,6 +17,7 @@ import {
   GitBranch,
 } from "lucide-react";
 import AssessmentForm from "@/components/AssessmentForm";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata: Metadata = {
   title: "Qzenta — AI-Native Business Technology, Software & Automation",
@@ -83,7 +83,7 @@ const productOverview = [
   {
     Icon: Sparkles,
     name: "Business Software",
-    desc: "Cloud-native accounting and payroll software purpose-built for African enterprises.",
+    desc: "Cloud-native accounting and payroll software (Qzenta Accounting & Payroll) currently in active development.",
     price: "In Development",
     href: "/business-software",
   },
@@ -192,66 +192,8 @@ const packages = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section
-        className="relative overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(ellipse 65% 75% at 78% 45%, rgba(16,185,129,0.35) 0%, transparent 60%), linear-gradient(135deg, #0f172a 0%, #111827 55%, #1e293b 100%)",
-        }}
-      >
-        <div className="relative flex items-center min-h-[340px] sm:min-h-[380px] lg:min-h-[440px] px-4 sm:px-6 lg:px-8 pt-12 pb-10">
-          <div className="max-w-7xl mx-auto w-full relative">
-            <div className="max-w-xl lg:max-w-2xl">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-emerald-300 text-xs font-semibold px-3.5 py-1.5 rounded-full mb-4 border border-white/15">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-                AI-Native Business Technology · Software · Automation
-              </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] tracking-tight">
-                Modern Business Technology.{" "}
-                <span className="text-emerald-400">Engineered to Run Quietly.</span>
-              </h1>
-
-              <p className="mt-4 text-sm sm:text-base text-slate-200 max-w-lg leading-relaxed">
-                Qzenta builds digital infrastructure, deploys intelligent automation workflows, and develops next-generation business software for ambitious enterprises. Direct access to builders who deliver.
-              </p>
-
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <Link
-                  href="/solutions"
-                  className="px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-emerald-950/30"
-                >
-                  Explore Our Capabilities
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-6 py-3 rounded-lg border border-white/30 hover:border-white/60 text-white font-semibold text-sm transition-colors backdrop-blur-sm"
-                >
-                  Initiate Technical Inquiry
-                </Link>
-              </div>
-
-              <p className="mt-5 text-xs text-slate-300 tracking-wide">
-                CIPC Registered (22 May 2026) &nbsp;&middot;&nbsp; 100% South African Owned &nbsp;&middot;&nbsp; Enterprise Cloud Foundations
-              </p>
-            </div>
-
-            {/* Floating illustration */}
-            <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[220px] xl:w-[260px] pointer-events-none">
-              <Image
-                src="/hero-ai-illustration.png"
-                alt=""
-                width={860}
-                height={1147}
-                priority
-                aria-hidden
-                className="w-full h-auto drop-shadow-[0_20px_50px_rgba(16,185,129,0.25)]"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
       {/* Foundational Qualitative Pillars Strip */}
       <section className="bg-slate-900 border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-10">
