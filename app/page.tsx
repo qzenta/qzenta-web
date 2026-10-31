@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import AssessmentForm from "@/components/AssessmentForm";
 import HeroCarousel from "@/components/HeroCarousel";
+import ServiceTagMarquee from "@/components/ServiceTagMarquee";
 
 export const metadata: Metadata = {
   title: "Qzenta — AI-Native Business Technology, Software & Automation",
@@ -194,6 +195,9 @@ export default function HomePage() {
     <>
       {/* Hero Carousel */}
       <HeroCarousel />
+
+      {/* Service Tag Marquee */}
+      <ServiceTagMarquee />
 
       {/* Foundational Qualitative Pillars Strip */}
       <section className="bg-slate-900 border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-10">
