@@ -60,11 +60,13 @@ Every factual, numerical, commercial, and operational claim identified across th
 | **CLM-039** | `"Live project — details shared with client permission."` | `app/portfolio/page.tsx:102` | Compliance / Permission | **REMOVED** | **Decision (3):** Blanket permission assertion removed alongside anonymous case studies. |
 | **CLM-040** | `"Salesforce membership management / Salesforce connectivity"` | `app/portfolio/page.tsx:39`, `app/industries/page.tsx:43` | Technical Capability | **REMOVED** | Unsubstantiated external enterprise dependency claim purged from marketing copy. |
 | **CLM-041** | `"The full process, done properly, takes 2–5 business days."` | `lib/posts.ts:136` | SLA / Technical Roadmap | **KEPT** | Contextualized educational guidance within technical insight article. Retained as an architectural estimation, not a commercial guarantee. |
+| **CLM-042** | `"guaranteed continuous lead delivery"` | `app/portfolio/page.tsx:28` | Guarantee / SLA | **REMOVED** | Replaced with qualitative architectural outcome: `"optimized lead delivery reliability"`. |
+| **CLM-043** | `"engines that guarantee data delivery"` | `app/ai-automation/page.tsx:61` | Guarantee / SLA | **REMOVED** | Replaced with factual qualitative statement: `"engines that ensure reliable data delivery"`. |
 
 ---
 
 ## 3. Reconciliation Summary
 
-All 41 claims have been reconciled in full:
+All 43 claims have been reconciled in full:
 - **KEPT (14 Claims):** Core corporate registration facts (CIPC 22 May 2026), Information Officer identity (Daniel Amoah), verified tech stack (Next.js, Vercel, Cloudflare, n8n, Brevo), and canonical commercial entry baselines (R8,500, R750/mo, R18,000, R35,000, from R150).
-- **REMOVED (27 Claims):** All unverified numeric counters, delivery-time SLAs (5-day, 1-5 day, 24h response), uptime guarantees (24/7), "Trusted by businesses in" statements, the 5 anonymous case studies, and conflicting legacy pricing figures (R3,000 setup, R200–R300/mo).
+- **REMOVED (29 Claims):** All unverified numeric counters, delivery-time SLAs (5-day, 1-5 day, 24h response), uptime guarantees (24/7), "Trusted by businesses in" statements, the 5 anonymous case studies, guarantee statements, and conflicting legacy pricing figures (R3,000 setup, R200–R300/mo).

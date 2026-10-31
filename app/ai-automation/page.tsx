@@ -58,7 +58,7 @@ const workflowPillars = [
   {
     Icon: GitBranch,
     title: "n8n Orchestration Pipelines",
-    desc: "Self-hosted or cloud-managed workflow engines that guarantee data delivery, logging, and error alerting across all operational tools.",
+    desc: "Self-hosted or cloud-managed workflow engines that ensure reliable data delivery, logging, and error alerting across all operational tools.",
     points: [
       "Multi-system synchronization (CRMs, databases, email, WhatsApp)",
       "Webhook-driven triggers and idempotent data queues",

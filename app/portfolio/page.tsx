@@ -25,7 +25,7 @@ const deployments = [
     title: "Commercial Property Platform & Lead Ingestion",
     category: "Property Sector Deployment",
     desc: "Migrated a commercial real estate platform to serverless edge architecture with zero-downtime DNS cutover. Configured SSL/TLS certificates and automated inquiry ingestion connecting web forms to CRM endpoints.",
-    outcomes: "Eliminated legacy hosting bottlenecks, secured the perimeter against scraping bots, and guaranteed continuous lead delivery.",
+    outcomes: "Eliminated legacy hosting bottlenecks, secured the perimeter against scraping bots, and engineered optimized lead delivery reliability.",
     stack: ["Next.js", "Vercel", "Cloudflare DNS", "Brevo", "Tailwind CSS"],
     cover: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80",
     Icon: Shield,
