@@ -11,11 +11,11 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   title: {
-    default: "Qzenta",
+    default: "Qzenta — AI-Native Business Technology, Software & Automation",
     template: "%s | Qzenta",
   },
   description:
-    "IT infrastructure and web services for ambitious African businesses. Web development, domain management, hosting, and ongoing technical support.",
+    "Qzenta architects, deploys, and manages production digital infrastructure, intelligent autonomous workflows, and modern business applications for ambitious enterprises.",
   metadataBase: new URL("https://www.qzenta.com"),
   icons: {
     icon: "/qzenta-icon.svg",
@@ -26,7 +26,8 @@ export const metadata: Metadata = {
     locale: "en_ZA",
     url: "https://www.qzenta.com",
     siteName: "Qzenta",
-    description: "IT infrastructure and web services for ambitious African businesses.",
+    description:
+      "AI-native business technology, software, and automation company. Quietly Excellent.",
   },
   twitter: {
     card: "summary_large_image",

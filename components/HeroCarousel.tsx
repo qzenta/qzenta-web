@@ -3,55 +3,54 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef, useSyncExternalStore } from "react";
-import { useCountUp } from "@/hooks/useCountUp";
+import { Globe, GitBranch, Bot, ShieldCheck } from "lucide-react";
 
 const slides = [
   {
-    sub: "Next.js websites on Vercel, protected by Cloudflare — fast, secure, and production-ready.",
+    sub: "Next.js web applications on Vercel edge infrastructure, secured by Cloudflare — fast, reliable, and production-grade.",
     cta: { label: "Explore Solutions", href: "/solutions" },
     ctaSecondary: { label: "View Portfolio", href: "/portfolio" },
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80",
     alt: "Modern glass office building",
   },
   {
-    sub: "Domains, email, DNS, SSL, and performance monitoring — all managed under one roof, month to month.",
-    cta: { label: "What We Manage", href: "/solutions#support" },
+    sub: "Domains, DNS, SSL, transactional email, and performance monitoring — managed end-to-end under one roof.",
+    cta: { label: "Digital Infrastructure", href: "/solutions#domains" },
     ctaSecondary: { label: "Get in Touch", href: "/contact" },
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80",
     alt: "Modern open-plan office workspace",
   },
   {
-    sub: "5 live projects across legal, NGO, SaaS, finance, and property — Qzenta infrastructure running right now.",
-    cta: { label: "Our Portfolio", href: "/portfolio" },
-    ctaSecondary: { label: "Which sectors?", href: "/industries" },
+    sub: "Production digital infrastructure, intelligent autonomous workflows, and modern business applications for ambitious enterprises.",
+    cta: { label: "AI & Automation", href: "/ai-automation" },
+    ctaSecondary: { label: "Business Software", href: "/business-software" },
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80",
-    alt: "Glass-fronted server rack in a data centre",
+    alt: "Glass-fronted server rack in a modern data network facility",
   },
 ];
 
-const stats = [
-  { value: 11, suffix: "+", label: "Domains",  detail: "Managed across multiple clients & sectors" },
-  { value: 5,  suffix: "+", label: "Projects",  detail: "Live sites built & actively maintained" },
-  { value: 5,  suffix: "+", label: "Sectors",   detail: "Legal, NGO, SaaS, finance & more" },
-  { value: 24, suffix: "h", label: "Response",  detail: "Average support turnaround time" },
+const capabilities = [
+  {
+    Icon: Globe,
+    title: "Edge Infrastructure",
+    detail: "Next.js & Vercel with Cloudflare perimeter security",
+  },
+  {
+    Icon: GitBranch,
+    title: "Process Automation",
+    detail: "Resilient n8n workflow orchestration pipelines",
+  },
+  {
+    Icon: Bot,
+    title: "Autonomous Agents",
+    detail: "Specialized AI agents for enquiry triage and operations",
+  },
+  {
+    Icon: ShieldCheck,
+    title: "Continuous Stewardship",
+    detail: "Proactive maintenance, dependency audits & health reports",
+  },
 ];
-
-function StatCard({ stat, inView }: { stat: typeof stats[number]; inView: boolean }) {
-  const count = useCountUp(stat.value, 1400, inView);
-  return (
-    <div className="stat-flip-card">
-      <div className="stat-flip-inner">
-        <div className="stat-flip-front">
-          <p className="text-2xl font-extrabold text-spring-400 leading-none tabular-nums">{count}{stat.suffix}</p>
-          <p className="text-xs text-onyx-300 uppercase tracking-[0.15em] mt-1.5">{stat.label}</p>
-        </div>
-        <div className="stat-flip-back">
-          <p className="text-xs text-onyx-50 text-center leading-relaxed px-1">{stat.detail}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function subscribeReducedMotion(callback: () => void) {
   const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -75,21 +74,7 @@ export default function HeroCarousel() {
     getServerReducedMotionSnapshot
   );
   const [paused, setPaused] = useState(false);
-  const [statsInView, setStatsInView] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
-
-
-  useEffect(() => {
-    const el = statsRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setStatsInView(true); },
-      { threshold: 0.4 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
 
   const startTimer = () => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -104,7 +89,9 @@ export default function HeroCarousel() {
       return;
     }
     startTimer();
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
   }, [reducedMotion, paused]);
 
   const go = (i: number) => {
@@ -139,12 +126,15 @@ export default function HeroCarousel() {
       ))}
 
       {/* Dark base overlay */}
-      <div className="absolute inset-0 bg-onyx-950/35" />
+      <div className="absolute inset-0 bg-onyx-950/40" />
 
       {/* Radial spring glow — centered accent */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 70% 55% at 50% 42%, rgba(2,245,161,0.26) 0%, transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 55% at 50% 42%, rgba(2,245,161,0.22) 0%, transparent 70%)",
+        }}
       />
 
       {/* Bottom fade into next section */}
@@ -152,20 +142,18 @@ export default function HeroCarousel() {
 
       {/* Content — centered */}
       <div className="relative z-10 flex flex-col justify-center items-center text-center flex-1 px-6 sm:px-10 lg:px-20 pt-20 pb-6 max-w-4xl mx-auto w-full">
-        <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-6">
-          Quietly Excellent &nbsp;·&nbsp; IT Infrastructure &nbsp;·&nbsp; Africa
+        <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-5">
+          Quietly Excellent &nbsp;&middot;&nbsp; Business Technology &nbsp;&middot;&nbsp; South Africa
         </p>
 
-        {/* Static H1 with spring keyword */}
-        <h1 className="text-3xl sm:text-4xl lg:text-[2.8rem] font-extrabold text-onyx-50 leading-[1.08] tracking-tight">
-          Your digital foundation,{" "}
-          <span className="text-spring-500">built</span> correctly from day one
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-onyx-50 leading-[1.08] tracking-tight">
+          Modern Business Technology,{" "}
+          <span className="text-spring-400">engineered</span> to run quietly
         </h1>
 
-        {/* Rotating subheadline */}
         <p
           key={`sub-${current}`}
-          className="mt-5 text-base sm:text-lg text-onyx-300 leading-relaxed max-w-2xl"
+          className="mt-5 text-base sm:text-lg text-onyx-200 leading-relaxed max-w-2xl"
           style={{ animation: "subFadeIn 0.5s ease both" }}
         >
           {slide.sub}
@@ -177,11 +165,11 @@ export default function HeroCarousel() {
             href={slide.cta.href}
             className="px-6 py-3 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors inline-block"
           >
-            {slide.cta.label} →
+            {slide.cta.label} &rarr;
           </Link>
           <Link
             href={slide.ctaSecondary.href}
-            className="px-6 py-3 rounded-md border border-white/20 hover:border-spring-400/50 text-white/80 hover:text-spring-300 font-semibold text-sm transition-colors inline-block backdrop-blur-sm"
+            className="px-6 py-3 rounded-md border border-white/20 hover:border-spring-400/50 text-white hover:text-spring-300 font-semibold text-sm transition-colors inline-block backdrop-blur-sm"
           >
             {slide.ctaSecondary.label}
           </Link>
@@ -192,7 +180,7 @@ export default function HeroCarousel() {
           <button
             onClick={() => go((current - 1 + slides.length) % slides.length)}
             aria-label="Previous"
-            className="w-7 h-7 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/40 hover:text-spring-400 transition-colors"
+            className="w-7 h-7 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/50 hover:text-spring-400 transition-colors"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -211,7 +199,7 @@ export default function HeroCarousel() {
           <button
             onClick={() => go((current + 1) % slides.length)}
             aria-label="Next"
-            className="w-7 h-7 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/40 hover:text-spring-400 transition-colors"
+            className="w-7 h-7 rounded-full border border-white/20 hover:border-spring-500/60 flex items-center justify-center text-white/50 hover:text-spring-400 transition-colors"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -220,14 +208,20 @@ export default function HeroCarousel() {
         </div>
       </div>
 
-      {/* Stats bar */}
-      <div
-        ref={statsRef}
-        className="relative z-10 border-t border-white/10 bg-onyx-950/70 backdrop-blur-sm px-6 sm:px-10 lg:px-20 py-4"
-      >
-        <div className="grid grid-cols-4 gap-3 max-w-4xl mx-auto">
-          {stats.map((s) => (
-            <StatCard key={s.label} stat={s} inView={statsInView} />
+      {/* Qualitative Capability Strip (Replacing numeric stat counters) */}
+      <div className="relative z-10 border-t border-white/10 bg-onyx-950/75 backdrop-blur-sm px-4 sm:px-6 lg:px-8 py-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-5xl mx-auto">
+          {capabilities.map((c) => (
+            <div
+              key={c.title}
+              className="p-3 rounded-lg bg-white/5 border border-white/10 text-left"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <c.Icon className="w-4 h-4 text-spring-400 shrink-0" />
+                <p className="text-xs font-bold text-onyx-50 leading-tight">{c.title}</p>
+              </div>
+              <p className="text-[11px] text-onyx-300 leading-snug">{c.detail}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -235,7 +229,7 @@ export default function HeroCarousel() {
       <style>{`
         .hero-height {
           height: 70dvh;
-          min-height: 420px;
+          min-height: 440px;
         }
         @media (min-width: 1024px) {
           .hero-height { height: 70dvh; }
@@ -243,29 +237,6 @@ export default function HeroCarousel() {
         @keyframes subFadeIn {
           from { opacity: 0; transform: translateY(10px); }
           to   { opacity: 1; transform: translateY(0); }
-        }
-        .stat-flip-card { perspective: 600px; height: 76px; }
-        .stat-flip-inner {
-          position: relative; width: 100%; height: 100%;
-          transition: transform 0.5s ease;
-          transform-style: preserve-3d;
-        }
-        .stat-flip-card:hover .stat-flip-inner { transform: rotateY(180deg); }
-        .stat-flip-front, .stat-flip-back {
-          position: absolute; inset: 0;
-          display: flex; flex-direction: column;
-          align-items: center; justify-content: center;
-          backface-visibility: hidden; -webkit-backface-visibility: hidden;
-          border-radius: 0.5rem;
-        }
-        .stat-flip-front {
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.12);
-        }
-        .stat-flip-back {
-          background: rgba(2,245,161,0.14);
-          border: 1px solid rgba(2,245,161,0.32);
-          transform: rotateY(180deg);
         }
       `}</style>
     </section>

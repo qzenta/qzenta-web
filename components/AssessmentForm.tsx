@@ -51,7 +51,7 @@ export default function AssessmentForm() {
           </svg>
         </div>
         <h3 className="text-lg font-semibold text-slate-900 mb-2">Your report is being prepared</h3>
-        <p className="text-slate-500 text-sm">We&apos;ll be in touch within 1 business day.</p>
+        <p className="text-slate-500 text-sm">Our engineering team will review your details and follow up directly.</p>
       </div>
     );
   }

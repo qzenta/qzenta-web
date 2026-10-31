@@ -2,14 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
-import {
-  PhoneIncoming, TrendingUp, FileText, MessageCircle, Shield, Bot,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Solutions",
+  title: "Solutions — Digital Infrastructure & Managed Tech Services",
   description:
-    "Qzenta delivers web development, domain and hosting management, tech infrastructure setup, and ongoing maintenance for South African businesses.",
+    "Qzenta delivers production web development, domain and hosting management, tech infrastructure setup, and ongoing stewardship for South African enterprises.",
   openGraph: { url: "https://www.qzenta.com/solutions" },
 };
 
@@ -17,105 +15,120 @@ const services = [
   {
     number: "01",
     id: "web",
-    title: "Web Development & Deployment",
-    summary: "Modern, performant websites built for growth.",
+    title: "Web Development & Edge Deployment",
+    summary: "Modern, performant web applications built for speed and long-term stability.",
     details: [
-      "Next.js with TypeScript — fast, SEO-friendly, and maintainable",
-      "Deployed on Vercel with automatic previews and rollback",
-      "Cloudflare CDN and DDoS protection on every project",
-      "Mobile-first, responsive design as standard",
-      "Full README with deployment and handoff documentation",
+      "Next.js with TypeScript — fast, SEO-optimized, and maintainable",
+      "Deployed on Vercel with automatic branch previews and instant rollback",
+      "Cloudflare CDN caching and DDoS mitigation on every deployment",
+      "Mobile-first, responsive engineering with high Core Web Vitals",
+      "Complete deployment documentation and repository ownership",
     ],
   },
   {
     number: "02",
     id: "domains",
     title: "Domain & Hosting Management",
-    summary: "Your domains and hosting, handled end-to-end.",
+    summary: "Your domain portfolio, DNS routing, and hosting handled end-to-end.",
     details: [
-      "Domain registration (.com, .co.za, and others)",
-      "DNS configuration and Cloudflare migration",
-      "SSL certificate setup and renewal monitoring",
-      "Subdomain and redirect management",
-      "Registrar migrations with zero-downtime DNS cutover",
+      "Domain lifecycle management (.com, .co.za, and specialist TLDs)",
+      "DNS configuration and enterprise Cloudflare perimeter migration",
+      "SSL/TLS certificate automation and renewal monitoring",
+      "Subdomain routing and permanent HTTP redirect architecture",
+      "Zero-downtime DNS cutover and registrar migration management",
     ],
   },
   {
     number: "03",
     id: "infrastructure",
-    title: "Tech Infrastructure for SMEs",
-    summary: "The complete digital foundation, set up right from day one.",
+    title: "Digital Infrastructure for Growing Businesses",
+    summary: "The foundational technology stack, engineered correctly from day one.",
     details: [
-      "GitHub organisation setup and repository structure",
-      "Brevo transactional email and contact form integration",
-      "MailerLite newsletter and marketing email setup",
-      "Environment variable management and secrets handling",
-      "CI/CD pipelines with Vercel and GitHub Actions",
+      "GitHub organisation architecture and repository structure",
+      "Brevo transactional email routing and form submission pipelines",
+      "MailerLite newsletter and subscriber segmentation infrastructure",
+      "Environment variable management and zero-leak secrets handling",
+      "Automated CI/CD delivery pipelines with Vercel and GitHub Actions",
     ],
   },
   {
     number: "04",
     id: "support",
-    title: "Ongoing Maintenance & Support",
-    summary: "Your tech stack, managed month to month.",
+    title: "Ongoing Maintenance & Stewardship",
+    summary: "Your digital perimeter monitored and maintained month to month.",
     details: [
-      "Dependency updates and security patch management",
-      "Uptime monitoring and incident response",
-      "Performance audits and optimisation",
-      "Content and copy updates on request",
-      "Monthly reporting on site health and infrastructure status",
+      "Dependency auditing, framework upgrades, and security patch management",
+      "Automated infrastructure monitoring and rapid incident mitigation",
+      "Performance benchmarking and Core Web Vitals optimization",
+      "Technical copy, content updates, and schema maintenance",
+      "Monthly infrastructure health reporting and DNS oversight",
     ],
   },
 ];
 
-const agents = [
+const industries = [
   {
-    Icon: PhoneIncoming,
-    name: "AI Receptionist",
-    desc: "Receives, classifies and routes every enquiry automatically -- no human needed for triage.",
+    id: "professional",
+    number: "01",
+    title: "Professional Services",
+    tag: "Accountants · Tax Practitioners · Consultants",
+    desc: "Accounting practices, tax consultancies, and professional firms need digital infrastructure that reflects technical credibility. We engineer fast, search-optimized platforms with transactional communications and document inquiry workflows.",
+    cover: "https://images.unsplash.com/photo-1589666564459-93cdd3ab856a?auto=format&fit=crop&w=800&q=80",
   },
   {
-    Icon: TrendingUp,
-    name: "AI Sales Agent",
-    desc: "Qualifies leads, sends follow-ups and nurtures prospects to conversion around the clock.",
+    id: "property",
+    number: "02",
+    title: "Property & Real Estate",
+    tag: "Estate Agencies · Property Managers",
+    desc: "Commercial and residential property businesses depend on fast, high-trust digital platforms. We deploy reliable lead routing, Cloudflare DDoS defense, and domain management so your perimeter remains secure during high-traffic campaigns.",
+    cover: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80",
   },
   {
-    Icon: FileText,
-    name: "AI Proposal Agent",
-    desc: "Generates professional, branded proposals from lead data in minutes, not hours.",
+    id: "saas",
+    number: "03",
+    title: "Technology & SaaS",
+    tag: "Early-Stage Products · Software Teams",
+    desc: "Software companies need deployment pipelines that can move fast without breaking production. We configure GitHub organisations, CI/CD pipelines, authentication email flows, database connections, and staging environments.",
+    cover: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
   },
   {
-    Icon: MessageCircle,
-    name: "AI Support Agent",
-    desc: "Answers client questions 24/7 using your knowledge base -- accurate, instant, consistent.",
+    id: "ngo",
+    number: "04",
+    title: "NGOs & Non-Profits",
+    tag: "Community Organisations · Advocacy Groups",
+    desc: "Mission-driven organisations require accessible, high-reliability infrastructure. We build community portals with transactional email integrations, member onboarding flows, and accessibility-first design.",
+    cover: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
   },
   {
-    Icon: Shield,
-    name: "AI Compliance Agent",
-    desc: "Keeps SA businesses on top of VAT, PAYE and CIPC deadlines so nothing slips through.",
+    id: "payroll",
+    number: "05",
+    title: "Payroll & HR Services",
+    tag: "Payroll Outsourcing · HR Consultancies",
+    desc: "Firms handling sensitive employee data need POPIA-compliant, tamper-evident digital systems. We architect secure web applications with encrypted data handling, professional email, and audit-ready records.",
+    cover: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
-const process = [
+const processSteps = [
   {
-    step: "Discovery",
-    desc: "We start with a clear brief — what you have, what you need, and what success looks like.",
+    step: "Discovery & Audit",
+    desc: "We analyze your existing domains, DNS, hosting, and application requirements to define an exact architectural brief.",
   },
   {
-    step: "Setup",
-    desc: "Infrastructure is provisioned, repositories created, and environments configured before a line of code is written.",
+    step: "Infrastructure Provisioning",
+    desc: "Repositories, edge environments, and security perimeters are provisioned before application code is deployed.",
   },
   {
-    step: "Build",
-    desc: "Development with regular previews. You review in a staging environment before anything goes live.",
+    step: "Engineering & Staging",
+    desc: "Development with continuous preview deployments. You verify functionality in a staging environment prior to cutover.",
   },
   {
-    step: "Launch",
-    desc: "DNS cutover, SSL confirmation, and a live deployment verified end-to-end before handoff.",
+    step: "Zero-Downtime Launch",
+    desc: "Cloudflare DNS cutover, automated SSL provisioning, and live verification across all endpoints.",
   },
   {
-    step: "Maintain",
-    desc: "Ongoing support keeps your stack secure, performant, and up to date.",
+    step: "Continuous Stewardship",
+    desc: "Routine dependency updates, monthly health reviews, and proactive infrastructure maintenance.",
   },
 ];
 
@@ -123,24 +136,35 @@ export default function SolutionsPage() {
   return (
     <>
       <PageHero
-        eyebrow="What we offer"
+        eyebrow="Digital Infrastructure"
         title="Solutions"
-        sub="End-to-end IT support for businesses that want to move fast without breaking things."
+        sub="Production web development, domain lifecycle management, and cloud infrastructure engineered to run quietly and reliably."
         image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=80"
-        imageAlt="Server infrastructure"
-        overlay="from-[#0C2228]/90 via-[#0C2228]/70 to-[#0C2228]/40"
+        imageAlt="Server infrastructure and modern data network"
+        overlay="from-[#0C2228]/92 via-[#0C2228]/75 to-[#0C2228]/45"
       />
 
-      {/* Service cards */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-20 max-w-7xl mx-auto">
+      {/* Core Infrastructure Services */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 max-w-7xl mx-auto">
+        <div className="max-w-3xl mb-12">
+          <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.25em] mb-2">
+            Pillar 01: Digital Infrastructure
+          </p>
+          <h2 className="text-3xl font-bold text-onyx-950 dark:text-onyx-50">
+            Web and hosting infrastructure you never have to think about
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-onyx-500 dark:text-onyx-300 leading-relaxed">
+            Good technology infrastructure operates quietly in the background. We build clean, maintainable systems on world-class platforms so your team can focus entirely on business execution.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {services.map((s) => (
             <div
               id={s.id}
               key={s.number}
-              className="relative bg-white dark:bg-white/5 dark:backdrop-blur-sm rounded-lg p-8 border border-onyx-100 dark:border-white/10 hover:border-spring-500/40 dark:hover:border-spring-500/30 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden group"
+              className="relative bg-white dark:bg-white/5 dark:backdrop-blur-sm rounded-xl p-8 border border-onyx-100 dark:border-white/10 hover:border-spring-500/40 dark:hover:border-spring-500/30 hover:shadow-[0_0_24px_rgba(2,245,161,0.08)] transition-all overflow-hidden group"
             >
-              {/* Editorial watermark */}
               <span
                 aria-hidden
                 className="absolute -top-4 -right-2 text-[8rem] font-black text-spring-500/8 dark:text-spring-500/6 select-none leading-none group-hover:text-spring-500/12 transition-colors"
@@ -150,13 +174,13 @@ export default function SolutionsPage() {
               <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-spring-500/10 border border-spring-500/30 text-sm font-bold text-spring-500 dark:text-spring-400 select-none">
                 {s.number}
               </span>
-              <h2 className="mt-4 text-xl font-semibold text-onyx-950 dark:text-onyx-50">{s.title}</h2>
-              <p className="mt-2 text-onyx-500 dark:text-onyx-300">{s.summary}</p>
-              <ul className="mt-5 space-y-2.5">
+              <h3 className="mt-4 text-xl font-bold text-onyx-950 dark:text-onyx-50">{s.title}</h3>
+              <p className="mt-2 text-sm text-onyx-500 dark:text-onyx-300">{s.summary}</p>
+              <ul className="mt-6 space-y-3">
                 {s.details.map((d) => (
-                  <li key={d} className="flex items-start gap-3 text-sm text-onyx-500 dark:text-onyx-300">
+                  <li key={d} className="flex items-start gap-3 text-xs sm:text-sm text-onyx-500 dark:text-onyx-300">
                     <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-spring-500" />
-                    {d}
+                    <span>{d}</span>
                   </li>
                 ))}
               </ul>
@@ -165,130 +189,173 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* AI Agents */}
-      <section id="ai-agents" className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-50 dark:bg-onyx-900 border-t border-onyx-100 dark:border-onyx-700">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-center text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
-            AI Workforce
-          </p>
-          <h2 className="text-center text-2xl font-bold text-onyx-950 dark:text-onyx-50 mb-3">
-            Your AI agents, working around the clock
-          </h2>
-          <p className="text-center text-onyx-500 dark:text-onyx-300 max-w-xl mx-auto leading-relaxed mb-10">
-            Each agent handles a specific business function -- autonomously, accurately, and at scale. From R35,000.
-          </p>
+      {/* Cross-Link Banner to AI & Automation */}
+      <section className="px-4 sm:px-6 lg:px-8 py-10 max-w-7xl mx-auto">
+        <div className="bg-onyx-800 rounded-2xl p-8 sm:p-10 border border-onyx-700 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-spring-400 bg-spring-500/10 border border-spring-500/25 px-2.5 py-1 rounded">
+              Pillar 02: Intelligent Automation
+            </span>
+            <h3 className="text-xl font-bold text-onyx-50 mt-3 mb-2">
+              Looking for autonomous AI agents &amp; n8n workflow pipelines?
+            </h3>
+            <p className="text-xs sm:text-sm text-onyx-300 max-w-2xl leading-relaxed">
+              Explore our dedicated automation suite for lead triage, document generation, statutory compliance monitoring, and custom AI agents starting from R18,000.
+            </p>
+          </div>
+          <Link
+            href="/ai-automation"
+            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors"
+          >
+            Explore AI &amp; Automation
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {agents.map((agent) => (
+      {/* Sector Solutions (Consolidated from /industries) */}
+      <section id="industries" className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-50 dark:bg-onyx-900 border-t border-onyx-100 dark:border-onyx-700">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12">
+            <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.25em] mb-2">
+              Sector Solutions
+            </p>
+            <h2 className="text-3xl font-bold text-onyx-950 dark:text-onyx-50">
+              Infrastructure tailored to your sector
+            </h2>
+            <p className="mt-3 text-sm text-onyx-500 dark:text-onyx-300 leading-relaxed">
+              Reliable, security-conscious digital foundations engineered for South African commercial sectors.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {industries.map((ind) => (
               <div
-                key={agent.name}
-                className="flex items-start gap-4 bg-white dark:bg-onyx-800 rounded-lg p-6 border border-onyx-100 dark:border-onyx-700 hover:border-spring-500/40 transition-all"
+                key={ind.id}
+                id={ind.id}
+                className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white dark:bg-onyx-800 rounded-xl border border-onyx-100 dark:border-onyx-700 overflow-hidden hover:border-spring-500/40 transition-all"
               >
-                <div className="shrink-0 w-11 h-11 rounded-xl bg-white dark:bg-onyx-900 border border-spring-500/30 shadow-sm flex items-center justify-center">
-                  <agent.Icon className="w-5 h-5 text-spring-500 dark:text-spring-400" />
+                <div className="relative h-44 lg:h-auto lg:col-span-2">
+                  <Image
+                    src={ind.cover}
+                    alt={ind.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                  <div className="absolute inset-0 bg-[#0C2228]/55" />
+                  <span className="absolute top-4 left-4 text-3xl font-extrabold text-white/20 select-none">
+                    {ind.number}
+                  </span>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-onyx-950 dark:text-onyx-50 text-sm mb-1.5">{agent.name}</h3>
-                  <p className="text-xs text-onyx-500 dark:text-onyx-300 leading-relaxed">{agent.desc}</p>
+
+                <div className="lg:col-span-3 p-8">
+                  <span className="inline-block text-xs font-semibold text-spring-400 bg-spring-500/10 px-3 py-1 rounded uppercase tracking-wide border border-spring-500/20">
+                    {ind.tag}
+                  </span>
+                  <h3 className="mt-3 text-xl font-bold text-onyx-950 dark:text-onyx-50">{ind.title}</h3>
+                  <p className="mt-3 text-xs sm:text-sm text-onyx-500 dark:text-onyx-300 leading-relaxed">{ind.desc}</p>
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-spring-500 dark:text-spring-400 hover:text-spring-600 transition-colors"
+                  >
+                    Discuss your sector requirements
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             ))}
-            <div className="sm:col-span-2 sm:max-w-md sm:mx-auto w-full">
-              <div className="flex items-start gap-4 bg-white dark:bg-onyx-800 rounded-lg p-6 border border-onyx-100 dark:border-onyx-700 hover:border-spring-500/40 transition-all">
-                <div className="shrink-0 w-11 h-11 rounded-xl bg-white dark:bg-onyx-900 border border-spring-500/30 shadow-sm flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-spring-500 dark:text-spring-400" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-onyx-950 dark:text-onyx-50 text-sm mb-1.5">Custom AI Agent</h3>
-                  <p className="text-xs text-onyx-500 dark:text-onyx-300 leading-relaxed">
-                    Need something specific? We design, train and deploy bespoke agents for your
-                    exact business workflow.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* How we work */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-50 dark:bg-onyx-900">
+      {/* Engineering Process */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 border-t border-onyx-100 dark:border-onyx-700">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-14">
-            <div>
-              <p className="text-spring-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
-                Our Process
-              </p>
-              <h2 className="text-2xl font-bold text-onyx-950 dark:text-onyx-50 mb-3">How we work</h2>
-              <p className="text-onyx-500 dark:text-onyx-300 max-w-xl leading-relaxed">
-                A consistent process across every engagement — no surprises.
-              </p>
-            </div>
-            <div className="relative h-52 sm:h-64 rounded-xl overflow-hidden border border-onyx-100 dark:border-onyx-700">
-              <Image
-                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80"
-                alt="African business team collaborating with technology"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-onyx-950/50" />
-            </div>
+          <div className="max-w-3xl mb-12">
+            <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.25em] mb-2">
+              Our Process
+            </p>
+            <h2 className="text-3xl font-bold text-onyx-950 dark:text-onyx-50">
+              Disciplined delivery from brief to cutover
+            </h2>
+            <p className="mt-3 text-sm text-onyx-500 dark:text-onyx-300 leading-relaxed">
+              Every project follows structured milestones with staging verification before production cutover.
+            </p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-0">
-            {process.map((p, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            {processSteps.map((p, i) => (
               <div
                 key={p.step}
-                className="flex-1 relative pl-6 md:pl-0 md:pt-6 pb-8 md:pb-0"
+                className="bg-white dark:bg-onyx-800 p-6 rounded-xl border border-onyx-100 dark:border-onyx-700"
               >
-                {i < process.length - 1 && (
-                  <>
-                    <span className="absolute left-3 top-7 bottom-0 w-px bg-onyx-100 dark:bg-onyx-700 md:hidden" />
-                    <span className="hidden md:block absolute top-3 left-1/2 right-0 h-px bg-onyx-100 dark:bg-onyx-700" />
-                  </>
-                )}
-                <span className="absolute left-0 top-1 md:left-auto md:top-0 md:relative md:block w-6 h-6 rounded-full bg-spring-500/10 border border-spring-500/50 flex items-center justify-center">
-                  <span className="w-2 h-2 rounded-full bg-spring-500 block" />
+                <span className="w-8 h-8 rounded-full bg-spring-500/10 border border-spring-500/30 flex items-center justify-center text-xs font-bold text-spring-400 mb-4">
+                  0{i + 1}
                 </span>
-                <div className="md:mt-4 ml-0">
-                  <h3 className="font-semibold text-onyx-950 dark:text-onyx-50 text-sm">{p.step}</h3>
-                  <p className="mt-1 text-sm text-onyx-500 dark:text-onyx-300 leading-relaxed">{p.desc}</p>
-                </div>
+                <h3 className="font-bold text-onyx-950 dark:text-onyx-50 text-sm mb-2">{p.step}</h3>
+                <p className="text-xs text-onyx-500 dark:text-onyx-300 leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing callout */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 border-t border-onyx-100 dark:border-onyx-700">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white dark:bg-onyx-800 rounded-lg p-8 border border-onyx-100 dark:border-onyx-700">
-            <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.2em] mb-2">Once-off</p>
-            <p className="text-3xl font-extrabold text-onyx-950 dark:text-onyx-50">R3,000</p>
-            <p className="mt-2 text-sm text-onyx-500 dark:text-onyx-300">Setup, build, and deployment — domain, hosting, email, and CI/CD included.</p>
+      {/* Pricing / Engagement Baseline (Legacy R3,000 and R200-R300 deleted) */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 bg-onyx-50 dark:bg-onyx-900 border-t border-onyx-100 dark:border-onyx-700">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.25em] mb-2">
+              Commercial Baseline
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-onyx-950 dark:text-onyx-50">
+              Transparent service rates
+            </h2>
+            <p className="mt-2 text-xs sm:text-sm text-onyx-500 dark:text-onyx-300">
+              Standardized baseline rates. Custom scopes quoted after technical discovery.
+            </p>
           </div>
-          <div className="bg-onyx-800 rounded-lg p-8 border border-spring-500/40 shadow-[0_0_24px_rgba(2,245,161,0.08)]">
-            <p className="text-xs font-semibold text-spring-400 uppercase tracking-[0.2em] mb-2">Monthly</p>
-            <p className="text-3xl font-extrabold text-onyx-950 dark:text-onyx-50">R200 – R300<span className="text-lg font-semibold text-onyx-300">/mo</span></p>
-            <p className="mt-2 text-sm text-onyx-300">Ongoing maintenance, updates, monitoring, and support — managed service, not DIY.</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white dark:bg-onyx-800 rounded-xl p-8 border border-onyx-100 dark:border-onyx-700">
+              <span className="text-xs font-bold uppercase tracking-wider text-spring-400 bg-spring-500/10 px-2.5 py-1 rounded">
+                Website Engineering
+              </span>
+              <p className="text-3xl font-extrabold text-onyx-950 dark:text-onyx-50 mt-4">
+                Starting at R8,500
+              </p>
+              <p className="mt-2 text-xs text-onyx-500 dark:text-onyx-300 leading-relaxed">
+                Full Next.js web application build, Cloudflare CDN integration, domain configuration, and Brevo contact form handling.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-onyx-800 rounded-xl p-8 border border-spring-500/40 shadow-[0_0_24px_rgba(2,245,161,0.08)]">
+              <span className="text-xs font-bold uppercase tracking-wider text-spring-400 bg-spring-500/10 px-2.5 py-1 rounded">
+                Managed Hosting &amp; Stewardship
+              </span>
+              <p className="text-3xl font-extrabold text-onyx-950 dark:text-onyx-50 mt-4">
+                Starting at R750<span className="text-base font-normal text-onyx-400">/mo</span>
+              </p>
+              <p className="mt-2 text-xs text-onyx-500 dark:text-onyx-300 leading-relaxed">
+                Vercel edge hosting, uptime monitoring, automated SSL renewal, dependency auditing, and monthly infrastructure health reporting.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-50 dark:bg-onyx-900 border-t border-onyx-100 dark:border-onyx-700">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-onyx-950 dark:text-onyx-50">Ready to get started?</h2>
-          <p className="mt-3 text-onyx-500 dark:text-onyx-300 max-w-md mx-auto">
-            Tell us what you need and we&apos;ll put together a plan.
+      {/* Bottom CTA */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-onyx-950 border-t border-onyx-800 text-center">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-onyx-50">Ready to build on a solid foundation?</h2>
+          <p className="mt-3 text-onyx-300 text-sm sm:text-base max-w-md mx-auto">
+            Tell us about your digital infrastructure needs and we&apos;ll prepare an architectural recommendation.
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-block px-8 py-3.5 rounded-md bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors"
+            className="mt-8 inline-block px-8 py-3.5 rounded-lg bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors"
           >
-            Get in Touch
+            Initiate Technical Inquiry
           </Link>
         </div>
       </section>
