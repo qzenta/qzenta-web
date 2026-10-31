@@ -85,6 +85,24 @@ export default function ContactPage() {
                   github.com/qzenta
                 </a>
               </div>
+
+              <div>
+                <h3 className="text-xs font-semibold text-onyx-950 dark:text-onyx-50 uppercase tracking-[0.2em] mb-3">
+                  Location
+                </h3>
+                <div className="rounded-xl overflow-hidden border border-onyx-100 dark:border-onyx-700 shadow-sm relative w-full" style={{ aspectRatio: "16 / 9" }}>
+                  <iframe
+                    src="https://www.google.com/maps?q=Alberton,+Johannesburg,+South+Africa&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Qzenta Location Map — Alberton, Johannesburg, South Africa"
+                    className="w-full h-full border-0"
+                  />
+                </div>
+                <p className="mt-2 text-xs text-onyx-400">
+                  Based in Alberton, Johannesburg. Remote-first service across South Africa.
+                </p>
+              </div>
             </div>
           </div>
 
