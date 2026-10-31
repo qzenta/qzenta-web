@@ -13,7 +13,7 @@ const softwareDevLinks = [
   { href: "/business-software#payroll", label: "Qzenta Payroll (In Dev)" },
   { href: "/business-software", label: "SME Application Suite" },
   { href: "/products", label: "Product Roadmap" },
-  { href: "/products#partners", label: "Design Partner Program" },
+  { href: "/contact", label: "Register interest in early access" },
 ];
 
 const companyLinks = [

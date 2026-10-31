@@ -185,20 +185,20 @@ export default function ProductsPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-spring-500/10 border border-spring-500/30 text-spring-400 text-xs font-semibold px-3 py-1 rounded-full mb-4">
             <Rocket className="w-3.5 h-3.5" />
-            Design Partner Program
+            Early Access
           </div>
           <h2 className="text-3xl font-bold text-onyx-50 mb-4">
-            Shape the future of African business software
+            Register interest in early access
           </h2>
           <p className="text-onyx-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-            We are partnering with select South African accounting firms, payroll administrators, and SME leaders to test early alpha builds and provide feedback directly to our engineering team.
+            Prospective users may register interest in early access and roadmap updates for upcoming software releases.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors"
             >
-              Apply as a Design Partner
+              Register interest in early access
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link

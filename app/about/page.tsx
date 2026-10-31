@@ -66,7 +66,7 @@ export default function AboutPage() {
               A dedicated home for mission-critical business technology
             </h2>
             <p className="text-onyx-500 dark:text-onyx-200 text-base sm:text-lg leading-relaxed">
-              Qzenta (Pty) Ltd was established in May 2026 (CIPC Registered 22 May 2026) under the leadership of Director Daniel Amoah as a dedicated technology entity. We architect and manage digital infrastructure, automated workflows, and business software for external enterprise clients as well as Qzenta group projects (including Sikatrix, TiqBooks, Erga, and GDSA).
+              Qzenta (Pty) Ltd was established in May 2026 (CIPC Registered 22 May 2026) under the leadership of Director Daniel Amoah as a dedicated technology entity. We architect and manage digital infrastructure, automated workflows, and business software for businesses and for Qzenta group projects (including Sikatrix, TiqBooks, Erga, and GDSA).
             </p>
             <p className="mt-4 text-onyx-500 dark:text-onyx-300 text-sm leading-relaxed">
               The founding logic was clear: digital infrastructure deserves focused engineering attention. Managing domains, edge hosting, transactional email pipelines, and autonomous workflows as a side function creates compounding operational risk. Qzenta provides dedicated architecture, rigorous governance, and continuous stewardship.
@@ -117,7 +117,7 @@ export default function AboutPage() {
               Headquartered in Johannesburg, South Africa
             </p>
             <p className="mt-1 text-xs sm:text-sm text-onyx-300">
-              CIPC Registered (22 May 2026) &middot; POPIA Compliant &middot; 100% South African Owned
+              Registered with CIPC, 22 May 2026 &middot; Based in Johannesburg, South Africa
             </p>
           </div>
         </div>

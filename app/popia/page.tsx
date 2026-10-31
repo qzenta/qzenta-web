@@ -30,8 +30,8 @@ export default function PopiaPage() {
             <p>
               Qzenta (Pty) Ltd (&ldquo;Qzenta&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a South
               African private company registered with the Companies and Intellectual Property
-              Commission (CIPC). We provide IT infrastructure and web services to businesses across
-              South Africa and Africa. Our registered information officer is Daniel Amoah, reachable
+              Commission (CIPC). We provide IT infrastructure and web services based in Johannesburg,
+              South Africa. Our registered information officer is Daniel Amoah, reachable
               at{" "}
               <a href="mailto:info@qzenta.com" className="text-spring-400 hover:text-spring-300 transition-colors">
                 info@qzenta.com

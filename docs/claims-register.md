@@ -62,11 +62,14 @@ Every factual, numerical, commercial, and operational claim identified across th
 | **CLM-041** | `"The full process, done properly, takes 2–5 business days."` | `lib/posts.ts:136` | SLA / Technical Roadmap | **KEPT** | Contextualized educational guidance within technical insight article. Retained as an architectural estimation, not a commercial guarantee. |
 | **CLM-042** | `"guaranteed continuous lead delivery"` | `app/portfolio/page.tsx:28` | Guarantee / SLA | **REMOVED** | Replaced with qualitative architectural outcome: `"optimized lead delivery reliability"`. |
 | **CLM-043** | `"engines that guarantee data delivery"` | `app/ai-automation/page.tsx:61` | Guarantee / SLA | **REMOVED** | Replaced with factual qualitative statement: `"engines that ensure reliable data delivery"`. |
+| **CLM-044** | `"24/7 Availability badge for AI Support agent"` | `app/ai-automation/page.tsx:47` | Unverified Availability Claim | **REMOVED** | Removed badge to eliminate unproven availability claims. |
+| **CLM-045** | `"Autonomous monitoring workflows that verify submission milestones for VAT, PAYE, and CIPC deadlines"` | `app/ai-automation/page.tsx:39-41` | Unproven Service Capability | **REMOVED** | Reworded as an example use case: `"Example use case: workflows that track VAT, PAYE and CIPC deadlines and flag gaps."`. |
+| **CLM-046** | `"We provide IT infrastructure and web services to businesses across South Africa and Africa"` | `app/popia/page.tsx:33` | Unproven Geographic / Client Claim | **REMOVED** | Reworded to factual local baseline: `"We provide IT infrastructure and web services based in Johannesburg, South Africa."`. |
 
 ---
 
 ## 3. Reconciliation Summary
 
-All 43 claims have been reconciled in full:
+All 46 claims have been reconciled in full:
 - **KEPT (14 Claims):** Core corporate registration facts (CIPC 22 May 2026), Information Officer identity (Daniel Amoah), verified tech stack (Next.js, Vercel, Cloudflare, n8n, Brevo), and canonical commercial entry baselines (R8,500, R750/mo, R18,000, R35,000, from R150).
-- **REMOVED (29 Claims):** All unverified numeric counters, delivery-time SLAs (5-day, 1-5 day, 24h response), uptime guarantees (24/7), "Trusted by businesses in" statements, the 5 anonymous case studies, guarantee statements, and conflicting legacy pricing figures (R3,000 setup, R200–R300/mo).
+- **REMOVED (32 Claims):** All unverified numeric counters, delivery-time SLAs, uptime guarantees, 24/7 availability badges, unproven geographic/client claims, anonymous case studies, and conflicting legacy pricing figures.

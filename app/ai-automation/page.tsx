@@ -37,14 +37,13 @@ const agents = [
   {
     Icon: Shield,
     name: "Compliance & Statutory Monitoring",
-    desc: "Autonomous monitoring workflows that verify submission milestones for VAT, PAYE, and CIPC deadlines, flagging compliance gaps before penalties arise.",
+    desc: "Example use case: workflows that track VAT, PAYE and CIPC deadlines and flag gaps.",
     badge: "Risk & Governance",
   },
   {
     Icon: Headphones,
     name: "AI Support & Knowledge Base",
-    desc: "Answers customer enquiries around the clock using your verified documentation and product manuals — accurate, instant, and consistent.",
-    badge: "24/7 Availability",
+    desc: "Answers customer enquiries using your verified documentation and product manuals — accurate, instant, and consistent.",
   },
   {
     Icon: Bot,

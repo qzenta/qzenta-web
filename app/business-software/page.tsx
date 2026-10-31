@@ -45,7 +45,7 @@ export default function BusinessSoftwarePage() {
                 <span className="text-xs text-onyx-300 font-medium">Pre-Release Transparency</span>
               </div>
               <p className="text-sm text-onyx-200 leading-relaxed max-w-3xl">
-                The software products detailed below are currently in active engineering within Qzenta&apos;s development lab. They are not yet commercially released. Design partners and prospective users may register for roadmap updates and private alpha preview access.
+                The software products detailed below are currently in active engineering within Qzenta&apos;s development lab. They are not yet commercially released. Prospective users may register interest in early access and roadmap updates.
               </p>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function BusinessSoftwarePage() {
                 href="/contact"
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-spring-500/50 hover:bg-spring-500/10 text-spring-400 font-semibold text-sm transition-colors"
               >
-                Join Design Partner Waitlist
+                Register interest in early access
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -251,17 +251,17 @@ export default function BusinessSoftwarePage() {
       <section className="px-4 sm:px-6 lg:px-8 py-16 bg-onyx-950 border-t border-onyx-800 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-onyx-50 mb-4">
-            Become a design partner
+            Register interest in early access
           </h2>
           <p className="text-onyx-300 text-sm sm:text-base mb-8 leading-relaxed">
-            Collaborate directly with our engineering team to shape product requirements and secure priority access upon private alpha release.
+            Register interest in early access and roadmap updates for upcoming software releases.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-spring-500 hover:bg-spring-600 text-onyx-950 font-semibold text-sm transition-colors"
             >
-              Request Design Partner Access
+              Register interest in early access
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
