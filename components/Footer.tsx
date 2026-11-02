@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const capabilityLinks = [
   { href: "/solutions", label: "Digital Infrastructure" },
@@ -44,20 +45,20 @@ export default function Footer() {
         {/* Top brand header */}
         <div className="pb-10 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2">
-              <span className="text-2xl font-extrabold tracking-tight">
-                <span className="text-emerald-500">Q</span>
-                <span className="text-slate-900">zenta</span>
-              </span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
-                (Pty) Ltd
-              </span>
+            <Link href="/" className="inline-flex items-center">
+              <Image
+                src="/brand/logo-wordmark.svg"
+                alt="Qzenta, quietly excellent"
+                width={110}
+                height={36}
+                className="h-9 w-auto"
+              />
             </Link>
             <p className="mt-2 text-sm text-slate-500 max-w-md leading-relaxed">
               AI-native business technology, software and automation. Built for ambitious enterprises.
             </p>
             <p className="mt-1 text-xs font-semibold text-emerald-600 uppercase tracking-widest">
-              Quietly Excellent.
+              quietly excellent.
             </p>
           </div>
 
