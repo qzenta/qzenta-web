@@ -234,15 +234,15 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="shrink-0 flex items-center gap-2.5 leading-none" onClick={() => setOpenMenu(null)}>
-            <Image src="/qzenta-icon.svg" alt="" width={32} height={32} className="h-8 w-8" aria-hidden />
-            <span className="text-2xl lg:text-3xl font-extrabold tracking-tight">
-              <span className="text-emerald-500">Q</span>
-              <span className="text-slate-900">zenta</span>
-            </span>
-            <span className="hidden lg:block text-[9px] font-semibold tracking-[0.22em] text-slate-400 uppercase mt-0.5 self-end mb-0.5">
-              Quietly Excellent
-            </span>
+          <Link href="/" className="shrink-0 flex items-center leading-none" onClick={() => setOpenMenu(null)}>
+            <Image
+              src="/brand/logo-wordmark.svg"
+              alt="Qzenta, quietly excellent"
+              width={134}
+              height={44}
+              className="h-9 lg:h-11 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

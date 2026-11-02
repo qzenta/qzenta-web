@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Qzenta — Quietly Excellent · AI-Native Business Technology, Software & Automation";
+export const alt = "Qzenta — quietly excellent · AI-Native Business Technology, Software & Automation";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -41,7 +41,7 @@ export default function OgImage() {
             left: 0,
             right: 0,
             height: "6px",
-            background: "linear-gradient(to right, #02F5A1, #00CC85)",
+            background: "linear-gradient(to right, #BAFA38, #00CC85)",
           }}
         />
 
@@ -50,7 +50,7 @@ export default function OgImage() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "16px",
+            gap: "12px",
             marginBottom: "48px",
           }}
         >
@@ -58,28 +58,38 @@ export default function OgImage() {
             style={{
               width: "56px",
               height: "56px",
-              background: "#02F5A1",
+              background: "#BAFA38",
               borderRadius: "12px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: "32px",
               fontWeight: 900,
-              color: "#07191E",
+              color: "#0B1220",
             }}
           >
             Q
           </div>
           <span
             style={{
-              fontSize: "36px",
+              fontSize: "38px",
               fontWeight: 800,
               color: "#F2F8F7",
               letterSpacing: "-0.5px",
             }}
           >
-            Qzenta
+            qzenta
           </span>
+          <div
+            style={{
+              width: "12px",
+              height: "12px",
+              background: "#BAFA38",
+              borderRadius: "3px",
+              marginLeft: "-6px",
+              marginTop: "16px",
+            }}
+          />
         </div>
 
         {/* Headline */}
@@ -94,7 +104,7 @@ export default function OgImage() {
           }}
         >
           AI-Native Business Technology for{" "}
-          <span style={{ color: "#02F5A1" }}>Ambitious</span> Enterprises
+          <span style={{ color: "#BAFA38" }}>Ambitious</span> Enterprises
         </div>
 
         {/* Tagline */}
@@ -104,10 +114,10 @@ export default function OgImage() {
             fontSize: "24px",
             color: "#87A6AA",
             letterSpacing: "0.1em",
-            textTransform: "uppercase",
+            textTransform: "lowercase",
           }}
         >
-          Quietly Excellent · qzenta.com
+          quietly excellent · qzenta.com
         </div>
       </div>
     ),

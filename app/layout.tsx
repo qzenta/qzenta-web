@@ -18,8 +18,9 @@ export const metadata: Metadata = {
     "Qzenta architects, deploys, and manages production digital infrastructure, intelligent autonomous workflows, and modern business applications for ambitious enterprises.",
   metadataBase: new URL("https://www.qzenta.com"),
   icons: {
-    icon: "/qzenta-icon.svg",
-    shortcut: "/qzenta-icon.svg",
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     type: "website",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://www.qzenta.com",
     siteName: "Qzenta",
     description:
-      "AI-native business technology, software, and automation company. Quietly Excellent.",
+      "AI-native business technology, software, and automation company. quietly excellent.",
   },
   twitter: {
     card: "summary_large_image",
@@ -39,7 +40,7 @@ const orgSchema = {
   "@type": "Organization",
   name: "Qzenta (Pty) Ltd",
   url: "https://www.qzenta.com",
-  logo: "https://www.qzenta.com/logo.png",
+  logo: "https://www.qzenta.com/brand/logo-horizontal.svg",
   contactPoint: {
     "@type": "ContactPoint",
     email: "info@qzenta.com",
