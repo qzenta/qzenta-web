@@ -67,6 +67,13 @@ export default function PrivacyPage() {
         </div>
 
         <div>
+          <h2 className="text-onyx-50 font-semibold mb-2">Google Maps Embed</h2>
+          <p>
+            The Contact page embeds a Google Map, which may set cookies and is governed by Google&apos;s privacy policy.
+          </p>
+        </div>
+
+        <div>
           <h2 className="text-onyx-50 font-semibold mb-2">Contact</h2>
           <p>
             Questions about this policy can be directed to{" "}

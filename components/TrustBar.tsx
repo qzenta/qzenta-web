@@ -4,6 +4,7 @@ const partners = [
   { name: "Cloudflare", icon: "☁" },
   { name: "Google Workspace", icon: "✉" },
   { name: "Brevo", icon: "✉" },
+  { name: "n8n", icon: "⚡" },
   { name: "GitHub", icon: "⬡" },
 ];
 
@@ -14,7 +15,7 @@ export default function TrustBar() {
     <section className="bg-onyx-50 dark:bg-onyx-900 border-t border-b border-onyx-100 dark:border-spring-500/20 py-12 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto mb-8 text-center">
         <p className="text-onyx-500 dark:text-onyx-300 text-sm leading-relaxed max-w-2xl mx-auto">
-          Accounting firms, law practices, NGOs, and property agencies across Gauteng trust Qzenta to keep their digital operations running.
+          Engineered for reliability. We build, deploy, and manage production systems on world-class technology foundations.
         </p>
       </div>
 

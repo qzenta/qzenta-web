@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Qzenta — Quietly Excellent · IT Infrastructure";
+export const alt = "Qzenta — Quietly Excellent · AI-Native Business Technology, Software & Automation";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -93,8 +93,8 @@ export default function OgImage() {
             maxWidth: "900px",
           }}
         >
-          IT Infrastructure for{" "}
-          <span style={{ color: "#02F5A1" }}>Ambitious</span> African Businesses
+          AI-Native Business Technology for{" "}
+          <span style={{ color: "#02F5A1" }}>Ambitious</span> Enterprises
         </div>
 
         {/* Tagline */}
@@ -102,7 +102,7 @@ export default function OgImage() {
           style={{
             marginTop: "32px",
             fontSize: "24px",
-            color: "#3E6168",
+            color: "#87A6AA",
             letterSpacing: "0.1em",
             textTransform: "uppercase",
           }}

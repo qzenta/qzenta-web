@@ -1,88 +1,123 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import {
-  UserMinus, Clock, Database, MessageSquare,
-  Globe, Server, Zap, Bot, Sparkles,
-  Check, ArrowRight,
+  UserMinus,
+  Clock,
+  Database,
+  MessageSquare,
+  Globe,
+  Server,
+  Zap,
+  Bot,
+  Sparkles,
+  Check,
+  ArrowRight,
+  Shield,
+  Code2,
+  GitBranch,
 } from "lucide-react";
 import AssessmentForm from "@/components/AssessmentForm";
+import HeroCarousel from "@/components/HeroCarousel";
+import ServiceTagMarquee from "@/components/ServiceTagMarquee";
 
 export const metadata: Metadata = {
-  title: "Qzenta -- AI, Automation & Digital Transformation for Growing Businesses",
+  title: "Qzenta — AI-Native Business Technology, Software & Automation",
   description:
-    "We build your digital presence, automate your workflows, and deploy AI agents that help your business scale without growing your headcount.",
+    "We build digital infrastructure, deploy intelligent automation workflows, and develop next-generation business software for ambitious enterprises.",
+  openGraph: { url: "https://www.qzenta.com" },
 };
 
 /* ─── Data ─────────────────────────────────────────────────────────────── */
 
-const stats = [
-  { value: "5-day", label: "Average delivery to live" },
-  { value: "6+",    label: "Industries served" },
-  { value: "10+",   label: "Domains under management" },
-  { value: "24/7",  label: "AI agents uptime" },
+const foundations = [
+  {
+    Icon: Code2,
+    title: "Direct Builder Access",
+    desc: "Work directly with experienced software and infrastructure engineers. No account managers, no junior handoffs.",
+  },
+  {
+    Icon: Shield,
+    title: "Enterprise Cloud Foundations",
+    desc: "Standardised on Next.js, Vercel edge infrastructure, and enterprise Cloudflare security across every deployment.",
+  },
+  {
+    Icon: GitBranch,
+    title: "Intelligent Automation",
+    desc: "Autonomous AI agents and n8n orchestration pipelines engineered with deterministic fallbacks and human-in-the-loop oversight.",
+  },
+  {
+    Icon: Sparkles,
+    title: "Full Code & Data Ownership",
+    desc: "Complete administrative custody of repositories, DNS, and credentials. Managed by us, owned always by you.",
+  },
 ];
 
 const productOverview = [
   {
     Icon: Globe,
-    name: "Website Development",
-    desc: "A professional site built and live in days, not months.",
+    name: "Website Engineering",
+    desc: "High-performance Next.js web applications built for speed, SEO, and enterprise reliability.",
     price: "Starting at R8,500",
     href: "/solutions#web",
   },
   {
     Icon: Server,
     name: "Hosting & Domains",
-    desc: "Your domain, hosting, SSL and email, handled.",
+    desc: "Managed Vercel edge deployment, domain lifecycle oversight, SSL, and DNS handled end-to-end.",
     price: "Starting at R750/mo",
     href: "/solutions#domains",
   },
   {
     Icon: Zap,
     name: "Workflow Automation",
-    desc: "Stop losing leads to slow follow-up.",
+    desc: "Resilient n8n workflow pipelines connecting CRMs, email, WhatsApp, and internal business logic.",
     price: "Starting at R18,000",
-    href: "/#how-it-works",
+    href: "/ai-automation#workflows",
   },
   {
     Icon: Bot,
-    name: "AI Agents",
-    desc: "A receptionist, sales rep, or support agent that never sleeps.",
+    name: "Autonomous AI Agents",
+    desc: "Specialized agents for reception, lead triage, proposal generation, and statutory monitoring.",
     price: "Starting at R35,000",
-    href: "/solutions#ai-agents",
+    href: "/ai-automation#agents",
   },
   {
     Icon: Sparkles,
-    name: "Custom Solutions",
-    desc: "Built around what you already have.",
-    price: "On request",
-    href: "/contact",
+    name: "Business Software",
+    desc: "Cloud-native accounting and payroll software (Qzenta Accounting & Payroll) currently in active development.",
+    price: "In Development",
+    href: "/business-software",
   },
 ];
 
-const sectors = ["Professional Services", "Property", "SaaS", "NGO", "Legal & Faith"];
+const sectors = [
+  "Professional Services",
+  "Commercial Property",
+  "Technology & SaaS",
+  "Non-Profit & NGOs",
+  "Legal Practices",
+];
 
 const painPoints = [
   {
     Icon: UserMinus,
     title: "Lost leads from slow follow-up",
-    desc: "Enquiries go cold while you are busy with client work.",
+    desc: "Enquiries go cold while your team is busy delivering client work.",
   },
   {
     Icon: Clock,
     title: "Hours wasted on manual admin",
-    desc: "Data entry, scheduling and chasing documents eat your day.",
+    desc: "Repetitive data entry, scheduling, and invoice reconciliation consume valuable hours.",
   },
   {
     Icon: Database,
-    title: "Missed sales due to no CRM",
-    desc: "No system means no pipeline visibility and no follow-up.",
+    title: "Disconnected business software",
+    desc: "Fragmented tools cause pipeline blind spots, sync errors, and compliance risks.",
   },
   {
     Icon: MessageSquare,
-    title: "Poor customer response times",
-    desc: "Clients wait hours for answers they could get instantly.",
+    title: "Slow client response times",
+    desc: "Prospective clients wait hours for answers that intelligent systems could provide immediately.",
   },
 ];
 
@@ -127,10 +162,10 @@ const packages = [
     monthlyLabel: "/mo",
     features: [
       "Everything in Growth",
-      "AI receptionist or chatbot",
+      "AI receptionist or triage agent",
       "Automated lead follow-up",
-      "WhatsApp integration",
-      "Priority support",
+      "WhatsApp & Brevo integration",
+      "Priority technical support",
     ],
     featured: true,
     badge: "Most Popular",
@@ -143,9 +178,9 @@ const packages = [
     monthlyLabel: "/mo",
     features: [
       "Everything in AI Business",
-      "Multiple AI agents deployed",
+      "Multiple autonomous AI agents",
       "Custom system integrations",
-      "Dedicated account manager",
+      "Dedicated engineering lead",
       "Full transformation roadmap",
     ],
     featured: false,
@@ -158,93 +193,40 @@ const packages = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section
-        className="relative overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(ellipse 65% 75% at 78% 45%, rgba(16,185,129,0.35) 0%, transparent 60%), linear-gradient(135deg, #0f172a 0%, #111827 55%, #1e293b 100%)",
-        }}
-      >
-        <div className="relative flex items-center min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] px-4 sm:px-6 lg:px-8 pt-10 pb-8">
-          <div className="max-w-7xl mx-auto w-full relative">
-            <div className="max-w-xl lg:max-w-2xl">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-emerald-300 text-xs font-semibold px-3.5 py-1.5 rounded-full mb-3 border border-white/15">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-                AI-powered digital transformation for South African SMEs
-              </div>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-[1.1] tracking-tight">
-                AI, Automation &amp; Digital Transformation{" "}
-                <span className="text-emerald-400">for Growing Businesses</span>
-              </h1>
+      {/* Service Tag Marquee */}
+      <ServiceTagMarquee />
 
-              <p className="mt-3 text-sm sm:text-base text-slate-200 max-w-lg leading-relaxed">
-                We build your digital presence, automate your workflows, and deploy AI agents that help
-                your business scale -- without growing your headcount.
-              </p>
-
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <a
-                  href="#assessment"
-                  className="px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm transition-colors shadow-lg shadow-emerald-950/30"
-                >
-                  Get Your Free AI Business Assessment
-                </a>
-                <a
-                  href="#how-it-works"
-                  className="px-6 py-3 rounded-lg border border-white/30 hover:border-white/60 text-white font-semibold text-sm transition-colors backdrop-blur-sm"
-                >
-                  See How It Works
-                </a>
-              </div>
-
-              <p className="mt-4 text-xs text-slate-300 tracking-wide">
-                Trusted by businesses in accounting, legal, property &amp; education &nbsp;&middot;&nbsp; 100% South African
-              </p>
-            </div>
-
-            {/* Floating illustration */}
-            <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[200px] xl:w-[240px] pointer-events-none">
-              <Image
-                src="/hero-ai-illustration.png"
-                alt=""
-                width={860}
-                height={1147}
-                priority
-                aria-hidden
-                className="w-full h-auto drop-shadow-[0_20px_50px_rgba(16,185,129,0.25)]"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Strip */}
-      <section className="bg-slate-900 px-4 sm:px-6 lg:px-8 py-10">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {stats.map((s) => (
-              <div key={s.value}>
-                <p className="text-3xl font-extrabold text-emerald-400 tracking-tight">{s.value}</p>
-                <p className="mt-1 text-xs text-slate-400 leading-snug">{s.label}</p>
+      {/* Foundational Qualitative Pillars Strip */}
+      <section className="bg-slate-900 border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {foundations.map((f) => (
+              <div key={f.title} className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3">
+                  <f.Icon className="w-4 h-4" />
+                </div>
+                <h3 className="text-sm font-bold text-white mb-1">{f.title}</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Problem */}
-      <section className="bg-slate-50 px-4 sm:px-6 lg:px-8 py-14">
+      {/* Problem Statement */}
+      <section className="bg-slate-50 px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-xs font-semibold text-emerald-600 uppercase tracking-[0.25em] mb-3">
-            The Problem
+            Operational Friction
           </p>
           <h2 className="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-3 tracking-tight">
             Sound familiar?
           </h2>
-          <p className="text-center text-sm text-slate-500 mb-8 max-w-xl mx-auto leading-relaxed">
-            Most growing South African businesses face the same four challenges. We solve all of them.
+          <p className="text-center text-sm text-slate-500 mb-10 max-w-xl mx-auto leading-relaxed">
+            Most growing businesses struggle with disconnected tools, manual admin, and delayed client responses. We solve these challenges with engineered systems.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {painPoints.map((p) => (
@@ -263,17 +245,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Product Overview */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 py-14">
+      {/* Three Capabilities & Product Overview */}
+      <section className="bg-white px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-xs font-semibold text-emerald-600 uppercase tracking-[0.25em] mb-3">
-            What We Offer
+            Core Capabilities
           </p>
           <h2 className="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-3 tracking-tight">
-            Everything you need, one place to start
+            Three pillars of modern business capability
           </h2>
-          <p className="text-center text-sm text-slate-500 mb-8 max-w-xl mx-auto leading-relaxed">
-            Know exactly what you need? Pick it below. Every service is priced up front -- no quote required to see where you stand.
+          <p className="text-center text-sm text-slate-500 mb-10 max-w-xl mx-auto leading-relaxed">
+            From production web infrastructure and autonomous AI workflows to integrated enterprise software, we provide the technical architecture growing businesses depend on.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {productOverview.map((p) => (
@@ -289,7 +271,7 @@ export default function HomePage() {
                 <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{p.desc}</p>
                 <p className="text-xs font-semibold text-slate-900 mb-3">{p.price}</p>
                 <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 group-hover:gap-1.5 transition-all">
-                  Overview
+                  Explore
                   <ArrowRight className="w-3 h-3" />
                 </span>
               </Link>
@@ -300,7 +282,7 @@ export default function HomePage() {
 
       {/* Differentiator Banner */}
       <section
-        className="relative bg-slate-900 px-4 sm:px-6 lg:px-8 py-14 overflow-hidden"
+        className="relative bg-slate-900 px-4 sm:px-6 lg:px-8 py-16 overflow-hidden"
         style={{
           background:
             "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(16,185,129,0.18) 0%, transparent 65%), #0f172a",
@@ -308,14 +290,19 @@ export default function HomePage() {
       >
         <div className="relative max-w-4xl mx-auto text-center">
           <p className="text-xs font-semibold text-emerald-400 uppercase tracking-[0.25em] mb-3">
-            Our Difference
+            The Qzenta Difference
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-[1.15] tracking-tight">
-            Direct to the builder.
-            <br className="hidden sm:block" /> No account managers, no outsourcing, no handoffs.
+            Direct access to the engineers building your systems.
+            <br className="hidden sm:block" /> No account managers, no junior handoffs, no administrative translation.
           </h2>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            {["Boutique & direct access", "Builds on your existing stack", "1-5 day delivery"].map((badge) => (
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            {[
+              "Boutique & direct access",
+              "Radical stack consistency",
+              "Structured milestone delivery",
+              "Total client ownership",
+            ].map((badge) => (
               <span
                 key={badge}
                 className="text-xs font-semibold text-emerald-300 bg-white/5 border border-white/10 px-4 py-2 rounded-full"
@@ -327,16 +314,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Packages */}
+      {/* Packages & Engagement Models */}
       <section id="how-it-works" className="bg-slate-50 border-y border-slate-100 px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-xs font-semibold text-emerald-600 uppercase tracking-[0.25em] mb-3">
-            Packages
+            Engagement Packages
           </p>
           <h2 className="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-3 tracking-tight">
-            Choose your transformation path
+            Transparent pricing for defined project scopes
           </h2>
-          <p className="text-center text-sm text-slate-500 mb-8">
+          <p className="text-center text-sm text-slate-500 mb-10">
             All prices exclude VAT. Johannesburg market rates.
           </p>
 
@@ -408,14 +395,14 @@ export default function HomePage() {
             Get Your Free AI Business Assessment
           </h2>
           <p className="text-sm text-slate-500 mb-8 leading-relaxed max-w-lg mx-auto">
-            Tell us about your business and we&apos;ll identify exactly where AI and automation
-            can save you time and grow your revenue -- no obligation.
+            Tell us about your business and we&apos;ll identify where AI and automation
+            can save you time and grow your revenue.
           </p>
           <AssessmentForm />
         </div>
       </section>
 
-      {/* CTA Strip */}
+      {/* Direct Engagement CTA Strip */}
       <section className="bg-slate-900 px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
@@ -429,10 +416,10 @@ export default function HomePage() {
             ))}
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
-            Ready to transform your business?
+            Ready to build a quiet, reliable technology foundation?
           </h2>
-          <p className="text-slate-400 mb-8 leading-relaxed text-lg">
-            Most clients are live within 5 working days. Get in touch today.
+          <p className="text-slate-400 mb-8 leading-relaxed text-base sm:text-lg">
+            Whether you need high-performance web infrastructure, custom workflow automation, or want to discuss our business software roadmap, we welcome a direct conversation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link

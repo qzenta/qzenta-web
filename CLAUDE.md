@@ -4,7 +4,7 @@
 ## Entity
 - IT holding company — infrastructure services to Sikatrix, TiqBooks, Erga, GDSA + external clients
 - CIPC Registered: 22 May 2026
-- Director: Daniel Onukpa
+- Director: Daniel Amoah
 - Tagline: Quietly Excellent
 - NOT an accounting firm
 

@@ -71,7 +71,7 @@ The API route (`app/api/contact/route.ts`) sends an email via the Brevo HTTP API
 1. Push to `github.com/qzenta/qzenta-web`
 2. Import the repo in Vercel (vercel.com/new)
 3. Add environment variables in Vercel project settings
-4. Deploy — Vercel auto-deploys on every push to `main`
+4. Deploy — Vercel auto-deploys on every push to `master`
 
 **Grant Vercel access to the qzenta GitHub org:**
 GitHub → Settings → Applications → Authorized OAuth Apps → Vercel → Grant access to qzenta

@@ -1,60 +1,95 @@
 import Link from "next/link";
 
-const solutionLinks = [
-  { href: "/solutions#web",            label: "Web Development" },
-  { href: "/solutions#domains",        label: "Domain Management" },
-  { href: "/solutions#infrastructure", label: "Tech Infrastructure" },
-  { href: "/#how-it-works",           label: "Workflow Automation" },
-  { href: "/#assessment",             label: "AI Agents" },
+const capabilityLinks = [
+  { href: "/solutions", label: "Digital Infrastructure" },
+  { href: "/ai-automation#agents", label: "Autonomous AI Agents" },
+  { href: "/ai-automation#workflows", label: "n8n Workflow Pipelines" },
+  { href: "/solutions#domains", label: "Managed Hosting & Vercel" },
+  { href: "/solutions#infrastructure", label: "Cloud Integrations" },
+];
+
+const softwareDevLinks = [
+  { href: "/business-software#accounting", label: "Qzenta Accounting (In Dev)" },
+  { href: "/business-software#payroll", label: "Qzenta Payroll (In Dev)" },
+  { href: "/business-software", label: "SME Application Suite" },
+  { href: "/products", label: "Product Roadmap" },
+  { href: "/contact", label: "Register interest in early access" },
 ];
 
 const companyLinks = [
-  { href: "/about",      label: "About Us" },
-  { href: "/industries", label: "Industries" },
-  { href: "/portfolio",  label: "Portfolio" },
-  { href: "/insights",   label: "Insights" },
-  { href: "/contact",    label: "Contact" },
+  { href: "/about", label: "About Qzenta" },
+  { href: "/portfolio", label: "Projects & Architecture" },
+  { href: "/about#stack", label: "Standard Tech Stack" },
+  { href: "/about#values", label: "Operating Values" },
+  { href: "/contact", label: "Direct Contact" },
+];
+
+const insightLinks = [
+  { href: "/insights", label: "All Technical Guides" },
+  { href: "/insights/sme-dedicated-it-partner", label: "SME IT Partner Guide" },
+  { href: "/insights/cloudflare-free-website-security", label: "Cloudflare Security Guide" },
+  { href: "/insights/registration-to-go-live-south-africa", label: "Registration to Go-Live" },
 ];
 
 const legalLinks = [
+  { href: "/popia", label: "POPIA Notice" },
   { href: "/privacy", label: "Privacy Policy" },
-  { href: "/terms",   label: "Terms of Service" },
-  { href: "/popia",   label: "POPIA Notice" },
+  { href: "/terms", label: "Terms of Service" },
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-slate-100 bg-white mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        {/* 4-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-          {/* Col 1 -- Brand */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        {/* Top brand header */}
+        <div className="pb-10 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <Link href="/" className="inline-flex items-center">
-              <span className="text-xl font-extrabold tracking-tight">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <span className="text-2xl font-extrabold tracking-tight">
                 <span className="text-emerald-500">Q</span>
                 <span className="text-slate-900">zenta</span>
               </span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
+                (Pty) Ltd
+              </span>
             </Link>
-            <p className="mt-4 text-sm text-slate-500 leading-relaxed">
-              AI, automation and digital transformation for ambitious South African businesses.
-              Family-operated. Boutique. Professional.
+            <p className="mt-2 text-sm text-slate-500 max-w-md leading-relaxed">
+              AI-native business technology, software and automation. Built for ambitious enterprises.
+            </p>
+            <p className="mt-1 text-xs font-semibold text-emerald-600 uppercase tracking-widest">
+              Quietly Excellent.
             </p>
           </div>
 
-          {/* Col 2 -- Solutions */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center text-xs font-semibold px-5 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white transition-colors"
+            >
+              Initiate Project Inquiry &rarr;
+            </Link>
+            <a
+              href="mailto:info@qzenta.com"
+              className="text-xs font-medium text-slate-500 hover:text-slate-900 transition-colors"
+            >
+              info@qzenta.com
+            </a>
+          </div>
+        </div>
+
+        {/* 5-Column Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 py-12">
+          {/* Col 1 -- Capabilities */}
           <div>
-            <h3 className="text-xs font-semibold text-slate-900 uppercase tracking-widest mb-4">
-              Solutions
+            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-widest mb-4">
+              Capabilities
             </h3>
             <ul className="space-y-2.5">
-              {solutionLinks.map((link) => (
+              {capabilityLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-500 hover:text-emerald-600 transition-colors"
+                    className="text-xs text-slate-500 hover:text-emerald-600 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -63,17 +98,36 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3 -- Company */}
+          {/* Col 2 -- Software in Dev */}
           <div>
-            <h3 className="text-xs font-semibold text-slate-900 uppercase tracking-widest mb-4">
-              Company
+            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-widest mb-4">
+              Software in Dev
+            </h3>
+            <ul className="space-y-2.5">
+              {softwareDevLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-xs text-slate-500 hover:text-emerald-600 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 3 -- Company & Proof */}
+          <div>
+            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-widest mb-4">
+              Company &amp; Proof
             </h3>
             <ul className="space-y-2.5">
               {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                    className="text-xs text-slate-500 hover:text-slate-900 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -82,62 +136,69 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4 -- Get in Touch */}
+          {/* Col 4 -- Insights & Guides */}
           <div>
-            <h3 className="text-xs font-semibold text-slate-900 uppercase tracking-widest mb-4">
-              Get in Touch
+            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-widest mb-4">
+              Insights &amp; Guides
             </h3>
             <ul className="space-y-2.5">
-              <li>
-                <a
-                  href="mailto:info@qzenta.com"
-                  className="text-sm text-slate-500 hover:text-emerald-600 transition-colors"
-                >
-                  info@qzenta.com
-                </a>
+              {insightLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-xs text-slate-500 hover:text-slate-900 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 5 -- Legal & Governance */}
+          <div className="col-span-2 md:col-span-1">
+            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-widest mb-4">
+              Legal &amp; Governance
+            </h3>
+            <ul className="space-y-2.5 text-xs text-slate-500">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-slate-900 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li className="pt-2 border-t border-slate-100 text-slate-400">
+                Information Officer: <span className="text-slate-600 font-medium">Daniel Amoah</span>
               </li>
-              <li>
-                <a
-                  href="https://github.com/qzenta"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
-                >
-                  github.com/qzenta
-                </a>
-              </li>
-              <li>
-                <span className="text-sm text-slate-400">South Africa</span>
+              <li className="text-slate-400">
+                CIPC Registered: <span className="text-slate-600 font-medium">22 May 2026</span>
               </li>
             </ul>
-            <Link
-              href="/contact"
-              className="mt-6 inline-block text-xs font-semibold px-4 py-2 rounded-lg border border-emerald-400 text-emerald-600 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-colors"
-            >
-              Start a project &rarr;
-            </Link>
           </div>
-
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-slate-100">
-          <p className="text-xs text-slate-400 mb-3">
-            &copy; 2026 Qzenta (Pty) Ltd. All rights reserved. South Africa.
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+          <p>
+            &copy; 2026 Qzenta (Pty) Ltd. Registered in the Republic of South Africa. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-5">
-            {legalLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs text-slate-400 hover:text-slate-700 transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/qzenta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-600 transition-colors"
+            >
+              GitHub: @qzenta
+            </a>
+            <span>&middot;</span>
+            <span>Johannesburg, Gauteng</span>
           </div>
         </div>
-
       </div>
     </footer>
   );
